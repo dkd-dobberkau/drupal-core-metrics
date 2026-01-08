@@ -184,8 +184,8 @@
                 data: {
                     labels,
                     datasets: [
-                        { label: 'Production code', data: sortedData.map(d => d.production?.loc || 0), borderColor: colors.production, backgroundColor: colors.production, borderWidth: 2, tension: 0.3, pointRadius: 3 },
-                        { label: 'Tests', data: sortedData.map(d => d.testLoc || 0), borderColor: colors.test, backgroundColor: colors.test, borderWidth: 2, tension: 0.3, pointRadius: 3, hidden: true }
+                        { label: 'Production code', data: sortedData.map(d => d.production?.loc || 0), borderColor: colors.production, backgroundColor: colors.production, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'circle' },
+                        { label: 'Tests', data: sortedData.map(d => d.testLoc || 0), borderColor: colors.test, backgroundColor: colors.test, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'rect', borderDash: [5, 5], hidden: true }
                     ]
                 },
                 options: {
@@ -248,8 +248,8 @@
                 data: {
                     labels,
                     datasets: [
-                        { label: 'Average', data: sortedData.map(d => d.production?.ccn?.avg || 0), borderColor: colors.production, backgroundColor: colors.production, borderWidth: 2, tension: 0.3, pointRadius: 3 },
-                        { label: '95th percentile', data: sortedData.map(d => d.production?.ccn?.p95 || 0), borderColor: colors.percentile, backgroundColor: colors.percentile, borderWidth: 2, tension: 0.3, pointRadius: 3 }
+                        { label: 'Average', data: sortedData.map(d => d.production?.ccn?.avg || 0), borderColor: colors.production, backgroundColor: colors.production, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'circle' },
+                        { label: '95th percentile', data: sortedData.map(d => d.production?.ccn?.p95 || 0), borderColor: colors.percentile, backgroundColor: colors.percentile, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'rect', borderDash: [5, 5] }
                     ]
                 },
                 options: {
@@ -311,8 +311,8 @@
                 data: {
                     labels,
                     datasets: [
-                        { label: 'Average', data: sortedData.map(d => d.production?.mi?.avg || 0), borderColor: colors.production, backgroundColor: colors.production, borderWidth: 2, tension: 0.3, pointRadius: 3 },
-                        { label: '5th percentile', data: sortedData.map(d => d.production?.mi?.p5 || 0), borderColor: colors.percentile, backgroundColor: colors.percentile, borderWidth: 2, tension: 0.3, pointRadius: 3 }
+                        { label: 'Average', data: sortedData.map(d => d.production?.mi?.avg || 0), borderColor: colors.production, backgroundColor: colors.production, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'circle' },
+                        { label: '5th percentile', data: sortedData.map(d => d.production?.mi?.p5 || 0), borderColor: colors.percentile, backgroundColor: colors.percentile, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'rect', borderDash: [5, 5] }
                     ]
                 },
                 options: {
@@ -548,9 +548,9 @@
                 data: {
                     labels,
                     datasets: [
-                        { label: 'Magic keys', data: sortedData.map(d => getDensity(d, 'magicKeys')), borderColor: antipatternColors.magicKeys, backgroundColor: antipatternColors.magicKeys + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 },
-                        { label: 'Deep arrays', data: sortedData.map(d => getDensity(d, 'deepArrays')), borderColor: antipatternColors.deepArrays, backgroundColor: antipatternColors.deepArrays + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 },
-                        { label: 'Service locators', data: sortedData.map(d => getDensity(d, 'serviceLocators')), borderColor: antipatternColors.serviceLocators, backgroundColor: antipatternColors.serviceLocators + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 }
+                        { label: 'Magic keys', data: sortedData.map(d => getDensity(d, 'magicKeys')), borderColor: antipatternColors.magicKeys, backgroundColor: antipatternColors.magicKeys + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 3, pointStyle: 'circle' },
+                        { label: 'Deep arrays', data: sortedData.map(d => getDensity(d, 'deepArrays')), borderColor: antipatternColors.deepArrays, backgroundColor: antipatternColors.deepArrays + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'rect' },
+                        { label: 'Service locators', data: sortedData.map(d => getDensity(d, 'serviceLocators')), borderColor: antipatternColors.serviceLocators, backgroundColor: antipatternColors.serviceLocators + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'triangle' }
                     ]
                 },
                 options: {
