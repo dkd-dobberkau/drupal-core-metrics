@@ -4,6 +4,16 @@ on:
   schedule:
     - cron: '0 0 * * *'  # Daily at midnight UTC
   workflow_dispatch:
+    inputs:
+      framework:
+        description: 'Framework to analyze'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - drupal
+          - typo3
 
 permissions:
   contents: write
@@ -11,32 +21,52 @@ permissions:
 jobs:
   analyze:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        framework: [drupal, typo3]
 
     steps:
+      - name: Check if framework should run
+        id: check
+        run: |
+          INPUT_FRAMEWORK="${{ github.event.inputs.framework || 'all' }}"
+          if [[ "$INPUT_FRAMEWORK" == "all" ]] || [[ "$INPUT_FRAMEWORK" == "${{ matrix.framework }}" ]]; then
+            echo "should_run=true" >> $GITHUB_OUTPUT
+          else
+            echo "should_run=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Checkout repository
+        if: steps.check.outputs.should_run == 'true'
         uses: actions/checkout@v6
 
       - name: Setup PHP
+        if: steps.check.outputs.should_run == 'true'
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.4'
 
       - name: Setup Python
+        if: steps.check.outputs.should_run == 'true'
         uses: actions/setup-python@v6
         with:
           python-version: '3'
 
       - name: Install Composer dependencies
+        if: steps.check.outputs.should_run == 'true'
         run: composer install --no-interaction
 
       - name: Run analysis
-        run: python3 scripts/analyze.py
+        if: steps.check.outputs.should_run == 'true'
+        run: python3 scripts/analyze.py --framework ${{ matrix.framework }}
 
       - name: Commit and push
+        if: steps.check.outputs.should_run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json
-          git diff --staged --quiet || git commit -m "- Regenerate metrics data"
+          git add data/
+          git diff --staged --quiet || git commit -m "- Regenerate ${{ matrix.framework }} metrics data"
           git pull --rebase
           git push

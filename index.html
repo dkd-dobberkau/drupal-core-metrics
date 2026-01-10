@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drupal Core Metrics - Code Quality Dashboard</title>
-    <meta name="description" content="Track Drupal Core's code quality over time. See lines of code, cyclomatic complexity, maintainability index, anti-patterns, and API surface area.">
+    <title>PHP CMS Core Metrics - Code Quality Dashboard</title>
+    <meta name="description" content="Track PHP CMS code quality over time. See lines of code, cyclomatic complexity, maintainability index, anti-patterns, and API surface area for Drupal and TYPO3.">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
     <style>
         :root {
@@ -68,21 +68,81 @@
         .sa-panel .sa-list div { padding: 0.125rem 0; color: var(--text-secondary); }
         .error { text-align: center; padding: 2rem; color: var(--color-bad); background: #fef2f2; border-radius: 0.5rem; }
         .loading { text-align: center; padding: 3rem; color: var(--text-secondary); }
+        .framework-selector { display: inline-flex; gap: 0.5rem; margin-bottom: 1rem; }
+        .framework-selector button { padding: 0.5rem 1rem; border-radius: 0.375rem; font-weight: 500; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Drupal Core Metrics</h1>
+            <h1 id="page-title">PHP CMS Core Metrics</h1>
+            <div class="framework-selector">
+                <button id="btn-drupal" class="active" data-framework="drupal">Drupal</button>
+                <button id="btn-typo3" data-framework="typo3">TYPO3</button>
+            </div>
             <p class="header-meta" id="last-updated">Loading...</p>
-            <p class="executive-summary">The charts below tell the story of a changing code base.</p>
-            <p class="executive-summary">Code quality has improved since Drupal 7: lower complexity, fewer anti-patterns, better architecture, and better test coverage. The API surface has also modernized: global functions were replaced by interface methods, services, plugins, and events, shifting from procedural to object-oriented patterns.</p>
-            <p class="executive-summary">By tracking these metrics, we hope to inform decisions about both code quality and developer experience.</p>
+            <p class="executive-summary" id="summary-1">The charts below tell the story of a changing code base.</p>
+            <p class="executive-summary" id="summary-2"></p>
+            <p class="executive-summary" id="summary-3">By tracking these metrics, we hope to inform decisions about both code quality and developer experience.</p>
         </header>
         <div id="dashboard"><div class="loading">Loading data...</div></div>
     </div>
     <script>
         const colors = { production: '#3b82f6', percentile: '#f97316', test: '#8b5cf6' };
+
+        // Framework configurations
+        const frameworkConfig = {
+            drupal: {
+                name: 'Drupal',
+                dataFile: 'data/drupal.json',
+                repoUrl: 'https://git.drupalcode.org/project/drupal',
+                corePrefix: 'core/',
+                releases: [
+                    { name: 'D7', dates: ['2011-01'] },
+                    { name: 'D8', dates: ['2015-10', '2015-11', '2016-01'] },
+                    { name: 'D9', dates: ['2020-04', '2020-07'] },
+                    { name: 'D10', dates: ['2022-10', '2023-01'] },
+                    { name: 'D11', dates: ['2024-07', '2024-10'] }
+                ],
+                summary: 'Code quality has improved since Drupal 7: lower complexity, fewer anti-patterns, better architecture, and better test coverage. The API surface has also modernized: global functions were replaced by interface methods, services, plugins, and events, shifting from procedural to object-oriented patterns.',
+                antipatternDesc: {
+                    title: 'Drupal anti-patterns',
+                    intro: 'Code patterns with known downsides. Shows how often these patterns appear per 1,000 lines of code (density). PHP production code only; excludes tests and vendor dependencies.',
+                    items: [
+                        { name: 'Magic keys', desc: '#-prefixed array keys require memorization and lack IDE support. Inherent to Drupal\'s render array architecture.' },
+                        { name: 'Deep arrays', desc: 'arrays nested 3+ levels deep are hard to read and refactor.' },
+                        { name: 'Service locators', desc: '<code>\\Drupal::service()</code> calls hide dependencies and hinder testing.' }
+                    ]
+                }
+            },
+            typo3: {
+                name: 'TYPO3',
+                dataFile: 'data/typo3.json',
+                repoUrl: 'https://github.com/TYPO3/typo3',
+                corePrefix: 'typo3/sysext/',
+                releases: [
+                    { name: 'v8', dates: ['2016-01', '2016-07'] },
+                    { name: 'v9', dates: ['2018-07', '2018-10'] },
+                    { name: 'v10', dates: ['2020-01', '2020-04'] },
+                    { name: 'v11', dates: ['2021-07', '2021-10'] },
+                    { name: 'v12', dates: ['2022-07', '2022-10'] },
+                    { name: 'v13', dates: ['2024-01', '2024-04'] }
+                ],
+                summary: 'TYPO3 has evolved from a monolithic PHP application to a modern Symfony-based CMS. The transition to dependency injection, PSR standards, and event-driven architecture represents a significant modernization of the codebase.',
+                antipatternDesc: {
+                    title: 'TYPO3 anti-patterns',
+                    intro: 'Code patterns with known downsides. Shows how often these patterns appear per 1,000 lines of code (density). PHP production code only; excludes tests and vendor dependencies.',
+                    items: [
+                        { name: 'TCA nesting', desc: 'Type Configuration Arrays nested 3+ levels deep are hard to read and refactor.' },
+                        { name: 'Deep arrays', desc: 'arrays nested 3+ levels deep are hard to read and refactor.' },
+                        { name: 'Service locators', desc: '<code>GeneralUtility::makeInstance()</code> calls bypass dependency injection.' }
+                    ]
+                }
+            }
+        };
+
+        let currentFramework = 'drupal';
+        let currentData = null;
 
         // Plugin to draw threshold bands and release markers
         const thresholdBandsPlugin = {
@@ -131,13 +191,7 @@
                 }
 
                 const labels = chart.data.labels || [];
-                const releases = [
-                    { name: 'D7', dates: ['2011-01'] },
-                    { name: 'D8', dates: ['2015-10', '2015-11', '2016-01'] },
-                    { name: 'D9', dates: ['2020-04', '2020-07'] },
-                    { name: 'D10', dates: ['2022-10', '2023-01'] },
-                    { name: 'D11', dates: ['2024-07', '2024-10'] }
-                ];
+                const releases = frameworkConfig[currentFramework].releases;
 
                 releases.forEach((release) => {
                     const index = labels.findIndex(label => release.dates.includes(label));
@@ -167,6 +221,16 @@
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
+        }
+
+        function getCommitUrl(hash) {
+            const config = frameworkConfig[currentFramework];
+            return `${config.repoUrl}/-/commit/${hash}`;
+        }
+
+        function getFileUrl(file) {
+            const config = frameworkConfig[currentFramework];
+            return `${config.repoUrl}/-/blob/HEAD/${config.corePrefix}${file}`;
         }
 
         function createLocChart(container, data, title, subtitle) {
@@ -356,11 +420,9 @@
         }
 
         function renderHotspots(container, snapshots) {
-            // Filter snapshots that have hotspots
             const snapshotsWithHotspots = snapshots.filter(s => s.hotspots?.length);
             if (!snapshotsWithHotspots.length) return;
 
-            // Sort snapshots by date descending for dropdown
             const sortedSnapshots = [...snapshotsWithHotspots].sort((a, b) => b.date.localeCompare(a.date));
             let currentSnapshot = sortedSnapshots[0];
             let currentSort = 'ccn';
@@ -375,11 +437,11 @@
             };
 
             const makeRow = (hotspot, index) => {
-                const gitlabUrl = hotspot.file ? `https://git.drupalcode.org/project/drupal/-/blob/HEAD/core/${hotspot.file}` : '#';
+                const fileUrl = hotspot.file ? getFileUrl(hotspot.file) : '#';
                 return `
                     <tr>
                         <td>${index + 1}</td>
-                        <td class="class-name"><a href="${gitlabUrl}" title="${escapeHtml(hotspot.file)}">${escapeHtml(hotspot.name)}</a></td>
+                        <td class="class-name"><a href="${fileUrl}" title="${escapeHtml(hotspot.file)}">${escapeHtml(hotspot.name)}</a></td>
                         <td class="${hotspot.ccn > 50 ? 'metric-bad' : hotspot.ccn > 20 ? 'metric-warning' : ''}">${hotspot.ccn}</td>
                         <td class="${hotspot.mi < 50 ? 'metric-bad' : hotspot.mi < 80 ? 'metric-warning' : 'metric-good'}">${hotspot.mi}</td>
                         <td class="${hotspot.antipatterns > 20 ? 'metric-bad' : hotspot.antipatterns > 10 ? 'metric-warning' : ''}">${hotspot.antipatterns || '—'}</td>
@@ -427,7 +489,6 @@
             `;
             container.appendChild(section);
 
-            // Handle snapshot dropdown change
             section.querySelector('#hotspots-snapshot-select').addEventListener('change', function(e) {
                 currentSnapshot = sortedSnapshots.find(s => s.date === e.target.value);
                 expanded = false;
@@ -462,14 +523,12 @@
             };
 
             const makeRow = (commit) => {
-                // CCN: positive = more complexity = worse (red)
-                // MI: positive = improved maintainability = better (green)
                 const ccnClass = commit.ccnDelta > 0 ? 'metric-bad' : (commit.ccnDelta < 0 ? 'metric-good' : '');
                 const miClass = commit.miDelta < 0 ? 'metric-bad' : (commit.miDelta > 0 ? 'metric-good' : '');
                 const antipatternClass = commit.antipatternsDelta > 0 ? 'metric-bad' : (commit.antipatternsDelta < 0 ? 'metric-good' : '');
                 return `
                     <tr>
-                        <td><a href="https://git.drupalcode.org/project/drupal/-/commit/${commit.hash}"><code>${commit.hash}</code></a></td>
+                        <td><a href="${getCommitUrl(commit.hash)}"><code>${commit.hash}</code></a></td>
                         <td>${commit.date}</td>
                         <td>${commit.type}</td>
                         <td>${escapeHtml(commit.message)}</td>
@@ -515,14 +574,13 @@
             const patternsData = data.filter(d => d.antipatterns && Object.keys(d.antipatterns).length > 0);
             if (patternsData.length < 2) return;
 
+            const config = frameworkConfig[currentFramework].antipatternDesc;
             const section = document.createElement('div');
             section.className = 'card';
-            section.innerHTML = `<h2>Drupal anti-patterns</h2>
-                <p class="section-subtitle">Code patterns with known downsides. Shows how often these patterns appear per 1,000 lines of code (density). PHP production code only; excludes tests and vendor dependencies.</p>
+            section.innerHTML = `<h2>${config.title}</h2>
+                <p class="section-subtitle">${config.intro}</p>
                 <ul class="metric-list">
-                    <li><strong>Magic keys</strong>: #-prefixed array keys require memorization and lack IDE support. Inherent to Drupal's render array architecture.</li>
-                    <li><strong>Deep arrays</strong>: arrays nested 3+ levels deep are hard to read and refactor.</li>
-                    <li><strong>Service locators</strong>: <code>\\Drupal::service()</code> calls hide dependencies and hinder testing.</li>
+                    ${config.items.map(item => `<li><strong>${item.name}</strong>: ${item.desc}</li>`).join('')}
                 </ul>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
@@ -539,20 +597,35 @@
 
             const antipatternColors = {
                 magicKeys: '#ef4444',
+                tcaKeys: '#ef4444',
                 deepArrays: '#f97316',
-                serviceLocators: '#eab308'
+                serviceLocators: '#eab308',
+                globalsAccess: '#8b5cf6'
             };
+
+            // Build datasets based on available antipattern types
+            const datasets = [];
+            const firstData = sortedData[0]?.antipatterns || {};
+
+            if ('magicKeys' in firstData) {
+                datasets.push({ label: 'Magic keys', data: sortedData.map(d => getDensity(d, 'magicKeys')), borderColor: antipatternColors.magicKeys, backgroundColor: antipatternColors.magicKeys + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 3, pointStyle: 'circle' });
+            }
+            if ('tcaKeys' in firstData) {
+                datasets.push({ label: 'TCA nesting', data: sortedData.map(d => getDensity(d, 'tcaKeys')), borderColor: antipatternColors.tcaKeys, backgroundColor: antipatternColors.tcaKeys + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 3, pointStyle: 'circle' });
+            }
+            if ('deepArrays' in firstData) {
+                datasets.push({ label: 'Deep arrays', data: sortedData.map(d => getDensity(d, 'deepArrays')), borderColor: antipatternColors.deepArrays, backgroundColor: antipatternColors.deepArrays + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'rect' });
+            }
+            if ('serviceLocators' in firstData) {
+                datasets.push({ label: 'Service locators', data: sortedData.map(d => getDensity(d, 'serviceLocators')), borderColor: antipatternColors.serviceLocators, backgroundColor: antipatternColors.serviceLocators + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'triangle' });
+            }
+            if ('globalsAccess' in firstData) {
+                datasets.push({ label: 'Globals access', data: sortedData.map(d => getDensity(d, 'globalsAccess')), borderColor: antipatternColors.globalsAccess, backgroundColor: antipatternColors.globalsAccess + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'rectRot' });
+            }
 
             new Chart(context, {
                 type: 'line',
-                data: {
-                    labels,
-                    datasets: [
-                        { label: 'Magic keys', data: sortedData.map(d => getDensity(d, 'magicKeys')), borderColor: antipatternColors.magicKeys, backgroundColor: antipatternColors.magicKeys + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 3, pointStyle: 'circle' },
-                        { label: 'Deep arrays', data: sortedData.map(d => getDensity(d, 'deepArrays')), borderColor: antipatternColors.deepArrays, backgroundColor: antipatternColors.deepArrays + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'rect' },
-                        { label: 'Service locators', data: sortedData.map(d => getDensity(d, 'serviceLocators')), borderColor: antipatternColors.serviceLocators, backgroundColor: antipatternColors.serviceLocators + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'triangle' }
-                    ]
-                },
+                data: { labels, datasets },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
@@ -595,12 +668,12 @@
             const surfaceAreaData = data.filter(d => d.surfaceArea && Object.keys(d.surfaceArea).length > 0);
             if (surfaceAreaData.length < 2) return;
 
+            const config = frameworkConfig[currentFramework];
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>API surface area</h2>
-                <p class="section-subtitle">The chart tracks distinct extension points in Drupal Core over time. PHP production code only; excludes tests and vendor dependencies.</p>
-                <p class="section-subtitle">Since Drupal 7, Drupal Core has added functionality (like Views), removed features, and consolidated competing APIs into shared solutions (like Single Directory Components). Because the functionality changed, the trend doesn't tell you whether Drupal has become easier or harder to learn.</p>
-                <p class="section-subtitle">The chart does show how Drupal's architecture has evolved, from procedural (global functions) to object-oriented (interface methods, services, plugins, and events). It also shows the types of extension points developers need to learn, and the API surface that Drupal Core Maintainers are responsible for.</p>
+                <p class="section-subtitle">The chart tracks distinct extension points in ${config.name} Core over time. PHP production code only; excludes tests and vendor dependencies.</p>
+                <p class="section-subtitle">The chart shows how the architecture has evolved and the types of extension points developers need to learn.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -608,7 +681,6 @@
             const sortedData = [...surfaceAreaData].sort((a, b) => a.date.localeCompare(b.date));
             const labels = sortedData.map(d => d.date);
 
-            // Colors ordered: bottom of stack (foundational) to top (specific/largest)
             const surfaceAreaColors = {
                 globalFunctions: '#06b6d4',
                 hooks: '#f97316',
@@ -617,25 +689,45 @@
                 pluginTypes: '#ef4444',
                 yamlFormats: '#8b5cf6',
                 magicKeys: '#eab308',
+                tcaKeys: '#eab308',
                 interfaceMethods: '#ec4899'
             };
 
+            // Build datasets based on available surface area types
+            const datasets = [];
+            const firstData = sortedData[0]?.surfaceArea || {};
+
+            if ('globalFunctions' in firstData) {
+                datasets.push({ label: 'Global functions', data: sortedData.map(d => d.surfaceArea?.globalFunctions || 0), borderColor: surfaceAreaColors.globalFunctions, backgroundColor: surfaceAreaColors.globalFunctions + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 });
+            }
+            if ('hooks' in firstData) {
+                datasets.push({ label: 'Hooks', data: sortedData.map(d => d.surfaceArea?.hooks || 0), borderColor: surfaceAreaColors.hooks, backgroundColor: surfaceAreaColors.hooks + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 });
+            }
+            if ('services' in firstData) {
+                datasets.push({ label: 'Services', data: sortedData.map(d => d.surfaceArea?.services || 0), borderColor: surfaceAreaColors.services, backgroundColor: surfaceAreaColors.services + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 });
+            }
+            if ('events' in firstData) {
+                datasets.push({ label: 'Events', data: sortedData.map(d => d.surfaceArea?.events || 0), borderColor: surfaceAreaColors.events, backgroundColor: surfaceAreaColors.events + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 });
+            }
+            if ('pluginTypes' in firstData) {
+                datasets.push({ label: 'Plugin types', data: sortedData.map(d => d.surfaceArea?.pluginTypes || 0), borderColor: surfaceAreaColors.pluginTypes, backgroundColor: surfaceAreaColors.pluginTypes + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 });
+            }
+            if ('yamlFormats' in firstData) {
+                datasets.push({ label: 'YAML formats', data: sortedData.map(d => d.surfaceArea?.yamlFormats || 0), borderColor: surfaceAreaColors.yamlFormats, backgroundColor: surfaceAreaColors.yamlFormats + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 });
+            }
+            if ('magicKeys' in firstData) {
+                datasets.push({ label: 'Magic keys', data: sortedData.map(d => d.surfaceArea?.magicKeys || 0), borderColor: surfaceAreaColors.magicKeys, backgroundColor: surfaceAreaColors.magicKeys + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 });
+            }
+            if ('tcaKeys' in firstData) {
+                datasets.push({ label: 'TCA keys', data: sortedData.map(d => d.surfaceArea?.tcaKeys || 0), borderColor: surfaceAreaColors.tcaKeys, backgroundColor: surfaceAreaColors.tcaKeys + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 });
+            }
+            if ('interfaceMethods' in firstData) {
+                datasets.push({ label: 'Interface methods', data: sortedData.map(d => d.surfaceArea?.interfaceMethods || 0), borderColor: surfaceAreaColors.interfaceMethods, backgroundColor: surfaceAreaColors.interfaceMethods + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 });
+            }
+
             new Chart(context, {
                 type: 'line',
-                data: {
-                    labels,
-                    // Order: foundational (bottom) to specific/largest (top)
-                    datasets: [
-                        { label: 'Global functions', data: sortedData.map(d => d.surfaceArea?.globalFunctions || 0), borderColor: surfaceAreaColors.globalFunctions, backgroundColor: surfaceAreaColors.globalFunctions + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 },
-                        { label: 'Hooks', data: sortedData.map(d => d.surfaceArea?.hooks || 0), borderColor: surfaceAreaColors.hooks, backgroundColor: surfaceAreaColors.hooks + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 },
-                        { label: 'Services', data: sortedData.map(d => d.surfaceArea?.services || 0), borderColor: surfaceAreaColors.services, backgroundColor: surfaceAreaColors.services + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 },
-                        { label: 'Events', data: sortedData.map(d => d.surfaceArea?.events || 0), borderColor: surfaceAreaColors.events, backgroundColor: surfaceAreaColors.events + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 },
-                        { label: 'Plugin types', data: sortedData.map(d => d.surfaceArea?.pluginTypes || 0), borderColor: surfaceAreaColors.pluginTypes, backgroundColor: surfaceAreaColors.pluginTypes + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 },
-                        { label: 'YAML formats', data: sortedData.map(d => d.surfaceArea?.yamlFormats || 0), borderColor: surfaceAreaColors.yamlFormats, backgroundColor: surfaceAreaColors.yamlFormats + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 },
-                        { label: 'Magic keys', data: sortedData.map(d => d.surfaceArea?.magicKeys || 0), borderColor: surfaceAreaColors.magicKeys, backgroundColor: surfaceAreaColors.magicKeys + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 },
-                        { label: 'Interface methods', data: sortedData.map(d => d.surfaceArea?.interfaceMethods || 0), borderColor: surfaceAreaColors.interfaceMethods, backgroundColor: surfaceAreaColors.interfaceMethods + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 }
-                    ]
-                },
+                data: { labels, datasets },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
@@ -793,8 +885,7 @@
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>Features vs tasks vs bugs</h2>
-                <p class="section-subtitle">Tasks include both maintenance work (documentation, tests, CI, refactoring) and innovation (smaller enhancements, new feature follow-ups). Healthy mature projects allocate 20-40% to features; a lower ratio reflects a focus on stability and reliability, while below 20% introduces the risk of becoming obsolete.</p>
-                <p class="section-subtitle">Note: these numbers undercount feature development because much of it happens across multiple commits (classified as tasks or bug fixes) and in external repositories before experimental modules are added to Core. Drupal's architecture also encourages innovation in contributed modules, so Core's ratio tells only part of the story.</p>
+                <p class="section-subtitle">Tasks include both maintenance work (documentation, tests, CI, refactoring) and smaller enhancements. Healthy mature projects allocate 20-40% to features.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -875,11 +966,9 @@
         }
 
         function renderSurfaceAreaReference(container, snapshots) {
-            // Filter snapshots that have surfaceAreaLists
             const snapshotsWithLists = snapshots.filter(s => s.surfaceAreaLists && Object.keys(s.surfaceAreaLists).length);
             if (!snapshotsWithLists.length) return;
 
-            // Order matches chart: foundational to specific/largest
             const titles = {
                 globalFunctions: 'Global functions',
                 hooks: 'Hooks',
@@ -888,6 +977,7 @@
                 pluginTypes: 'Plugin types',
                 yamlFormats: 'YAML formats',
                 magicKeys: 'Magic keys',
+                tcaKeys: 'TCA keys',
                 interfaceMethods: 'Interface methods'
             };
 
@@ -906,7 +996,6 @@
                     }).join('');
             }
 
-            // Sort snapshots by date descending for dropdown
             const sortedSnapshots = [...snapshotsWithLists].sort((a, b) => b.date.localeCompare(a.date));
             const latestSnapshot = sortedSnapshots[0];
 
@@ -924,7 +1013,6 @@
             `;
             container.appendChild(section);
 
-            // Handle dropdown change
             const select = section.querySelector('#surface-area-snapshot-select');
             const panelsContainer = section.querySelector('#surface-area-panels');
             select.addEventListener('change', (e) => {
@@ -944,9 +1032,10 @@
                 return;
             }
 
+            const config = frameworkConfig[currentFramework];
             data.snapshots.sort((a, b) => b.date.localeCompare(a.date));
 
-            createLocChart(container, data.snapshots, 'Lines of code', 'Drupal Core is a large codebase, too big for any one person to fully understand, but manageable for a healthy community. For scale, Kubernetes is about 10x larger and the Linux kernel about 75x. A healthy test-to-production ratio is 1:1 or higher, and Drupal far exceeds this. Measures non-blank, non-comment lines (SLOC). PHP code only; excludes vendor dependencies.');
+            createLocChart(container, data.snapshots, 'Lines of code', `${config.name} Core codebase size over time. Measures non-blank, non-comment lines (SLOC). PHP code only; excludes vendor dependencies.`);
             createCcnChart(container, data.snapshots);
             createMiChart(container, data.snapshots);
             createAntiPatternsChart(container, data.snapshots);
@@ -959,25 +1048,52 @@
             renderSurfaceAreaReference(container, data.snapshots);
         }
 
-        // Load data and render
-        fetch('data.json')
-            .then(response => {
-                if (!response.ok) throw new Error('Failed to load data');
-                return response.json();
-            })
-            .then(data => {
-                // Update last updated date
-                const generated = new Date(data.generated);
-                const options = { year: 'numeric', month: 'long', day: '2-digit' };
-                document.getElementById('last-updated').textContent =
-                    'Last updated: ' + generated.toLocaleDateString('en-US', options);
+        function updateHeader(data) {
+            const config = frameworkConfig[currentFramework];
+            document.getElementById('page-title').textContent = `${config.name} Core Metrics`;
+            document.getElementById('summary-2').textContent = config.summary;
 
-                renderDashboard(data);
-            })
-            .catch(error => {
-                document.getElementById('dashboard').innerHTML =
-                    `<div class="error">Failed to load data: ${error.message}</div>`;
+            const generated = new Date(data.generated);
+            const options = { year: 'numeric', month: 'long', day: '2-digit' };
+            document.getElementById('last-updated').textContent =
+                'Last updated: ' + generated.toLocaleDateString('en-US', options);
+        }
+
+        function loadFramework(framework) {
+            currentFramework = framework;
+            const config = frameworkConfig[framework];
+
+            // Update button states
+            document.querySelectorAll('.framework-selector button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.framework === framework);
             });
+
+            // Show loading
+            document.getElementById('dashboard').innerHTML = '<div class="loading">Loading data...</div>';
+
+            fetch(config.dataFile)
+                .then(response => {
+                    if (!response.ok) throw new Error(`Failed to load ${config.name} data`);
+                    return response.json();
+                })
+                .then(data => {
+                    currentData = data;
+                    updateHeader(data);
+                    renderDashboard(data);
+                })
+                .catch(error => {
+                    document.getElementById('dashboard').innerHTML =
+                        `<div class="error">Failed to load data: ${error.message}<br><br>Make sure to run the analyzer first: <code>python3 scripts/analyze.py --framework ${framework}</code></div>`;
+                });
+        }
+
+        // Framework selector event listeners
+        document.querySelectorAll('.framework-selector button').forEach(btn => {
+            btn.addEventListener('click', () => loadFramework(btn.dataset.framework));
+        });
+
+        // Initial load
+        loadFramework('drupal');
     </script>
 </body>
 </html>

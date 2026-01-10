@@ -3,8 +3,9 @@
 composer.phar
 composer.lock
 
-# Drupal core clone (large, downloaded during analysis)
+# Core clones (large, downloaded during analysis)
 /drupal-core/
+/typo3-core/
 
 # Temporary output files
 /output/

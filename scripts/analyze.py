@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Drupal Core Dashboard - Data Collection Script
+PHP CMS Core Metrics - Data Collection Script
 
-Analyzes Drupal core across historical snapshots, collecting metrics like
-LOC, CCN, MI, anti-patterns, and API surface area. Uses drupalisms.php for all analysis.
+Analyzes PHP CMS codebases (Drupal, TYPO3) across historical snapshots, collecting
+metrics like LOC, CCN, MI, anti-patterns, and API surface area.
 """
 
+import argparse
 import json
 import re
 import shutil
@@ -16,9 +17,25 @@ from pathlib import Path
 from typing import Optional
 
 
-# Configuration
-DRUPAL_REPO_URL = "https://git.drupalcode.org/project/drupal.git"
-DRUPAL_START_DATE = datetime(2011, 1, 1)  # Start from Drupal 7 release
+# Framework configurations
+FRAMEWORKS = {
+    "drupal": {
+        "name": "Drupal",
+        "repo_url": "https://git.drupalcode.org/project/drupal.git",
+        "start_date": datetime(2011, 1, 1),  # Drupal 7 release
+        "analyzer": "drupalisms.php",
+        "core_subdir": "core",  # Analyze core/ subdirectory
+        "php_extensions": {'.php', '.module', '.inc', '.install', '.theme', '.profile', '.engine'},
+    },
+    "typo3": {
+        "name": "TYPO3",
+        "repo_url": "https://github.com/TYPO3/typo3.git",
+        "start_date": datetime(2016, 1, 1),  # TYPO3 v8 era
+        "analyzer": "typo3isms.php",
+        "core_subdir": "typo3/sysext",  # Analyze typo3/sysext/ subdirectory
+        "php_extensions": {'.php'},
+    },
+}
 
 
 class Colors:
@@ -57,59 +74,55 @@ def run_command(cmd: list[str], cwd: Optional[str] = None, capture: bool = True)
         return 1, "", str(e)
 
 
-def setup_drupal(drupal_dir: Path) -> bool:
-    """Clone or update Drupal core repository."""
-    if drupal_dir.exists():
-        log_info("Drupal core already exists, fetching updates...")
-        # Fetch remote HEAD and update local HEAD's target ref
-        code, _, err = run_command(["git", "fetch", "origin", "--tags"], cwd=str(drupal_dir))
+def setup_repo(repo_dir: Path, repo_url: str, framework_name: str) -> bool:
+    """Clone or update repository."""
+    if repo_dir.exists():
+        log_info(f"{framework_name} already exists, fetching updates...")
+        code, _, err = run_command(["git", "fetch", "origin", "--tags"], cwd=str(repo_dir))
         if code != 0:
             log_error(f"Failed to fetch: {err}")
             return False
-        code, head_ref, _ = run_command(["git", "symbolic-ref", "HEAD"], cwd=str(drupal_dir))
+        code, head_ref, _ = run_command(["git", "symbolic-ref", "HEAD"], cwd=str(repo_dir))
         if code == 0:
-            run_command(["git", "update-ref", head_ref.strip(), "FETCH_HEAD"], cwd=str(drupal_dir))
+            run_command(["git", "update-ref", head_ref.strip(), "FETCH_HEAD"], cwd=str(repo_dir))
     else:
-        log_info("Cloning Drupal core...")
-        code, _, err = run_command(["git", "clone", "--bare", DRUPAL_REPO_URL, str(drupal_dir)])
+        log_info(f"Cloning {framework_name}...")
+        code, _, err = run_command(["git", "clone", "--bare", repo_url, str(repo_dir)])
         if code != 0:
             log_error(f"Failed to clone: {err}")
             return False
     return True
 
 
-def get_commit_for_date(drupal_dir: Path, target_date: str) -> Optional[str]:
+def get_commit_for_date(repo_dir: Path, target_date: str) -> Optional[str]:
     """Get the commit hash closest to the target date."""
     code, stdout, _ = run_command(
         ["git", "rev-list", "-1", f"--before={target_date}T23:59:59", "HEAD"],
-        cwd=str(drupal_dir)
+        cwd=str(repo_dir)
     )
     if code == 0 and stdout.strip():
         return stdout.strip()
     return None
 
 
-def get_commits_per_year(drupal_dir: Path) -> list[dict]:
+def get_commits_per_year(repo_dir: Path) -> list[dict]:
     """Count commits per year from git history.
 
     Returns list of {year, commits} sorted by year ascending.
     """
-    # Get all commit dates (just the year)
     code, stdout, _ = run_command(
         ["git", "log", "--pretty=format:%ad", "--date=format:%Y"],
-        cwd=str(drupal_dir)
+        cwd=str(repo_dir)
     )
     if code != 0 or not stdout.strip():
         return []
 
-    # Count commits per year
     year_counts = {}
     for line in stdout.strip().split('\n'):
         year = line.strip()
         if year:
             year_counts[year] = year_counts.get(year, 0) + 1
 
-    # Convert to sorted list
     result = [{"year": int(year), "commits": count} for year, count in year_counts.items()]
     result.sort(key=lambda x: x["year"])
     return result
@@ -121,23 +134,23 @@ def classify_commit(subject: str) -> str:
     Returns: 'Bug', 'Feature', 'Maintenance', or 'Unknown'
     """
     subject = subject.strip().lower()
-    if subject.startswith(("fix:", "bug:")):
+    if subject.startswith(("fix:", "bug:", "[bugfix]", "[!!!][bugfix]")):
         return "Bug"
-    elif subject.startswith("feat:"):
+    elif subject.startswith(("feat:", "[feature]", "[!!!][feature]")):
         return "Feature"
-    elif subject.startswith(("task:", "docs:", "ci:", "test:", "perf:", "chore:", "refactor:")):
+    elif subject.startswith(("task:", "docs:", "ci:", "test:", "perf:", "chore:", "refactor:", "[task]", "[docs]")):
         return "Maintenance"
     return "Unknown"
 
 
-def get_commits_per_month(drupal_dir: Path) -> list[dict]:
+def get_commits_per_month(repo_dir: Path) -> list[dict]:
     """Count commits per month from git history, classified by type.
 
     Returns list of {date, total, features, bugs, maintenance, unknown} sorted by date ascending.
     """
     code, stdout, _ = run_command(
         ["git", "log", "--pretty=format:%ad|%s", "--date=format:%Y-%m"],
-        cwd=str(drupal_dir)
+        cwd=str(repo_dir)
     )
     if code != 0 or not stdout.strip():
         return []
@@ -168,17 +181,16 @@ def get_commits_per_month(drupal_dir: Path) -> list[dict]:
     return result
 
 
-def export_version(drupal_dir: Path, commit: str, work_dir: Path) -> bool:
-    """Export a specific version of Drupal to work directory."""
+def export_version(repo_dir: Path, commit: str, work_dir: Path) -> bool:
+    """Export a specific version to work directory."""
     if work_dir.exists():
         shutil.rmtree(work_dir)
     work_dir.mkdir(parents=True)
 
-    # Use git archive piped directly to tar (binary mode to handle non-text files)
     try:
         git_proc = subprocess.Popen(
             ["git", "archive", commit],
-            cwd=str(drupal_dir),
+            cwd=str(repo_dir),
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE
         )
@@ -197,14 +209,14 @@ def export_version(drupal_dir: Path, commit: str, work_dir: Path) -> bool:
         return False
 
 
-def get_recent_commits(drupal_dir: Path, days: int = 365) -> list[dict]:
+def get_recent_commits(repo_dir: Path, days: int = 365) -> list[dict]:
     """Get recent commits.
 
     Returns list of {hash, message, date, lines, type} sorted by date descending.
     """
     code, stdout, _ = run_command(
         ["git", "log", f"--since={days} days ago", "--pretty=format:COMMIT:%H:%cs:%s", "--shortstat"],
-        cwd=str(drupal_dir)
+        cwd=str(repo_dir)
     )
     if code != 0:
         return []
@@ -231,7 +243,6 @@ def get_recent_commits(drupal_dir: Path, days: int = 365) -> list[dict]:
             if match_del:
                 deletions = int(match_del.group(1))
             total = insertions + deletions
-            # Convert YYYY-MM-DD to "Mon DD, YYYY" format for display
             try:
                 dt = datetime.strptime(current_date, "%Y-%m-%d")
                 formatted_date = dt.strftime("%b %d, %Y")
@@ -253,16 +264,15 @@ def get_recent_commits(drupal_dir: Path, days: int = 365) -> list[dict]:
     return commits
 
 
-def get_changed_files(drupal_dir: Path, commit_hash: str) -> list[str]:
+def get_changed_files(repo_dir: Path, commit_hash: str, php_extensions: set[str]) -> list[str]:
     """Get list of PHP files changed in a commit."""
     code, stdout, _ = run_command(
         ["git", "diff-tree", "--no-commit-id", "--name-only", "-r", commit_hash],
-        cwd=str(drupal_dir)
+        cwd=str(repo_dir)
     )
     if code != 0:
         return []
 
-    php_extensions = {'.php', '.module', '.inc', '.install', '.theme', '.profile', '.engine'}
     files = []
     for line in stdout.strip().split('\n'):
         if line and any(line.endswith(ext) for ext in php_extensions):
@@ -270,13 +280,9 @@ def get_changed_files(drupal_dir: Path, commit_hash: str) -> list[str]:
     return files
 
 
-def export_changed_files(drupal_dir: Path, commit_hash: str, files: list[str],
+def export_changed_files(repo_dir: Path, commit_hash: str, files: list[str],
                          output_dir: Path) -> bool:
-    """Export only specific files from a commit.
-
-    Exports files individually to handle new/deleted files gracefully.
-    Files that don't exist in this commit are silently skipped.
-    """
+    """Export only specific files from a commit."""
     if not files:
         return True
 
@@ -284,26 +290,22 @@ def export_changed_files(drupal_dir: Path, commit_hash: str, files: list[str],
     exported_count = 0
 
     for file_path in files:
-        # Check if file exists in this commit
         result = subprocess.run(
             ["git", "cat-file", "-e", f"{commit_hash}:{file_path}"],
-            cwd=str(drupal_dir),
+            cwd=str(repo_dir),
             capture_output=True
         )
         if result.returncode != 0:
-            # File doesn't exist in this commit (new or deleted)
             continue
 
-        # Get file content
         result = subprocess.run(
             ["git", "show", f"{commit_hash}:{file_path}"],
-            cwd=str(drupal_dir),
+            cwd=str(repo_dir),
             capture_output=True
         )
         if result.returncode != 0:
             continue
 
-        # Write to output directory
         output_file = output_dir / file_path
         output_file.parent.mkdir(parents=True, exist_ok=True)
         output_file.write_bytes(result.stdout)
@@ -312,40 +314,27 @@ def export_changed_files(drupal_dir: Path, commit_hash: str, files: list[str],
     return exported_count > 0
 
 
-def analyze_commit_delta(drupal_dir: Path, commit_hash: str, work_dir: Path) -> Optional[dict]:
-    """Analyze metric deltas for a single commit.
-
-    Only analyzes files changed in the commit for speed.
-    Returns deltas for LOC, CCN, MI, and anti-patterns.
-    """
-    # Get parent commit
+def analyze_commit_delta(repo_dir: Path, commit_hash: str, work_dir: Path,
+                         php_script: Path, php_extensions: set[str]) -> Optional[dict]:
+    """Analyze metric deltas for a single commit."""
     code, stdout, _ = run_command(
         ["git", "rev-parse", f"{commit_hash}^"],
-        cwd=str(drupal_dir)
+        cwd=str(repo_dir)
     )
     if code != 0 or not stdout.strip():
         return None
     parent_hash = stdout.strip()
 
-    # Get list of changed PHP files
-    changed_files = get_changed_files(drupal_dir, commit_hash)
+    changed_files = get_changed_files(repo_dir, commit_hash, php_extensions)
     if not changed_files:
         return {"locDelta": 0, "ccnDelta": 0, "miDelta": 0, "antipatternsDelta": 0}
 
-    scripts_dir = Path(__file__).parent
-    php_script = scripts_dir / "drupalisms.php"
     if not php_script.exists():
         return {"locDelta": 0, "ccnDelta": 0, "miDelta": 0, "antipatternsDelta": 0}
 
     work_dir.mkdir(parents=True, exist_ok=True)
 
     def get_metrics(directory: Path) -> dict:
-        """Get metrics for files in directory.
-
-        Returns totals (not averages) for meaningful deltas:
-        - ccnSum: sum of CCN across all functions (higher = more complexity)
-        - miDebtSum: sum of (100 - MI) across all functions (higher = more debt)
-        """
         if not directory.exists() or not any(directory.rglob("*.php")):
             return {"loc": 0, "ccnSum": 0, "miDebtSum": 0, "antipatterns": 0}
         try:
@@ -357,7 +346,6 @@ def analyze_commit_delta(drupal_dir: Path, commit_hash: str, work_dir: Path) -> 
                 data = json.loads(result.stdout)
                 prod = data.get("production", {})
                 loc = prod.get("loc", 0)
-                # Convert antipatterns density back to absolute count
                 antipatterns = int(prod.get("antipatterns", 0) * loc / 1000) if loc > 0 else 0
                 return {
                     "loc": loc,
@@ -369,22 +357,18 @@ def analyze_commit_delta(drupal_dir: Path, commit_hash: str, work_dir: Path) -> 
             pass
         return {"loc": 0, "ccnSum": 0, "miDebtSum": 0, "antipatterns": 0}
 
-    # Export and analyze parent
     parent_dir = work_dir / "parent"
     if parent_dir.exists():
         shutil.rmtree(parent_dir)
-    export_changed_files(drupal_dir, parent_hash, changed_files, parent_dir)
+    export_changed_files(repo_dir, parent_hash, changed_files, parent_dir)
     parent_metrics = get_metrics(parent_dir)
 
-    # Export and analyze commit
     commit_dir = work_dir / "commit"
     if commit_dir.exists():
         shutil.rmtree(commit_dir)
-    export_changed_files(drupal_dir, commit_hash, changed_files, commit_dir)
+    export_changed_files(repo_dir, commit_hash, changed_files, commit_dir)
     commit_metrics = get_metrics(commit_dir)
 
-    # Calculate deltas using totals (always meaningful, even for new/deleted files)
-    # Note: miDelta is inverted (parent - commit) so positive = improved maintainability
     return {
         "locDelta": commit_metrics["loc"] - parent_metrics["loc"],
         "ccnDelta": commit_metrics["ccnSum"] - parent_metrics["ccnSum"],
@@ -393,14 +377,10 @@ def analyze_commit_delta(drupal_dir: Path, commit_hash: str, work_dir: Path) -> 
     }
 
 
-def analyze_recent_commits(drupal_dir: Path, output_dir: Path,
-                           target_count: int = 100) -> list[dict]:
-    """Analyze commits until we find target_count with metric changes.
-
-    Only includes commits where CCN, MI, or anti-patterns changed.
-    Returns list of commits with their metric deltas.
-    """
-    commits = get_recent_commits(drupal_dir, days=365)
+def analyze_recent_commits(repo_dir: Path, output_dir: Path, php_script: Path,
+                           php_extensions: set[str], target_count: int = 100) -> list[dict]:
+    """Analyze commits until we find target_count with metric changes."""
+    commits = get_recent_commits(repo_dir, days=365)
     if not commits:
         return []
 
@@ -415,7 +395,7 @@ def analyze_recent_commits(drupal_dir: Path, output_dir: Path,
         if len(results) >= target_count:
             break
 
-        delta = analyze_commit_delta(drupal_dir, commit['hash'], work_dir)
+        delta = analyze_commit_delta(repo_dir, commit['hash'], work_dir, php_script, php_extensions)
         if delta and has_metric_changes(delta):
             log_info(f"Commit {commit['hash'][:11]} has metric changes ({len(results) + 1}/{target_count})")
             results.append({
@@ -433,39 +413,33 @@ def analyze_recent_commits(drupal_dir: Path, output_dir: Path,
     return results
 
 
-def analyze_version(drupal_dir: Path, commit: str, year_month: str,
-                    output_dir: Path, current: int = 0, total: int = 0) -> Optional[dict]:
-    """Analyze a single version of Drupal using drupalisms.php.
-
-    Returns a snapshot dict with production, test, surfaceArea, and antipatterns.
-    hotspots and surfaceAreaLists are only kept for the latest snapshot.
-    """
+def analyze_version(repo_dir: Path, commit: str, year_month: str,
+                    output_dir: Path, php_script: Path, core_subdir: str,
+                    current: int = 0, total: int = 0) -> Optional[dict]:
+    """Analyze a single version using the framework-specific analyzer."""
     work_dir = output_dir / "work"
 
     progress = f" [{current}/{total}]" if total else ""
     log_info(f"Analyzing {year_month} (commit: {commit[:8]}){progress}")
 
-    if not export_version(drupal_dir, commit, work_dir):
+    if not export_version(repo_dir, commit, work_dir):
         return None
 
-    # Only analyze D8+ with core/ directory
-    if not (work_dir / "core").is_dir():
-        log_warn(f"No core/ directory for {year_month}, skipping")
+    # Check for core subdirectory
+    analyze_dir = work_dir / core_subdir if core_subdir else work_dir
+    if not analyze_dir.is_dir():
+        log_warn(f"No {core_subdir}/ directory for {year_month}, skipping")
         return None
-
-    # Run drupalisms.php for all metrics
-    scripts_dir = Path(__file__).parent
-    php_script = scripts_dir / "drupalisms.php"
 
     try:
         result = subprocess.run(
-            ["php", "-d", "memory_limit=2G", str(php_script), str(work_dir / "core")],
+            ["php", "-d", "memory_limit=2G", str(php_script), str(analyze_dir)],
             capture_output=True,
             text=True,
             timeout=600
         )
         if result.returncode != 0:
-            log_warn(f"drupalisms.php failed for {year_month}")
+            log_warn(f"Analyzer failed for {year_month}: {result.stderr[:200] if result.stderr else 'unknown error'}")
             return None
 
         data = json.loads(result.stdout)
@@ -485,25 +459,36 @@ def analyze_version(drupal_dir: Path, commit: str, year_month: str,
         return None
 
 
-def main():
-    # Setup paths
-    project_dir = Path(__file__).parent.parent.resolve()
-    drupal_dir = project_dir / "drupal-core"
+def analyze_framework(framework: str, project_dir: Path):
+    """Run analysis for a specific framework."""
+    config = FRAMEWORKS[framework]
+
+    repo_dir = project_dir / f"{framework}-core"
     output_dir = project_dir / "output"
-    data_file = project_dir / "data.json"
+    data_dir = project_dir / "data"
+    data_file = data_dir / f"{framework}.json"
+    scripts_dir = project_dir / "scripts"
+    php_script = scripts_dir / config["analyzer"]
 
-    log_info("Starting Drupal Core metrics collection")
+    log_info(f"Starting {config['name']} metrics collection")
 
-    # Create output directory
+    # Ensure directories exist
     output_dir.mkdir(exist_ok=True)
+    data_dir.mkdir(exist_ok=True)
 
-    # Setup Drupal
-    if not setup_drupal(drupal_dir):
+    # Check if analyzer exists
+    if not php_script.exists():
+        log_error(f"Analyzer not found: {php_script}")
+        log_error(f"Please create {config['analyzer']} for {config['name']} analysis")
         sys.exit(1)
 
-    # Build list of semi-annual snapshots to analyze (every 6 months)
+    # Setup repository
+    if not setup_repo(repo_dir, config["repo_url"], config["name"]):
+        sys.exit(1)
+
+    # Build list of semi-annual snapshots
     today = datetime.now()
-    target = DRUPAL_START_DATE.replace(day=1, month=1)  # Start at January
+    target = config["start_date"].replace(day=1, month=1)
     snapshot_dates = []
     while target <= today:
         snapshot_dates.append(target)
@@ -521,22 +506,27 @@ def main():
         target_date = target.strftime("%Y-%m-%d")
         year_month = target.strftime("%Y-%m")
 
-        commit = get_commit_for_date(drupal_dir, target_date)
+        commit = get_commit_for_date(repo_dir, target_date)
         if commit:
-            result = analyze_version(drupal_dir, commit, year_month, output_dir, i, total)
+            result = analyze_version(
+                repo_dir, commit, year_month, output_dir,
+                php_script, config["core_subdir"], i, total
+            )
             if result:
                 snapshots.append(result)
         else:
             log_warn(f"No commit found for {year_month}")
 
-    # Always analyze current HEAD to ensure charts are up-to-date
+    # Analyze current HEAD
     log_info("Analyzing current HEAD...")
-    code, head_commit, _ = run_command(["git", "rev-parse", "HEAD"], cwd=str(drupal_dir))
+    code, head_commit, _ = run_command(["git", "rev-parse", "HEAD"], cwd=str(repo_dir))
     if code == 0 and head_commit.strip():
         current_date = datetime.now().strftime("%Y-%m")
-        # Only add if not already covered by the last snapshot
         if not snapshots or snapshots[-1]["date"] != current_date:
-            result = analyze_version(drupal_dir, head_commit.strip(), current_date, output_dir)
+            result = analyze_version(
+                repo_dir, head_commit.strip(), current_date, output_dir,
+                php_script, config["core_subdir"]
+            )
             if result:
                 snapshots.append(result)
 
@@ -545,21 +535,22 @@ def main():
     if work_dir.exists():
         shutil.rmtree(work_dir)
 
-    # Analyze recent commits for per-commit deltas
-    commits = analyze_recent_commits(drupal_dir, output_dir)
+    # Analyze recent commits
+    commits = analyze_recent_commits(
+        repo_dir, output_dir, php_script, config["php_extensions"]
+    )
     log_info(f"Analyzed {len(commits)} recent commits")
 
-    # Get commit counts per year and month
-    commitsPerYear = get_commits_per_year(drupal_dir)
+    # Get commit counts
+    commitsPerYear = get_commits_per_year(repo_dir)
     log_info(f"Counted commits across {len(commitsPerYear)} years")
 
-    commitsMonthly = get_commits_per_month(drupal_dir)
+    commitsMonthly = get_commits_per_month(repo_dir)
     log_info(f"Counted commits across {len(commitsMonthly)} months")
-
-    # Keep hotspots and surfaceAreaLists in each snapshot for historical dropdowns
 
     # Build final data structure
     data = {
+        "framework": framework,
         "generated": datetime.now().isoformat(),
         "commitsMonthly": commitsMonthly,
         "snapshots": snapshots,
@@ -567,12 +558,33 @@ def main():
         "commitsPerYear": commitsPerYear,
     }
 
-    # Save results as JSON
+    # Save results
     with open(data_file, "w") as f:
         json.dump(data, f, indent=2)
 
     log_info(f"Analysis complete! Processed {len(snapshots)} snapshots.")
     log_info(f"Data saved to: {data_file}")
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Analyze PHP CMS codebases for code quality metrics"
+    )
+    parser.add_argument(
+        "--framework",
+        choices=list(FRAMEWORKS.keys()) + ["all"],
+        default="drupal",
+        help="Framework to analyze (default: drupal)"
+    )
+    args = parser.parse_args()
+
+    project_dir = Path(__file__).parent.parent.resolve()
+
+    if args.framework == "all":
+        for framework in FRAMEWORKS:
+            analyze_framework(framework, project_dir)
+    else:
+        analyze_framework(args.framework, project_dir)
 
 
 if __name__ == "__main__":

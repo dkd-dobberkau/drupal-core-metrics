@@ -1,6 +1,8 @@
-# Drupal Core Metrics
+# PHP CMS Core Metrics
 
-A dashboard that tracks Drupal core's codebase over time: lines of code, complexity, maintainability, anti-patterns, and API surface area.
+A dashboard that tracks PHP CMS codebases over time: lines of code, complexity, maintainability, anti-patterns, and API surface area.
+
+**Supported frameworks:** Drupal, TYPO3
 
 **View the dashboard:** https://dbuytaert.github.io/drupal-core-metrics/
 
@@ -15,23 +17,22 @@ A dashboard that tracks Drupal core's codebase over time: lines of code, complex
 ### Anti-patterns
 Code patterns with known downsides. Tracked per 1k lines.
 
+**Drupal:**
 | Pattern | Description |
 |---------|-------------|
 | Magic keys | `#`-prefixed array keys. Inherent to Drupal's render array architecture. |
 | Deep arrays | 3+ levels of nesting. Hard to read and refactor. |
 | Service locators | `\Drupal::service()` calls. Hides dependencies, hinders testing. |
 
-### API surface area
-Distinct extension points in Drupal. A larger surface may correlate with a steeper learning curve.
+**TYPO3:**
+| Pattern | Description |
+|---------|-------------|
+| Service locators | `GeneralUtility::makeInstance()` calls. Bypasses dependency injection. |
+| Globals access | Direct `$GLOBALS['TYPO3_CONF_VARS']` access. |
+| Deep arrays | 3+ levels of nesting. Hard to read and refactor. |
 
-| Category | Examples |
-|----------|----------|
-| Plugin types | Block, Field, ViewsDisplay |
-| Hooks | hook_form_alter, hook_entity_presave |
-| Magic keys | #theme, #states, #ajax (vocabulary size) |
-| Events | KernelEvents::REQUEST |
-| Services | cache, entity, router |
-| YAML formats | routing, permissions, services |
+### API surface area
+Distinct extension points in each CMS. A larger surface may correlate with a steeper learning curve.
 
 
 ## Running locally
@@ -41,11 +42,13 @@ Distinct extension points in Drupal. A larger surface may correlate with a steep
 ### Regenerating data
 
 ```bash
-composer install              # Install dependencies
-python3 scripts/analyze.py    # Run analysis (15-30 min)
+composer install                              # Install dependencies
+python3 scripts/analyze.py --framework drupal # Analyze Drupal (15-30 min)
+python3 scripts/analyze.py --framework typo3  # Analyze TYPO3 (15-30 min)
+python3 scripts/analyze.py --framework all    # Analyze both frameworks
 ```
 
-This generates `data.json`. The `index.html` file is static and does not need to be regenerated.
+This generates `data/drupal.json` and/or `data/typo3.json`. The `index.html` file is static and does not need to be regenerated.
 
 ### Viewing the dashboard
 
@@ -55,7 +58,7 @@ The dashboard loads data via `fetch()`, which requires an HTTP server (browsers 
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000 in your browser.
+Then open http://localhost:8000 in your browser. Use the framework selector to switch between Drupal and TYPO3.
 
 
 ## Contributing
