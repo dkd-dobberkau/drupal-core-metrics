@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-19T01:31:36.335846",
+  "generated": "2026-01-20T01:28:21.422514",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2459,11 +2459,11 @@
     },
     {
       "date": "2026-01",
-      "total": 58,
-      "features": 1,
-      "bugs": 28,
-      "maintenance": 25,
-      "unknown": 4
+      "total": 81,
+      "features": 2,
+      "bugs": 41,
+      "maintenance": 33,
+      "unknown": 5
     }
   ],
   "snapshots": [
@@ -133126,6 +133126,116 @@
   ],
   "commits": [
     {
+      "hash": "ff724645b20",
+      "date": "Jan 19, 2026",
+      "type": "Bug",
+      "message": "fix: #3562759 ContentEntityBase::hasTranslationChanges() must use loadRevisionUn",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "b13c0284ad9",
+      "date": "Jan 19, 2026",
+      "type": "Bug",
+      "message": "fix: #3532360 Check return value from getCurrentRequest() before calling setRequ",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "98539c4b797",
+      "date": "Jan 19, 2026",
+      "type": "Bug",
+      "message": "fix: #3557953 Drupal\\node\\Hook\\NodeRequirements::runtime throws PHP warning when",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 1,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "c289125bb75",
+      "date": "Jan 19, 2026",
+      "type": "Bug",
+      "message": "fix: #3502900 Improve error message when updating a field schema with existing d",
+      "locDelta": 7,
+      "ccnDelta": 1,
+      "miDelta": -7,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "5da34e968e9",
+      "date": "Jan 19, 2026",
+      "type": "Maintenance",
+      "message": "task: #3561135 Deprecate passing options array to UploadedFileConstraint",
+      "locDelta": 22,
+      "ccnDelta": 8,
+      "miDelta": -5,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "f2ee3e47285",
+      "date": "Jan 19, 2026",
+      "type": "Bug",
+      "message": "fix: #3450792 Only set #group is status field exists in NodeForm",
+      "locDelta": 2,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "7b7712f0891",
+      "date": "Jan 19, 2026",
+      "type": "Feature",
+      "message": "feat: #3397418 Ensure origin headers of mails sent using the symfony-based maile",
+      "locDelta": 72,
+      "ccnDelta": 16,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "c32f2c706ce",
+      "date": "Jan 19, 2026",
+      "type": "Bug",
+      "message": "fix: #3560093 $target_url in ViewAjaxController::ajaxView can be NULL",
+      "locDelta": 2,
+      "ccnDelta": 2,
+      "miDelta": -1,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "508e5ebfd25",
+      "date": "Jan 19, 2026",
+      "type": "Bug",
+      "message": "fix: #3389633 SwitchShortcutSet form does not set access on machine name element",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "ce83a049601",
+      "date": "Jan 19, 2026",
+      "type": "Unknown",
+      "message": "Revert \"fix: #3516264 CKEditor 5 loads all plugin translations on AJAX operation",
+      "locDelta": -1,
+      "ccnDelta": -2,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "4d11c55dcb2",
+      "date": "Jan 19, 2026",
+      "type": "Bug",
+      "message": "fix: #2940605 Can only intentionally re-render an entity with references 20 time",
+      "locDelta": 8,
+      "ccnDelta": 3,
+      "miDelta": 16,
+      "antipatternsDelta": 1
+    },
+    {
       "hash": "a2dbcab0ce7",
       "date": "Jan 15, 2026",
       "type": "Maintenance",
@@ -134014,116 +134124,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "05364537683",
-      "date": "Nov 17, 2025",
-      "type": "Bug",
-      "message": "fix: #3557556 Drupal\\content_moderation\\ModerationInformation->shouldModerateEnt",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "09cc5264a06",
-      "date": "Nov 17, 2025",
-      "type": "Bug",
-      "message": "fix: #3557372 \\Drupal\\Core\\Field\\BaseFieldDefinition::getPropertyDefinition() ca",
-      "locDelta": 8,
-      "ccnDelta": 4,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "9976cfec451",
-      "date": "Nov 14, 2025",
-      "type": "Bug",
-      "message": "fix: #3205577 Form handlers should throw exception when not implementing EntityF",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "8d7a456e70a",
-      "date": "Nov 14, 2025",
-      "type": "Bug",
-      "message": "fix: #3557938 Fix BC for WorkspaceAssociation::moveTrackedEntities()",
-      "locDelta": -4,
-      "ccnDelta": -2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "ed3bb26b3e1",
-      "date": "Nov 14, 2025",
-      "type": "Feature",
-      "message": "feat: #3536470 TypeError if #[ReOrderHook] targets hook that has no implementati",
-      "locDelta": 14,
-      "ccnDelta": 5,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "946903d077b",
-      "date": "Nov 14, 2025",
-      "type": "Bug",
-      "message": "fix: #3557333 Deprecations in \\Drupal\\Core\\Entity\\EntityStorageBase::mapFromStor",
-      "locDelta": 12,
-      "ccnDelta": 3,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "7f19688970e",
-      "date": "Nov 14, 2025",
-      "type": "Bug",
-      "message": "fix: #3557346 \\Drupal\\Core\\Plugin\\DefaultSingleLazyPluginCollection::addInstance",
-      "locDelta": 6,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "78e36872c5c",
-      "date": "Nov 14, 2025",
-      "type": "Bug",
-      "message": "fix: #3557174 Fix use of NULL as array key in \\Drupal\\user\\Plugin\\migrate\\proces",
-      "locDelta": -10,
-      "ccnDelta": -3,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "3fb107246a1",
-      "date": "Nov 13, 2025",
-      "type": "Bug",
-      "message": "fix: #3557153 \\Drupal\\language\\LanguageNegotiator::negotiateLanguage() causes de",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "73c48e9c995",
-      "date": "Nov 13, 2025",
-      "type": "Bug",
-      "message": "fix: #3557142 \\Drupal\\views\\FieldViewsDataProvider::defaultFieldImplementation c",
-      "locDelta": 0,
-      "ccnDelta": 2,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "ecec7783c24",
-      "date": "Nov 13, 2025",
-      "type": "Bug",
-      "message": "fix: #3458923 StaticMap documents that NULL is a supported map value but causes ",
-      "locDelta": 16,
-      "ccnDelta": 6,
-      "miDelta": -11,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -134233,7 +134233,7 @@
     },
     {
       "year": 2026,
-      "commits": 58
+      "commits": 81
     }
   ]
 }
