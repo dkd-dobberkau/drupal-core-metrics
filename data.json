@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-22T01:31:08.335913",
+  "generated": "2026-01-23T01:30:34.855018",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2459,10 +2459,10 @@
     },
     {
       "date": "2026-01",
-      "total": 83,
-      "features": 2,
-      "bugs": 41,
-      "maintenance": 34,
+      "total": 101,
+      "features": 6,
+      "bugs": 43,
+      "maintenance": 46,
       "unknown": 6
     }
   ],
@@ -133126,6 +133126,96 @@
   ],
   "commits": [
     {
+      "hash": "64584b8c118",
+      "date": "Jan 23, 2026",
+      "type": "Feature",
+      "message": "feat: #3566776 Move _block_content_has_reusable_condition() to a protected metho",
+      "locDelta": 0,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "d597c26b318",
+      "date": "Jan 23, 2026",
+      "type": "Feature",
+      "message": "feat: #3556794 preprocess_HOOK__candidates in themes can be assigned to module i",
+      "locDelta": 4,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "563b0179941",
+      "date": "Jan 22, 2026",
+      "type": "Maintenance",
+      "message": "task: #3552110 Remove manual create() method from plugins",
+      "locDelta": -1066,
+      "ccnDelta": -121,
+      "miDelta": -16,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "73f1c59d389",
+      "date": "Jan 22, 2026",
+      "type": "Maintenance",
+      "message": "task: #3370326 Refine labels and descriptions for field types",
+      "locDelta": 130,
+      "ccnDelta": 21,
+      "miDelta": -22,
+      "antipatternsDelta": 4
+    },
+    {
+      "hash": "a69a313a746",
+      "date": "Jan 22, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3559481 Let ImageToolkit and ImageToolkitOperations plugins be contai",
+      "locDelta": 31,
+      "ccnDelta": 3,
+      "miDelta": -9,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "3af56067738",
+      "date": "Jan 22, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3565604 Remove an unnecessary isset() from Renderer::doRender()",
+      "locDelta": -2,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "6f302be3436",
+      "date": "Jan 22, 2026",
+      "type": "Feature",
+      "message": "feat: #3541535 Make the `field_config_base` structure fully validatable by addin",
+      "locDelta": 69,
+      "ccnDelta": 9,
+      "miDelta": -19,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "a0acc2c1005",
+      "date": "Jan 22, 2026",
+      "type": "Bug",
+      "message": "fix: #3561800 Using \\Drupal\\Core\\Database\\Query\\Insert::from() on postgres on a ",
+      "locDelta": 8,
+      "ccnDelta": 5,
+      "miDelta": -4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "675ec8e209f",
+      "date": "Jan 22, 2026",
+      "type": "Bug",
+      "message": "fix: #3327662 Deleting the system.site:page.front config results in a PHP deprec",
+      "locDelta": 1,
+      "ccnDelta": 2,
+      "miDelta": -1,
+      "antipatternsDelta": 1
+    },
+    {
       "hash": "ff724645b20",
       "date": "Jan 19, 2026",
       "type": "Bug",
@@ -134034,96 +134124,6 @@
       "ccnDelta": 84,
       "miDelta": -98,
       "antipatternsDelta": 14
-    },
-    {
-      "hash": "2e4b5a62180",
-      "date": "Nov 19, 2025",
-      "type": "Feature",
-      "message": "feat: #2409559 User should be able to identify required fields from field listin",
-      "locDelta": 71,
-      "ccnDelta": 3,
-      "miDelta": -28,
-      "antipatternsDelta": 90
-    },
-    {
-      "hash": "d44415144d8",
-      "date": "Nov 18, 2025",
-      "type": "Feature",
-      "message": "feat: #3521131 Add support for Sequentially constraint",
-      "locDelta": 4,
-      "ccnDelta": 6,
-      "miDelta": -4,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "c2e40edf741",
-      "date": "Nov 17, 2025",
-      "type": "Feature",
-      "message": "feat: #2595805 Leverage attributes in Twig Sandbox Policy",
-      "locDelta": 9,
-      "ccnDelta": 1,
-      "miDelta": -4,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "52e6e9f5706",
-      "date": "Nov 17, 2025",
-      "type": "Bug",
-      "message": "fix: #3557522 Fix PHP 8.5 deprecations in Drupal\\Core\\Language\\LanguageManager->",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": -2,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "6a2c85f66ae",
-      "date": "Nov 17, 2025",
-      "type": "Bug",
-      "message": "fix: #3557516 \\Drupal\\views\\Plugin\\views\\argument_validator\\Entity::calculateDep",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "30a2de10ecf",
-      "date": "Nov 17, 2025",
-      "type": "Maintenance",
-      "message": "task: #3543035 Deprecate CommentManagerInterface::getCountNewComments",
-      "locDelta": 61,
-      "ccnDelta": 15,
-      "miDelta": 2,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "59fd86e66bb",
-      "date": "Nov 17, 2025",
-      "type": "Bug",
-      "message": "fix: #3557505 \\Drupal\\Core\\Entity\\EntityLastInstalledSchemaRepository::getLastIn",
-      "locDelta": 3,
-      "ccnDelta": 2,
-      "miDelta": -1,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "b61a7381274",
-      "date": "Nov 17, 2025",
-      "type": "Bug",
-      "message": "fix: #3557467 \\Drupal\\content_moderation\\ViewsData::getViewsData() causes PHP 8.",
-      "locDelta": 2,
-      "ccnDelta": 1,
-      "miDelta": -2,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "bbe8c4eee76",
-      "date": "Nov 17, 2025",
-      "type": "Bug",
-      "message": "fix: #3557367 \\Drupal\\views\\Plugin\\views\\HandlerBase::getJoin() triggers depreca",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -134233,7 +134233,7 @@
     },
     {
       "year": 2026,
-      "commits": 83
+      "commits": 101
     }
   ]
 }
