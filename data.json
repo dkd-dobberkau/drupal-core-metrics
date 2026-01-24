@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-23T01:30:34.855018",
+  "generated": "2026-01-24T01:27:32.053458",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2459,11 +2459,11 @@
     },
     {
       "date": "2026-01",
-      "total": 101,
-      "features": 6,
+      "total": 107,
+      "features": 8,
       "bugs": 43,
-      "maintenance": 46,
-      "unknown": 6
+      "maintenance": 49,
+      "unknown": 7
     }
   ],
   "snapshots": [
@@ -133126,6 +133126,16 @@
   ],
   "commits": [
     {
+      "hash": "6245bc3f3b1",
+      "date": "Jan 23, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3493290 Try to reduce the number of database queries in MenuTreeStorage::",
+      "locDelta": 22,
+      "ccnDelta": 5,
+      "miDelta": -8,
+      "antipatternsDelta": -1
+    },
+    {
       "hash": "64584b8c118",
       "date": "Jan 23, 2026",
       "type": "Feature",
@@ -134114,16 +134124,6 @@
       "ccnDelta": 2,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "5417f19c2cd",
-      "date": "Nov 20, 2025",
-      "type": "Feature",
-      "message": "feat: #3317769 Add support for linking to entities in CKEditor 5",
-      "locDelta": 487,
-      "ccnDelta": 84,
-      "miDelta": -98,
-      "antipatternsDelta": 14
     }
   ],
   "commitsPerYear": [
@@ -134233,7 +134233,7 @@
     },
     {
       "year": 2026,
-      "commits": 101
+      "commits": 107
     }
   ]
 }
