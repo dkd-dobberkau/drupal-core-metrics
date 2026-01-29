@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-28T01:30:07.598731",
+  "generated": "2026-01-29T01:39:36.899796",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2459,10 +2459,10 @@
     },
     {
       "date": "2026-01",
-      "total": 110,
-      "features": 9,
-      "bugs": 43,
-      "maintenance": 51,
+      "total": 117,
+      "features": 10,
+      "bugs": 46,
+      "maintenance": 54,
       "unknown": 7
     }
   ],
@@ -133126,6 +133126,46 @@
   ],
   "commits": [
     {
+      "hash": "6d59445f1d6",
+      "date": "Jan 28, 2026",
+      "type": "Bug",
+      "message": "fix: #3506444 UserThemeHooks::preprocessUsername() doesn't handle cacheability c",
+      "locDelta": 11,
+      "ccnDelta": 4,
+      "miDelta": -6,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "0895e77862b",
+      "date": "Jan 28, 2026",
+      "type": "Maintenance",
+      "message": "task: #3472008 Avoid JSON:API schema validation by default when assert is enable",
+      "locDelta": -70,
+      "ccnDelta": -12,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "85468ee47db",
+      "date": "Jan 28, 2026",
+      "type": "Feature",
+      "message": "feat: #3554447 Use #attributes instead of #item_attributes",
+      "locDelta": 5,
+      "ccnDelta": 2,
+      "miDelta": -4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "ab5a470b20f",
+      "date": "Jan 28, 2026",
+      "type": "Maintenance",
+      "message": "task: #3515347 Reduce run-tests.sh complexity in spawning subprocesses",
+      "locDelta": 34,
+      "ccnDelta": 6,
+      "miDelta": -8,
+      "antipatternsDelta": -1
+    },
+    {
       "hash": "b68de1a5f60",
       "date": "Jan 27, 2026",
       "type": "Maintenance",
@@ -134084,46 +134124,6 @@
       "ccnDelta": 23,
       "miDelta": 0,
       "antipatternsDelta": 4
-    },
-    {
-      "hash": "e4311e61d54",
-      "date": "Nov 21, 2025",
-      "type": "Bug",
-      "message": "fix: #3526080 Reduce write contention to the fast and consistent backend in Chai",
-      "locDelta": -1,
-      "ccnDelta": 2,
-      "miDelta": -2,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "ee1598d4239",
-      "date": "Nov 21, 2025",
-      "type": "Bug",
-      "message": "fix: #3550724 Reduce usleep() calls in Renderer::executeInRenderContext()",
-      "locDelta": 11,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "e8887b0e568",
-      "date": "Nov 20, 2025",
-      "type": "Feature",
-      "message": "feat: #2066993 Use magic methods to sync container property to \\Drupal::getConta",
-      "locDelta": 16,
-      "ccnDelta": 5,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "4ee8d86bc7a",
-      "date": "Nov 20, 2025",
-      "type": "Bug",
-      "message": "fix: #3549946 Use simple query mode for entity queries with limit 1 and no offse",
-      "locDelta": 1,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -134233,7 +134233,7 @@
     },
     {
       "year": 2026,
-      "commits": 110
+      "commits": 117
     }
   ]
 }
