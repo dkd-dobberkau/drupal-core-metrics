@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-30T01:39:01.525023",
+  "generated": "2026-01-31T01:36:21.613071",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2459,10 +2459,10 @@
     },
     {
       "date": "2026-01",
-      "total": 131,
+      "total": 139,
       "features": 14,
-      "bugs": 51,
-      "maintenance": 59,
+      "bugs": 54,
+      "maintenance": 64,
       "unknown": 7
     }
   ],
@@ -133126,6 +133126,56 @@
   ],
   "commits": [
     {
+      "hash": "2b1cd68a3d7",
+      "date": "Jan 30, 2026",
+      "type": "Maintenance",
+      "message": "chore: #3537713 [12.x] Require PHP 8.5",
+      "locDelta": -43,
+      "ccnDelta": -11,
+      "miDelta": 17,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "37c7cb06045",
+      "date": "Jan 30, 2026",
+      "type": "Bug",
+      "message": "fix: #3115188 Routes fail validation in link field widgets",
+      "locDelta": 3,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "43a14ed5f0c",
+      "date": "Jan 30, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3564969 Static cache field storage definitions",
+      "locDelta": 9,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "658e2bf8816",
+      "date": "Jan 30, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3560633 Load content language settings in bulk when rebuilding bundle and",
+      "locDelta": 27,
+      "ccnDelta": 7,
+      "miDelta": -21,
+      "antipatternsDelta": 5
+    },
+    {
+      "hash": "5d5b25bd598",
+      "date": "Jan 30, 2026",
+      "type": "Bug",
+      "message": "fix: #3564510 TypeError: Drupal\\Core\\Utility\\ThemeRegistry::getGlobalPreprocess(",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "fec030e580d",
       "date": "Jan 30, 2026",
       "type": "Feature",
@@ -134074,56 +134124,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "3cb299cf601",
-      "date": "Nov 27, 2025",
-      "type": "Bug",
-      "message": "fix: #3522087 set_attribute Twig filter doesn't work on responsive_image_formatt",
-      "locDelta": 2,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 3
-    },
-    {
-      "hash": "2e855eca5d4",
-      "date": "Nov 27, 2025",
-      "type": "Bug",
-      "message": "fix: #2839344 Broken aria-describedby in radios and checkboxes",
-      "locDelta": 8,
-      "ccnDelta": 2,
-      "miDelta": -6,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "709a9bbd194",
-      "date": "Nov 27, 2025",
-      "type": "Maintenance",
-      "message": "task: #3548571 Deprecate functions from content_translation.admin.inc",
-      "locDelta": 60,
-      "ccnDelta": 3,
-      "miDelta": 0,
-      "antipatternsDelta": -15
-    },
-    {
-      "hash": "fc5e337574d",
-      "date": "Nov 25, 2025",
-      "type": "Maintenance",
-      "message": "ci: #3547746 run-tests.sh reports x2 duration for failed tests",
-      "locDelta": -2,
-      "ccnDelta": 0,
-      "miDelta": 1,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "d471941bbf3",
-      "date": "Nov 25, 2025",
-      "type": "Bug",
-      "message": "fix: #3549583 Use #config_target to remove user_form_system_regional_settings_su",
-      "locDelta": -9,
-      "ccnDelta": -1,
-      "miDelta": 1,
-      "antipatternsDelta": -2
     }
   ],
   "commitsPerYear": [
@@ -134233,7 +134233,7 @@
     },
     {
       "year": 2026,
-      "commits": 131
+      "commits": 139
     }
   ]
 }
