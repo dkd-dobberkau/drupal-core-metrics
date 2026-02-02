@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-01T01:55:49.530727",
+  "generated": "2026-02-02T01:44:52.528001",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 2,
+      "total": 5,
       "features": 0,
       "bugs": 1,
-      "maintenance": 1,
+      "maintenance": 4,
       "unknown": 0
     }
   ],
@@ -133133,21 +133133,21 @@
     },
     {
       "date": "2026-02",
-      "commit": "317ec5e3",
+      "commit": "b6627d2b",
       "production": {
-        "loc": 302658,
-        "functions": 24049,
+        "loc": 303339,
+        "functions": 24113,
         "ccn": {
           "avg": 2.5,
           "p95": 8
         },
         "mi": {
-          "avg": 87.4,
+          "avg": 87.5,
           "p5": 85
         },
-        "antipatterns": 69.8
+        "antipatterns": 69.7
       },
-      "testLoc": 668214,
+      "testLoc": 668342,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 229,
@@ -137337,9 +137337,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10748,
-        "deepArrays": 7733,
-        "serviceLocators": 2732
+        "magicKeys": 10745,
+        "deepArrays": 7783,
+        "serviceLocators": 2731
       },
       "hotspots": [
         {
@@ -137746,6 +137746,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "b6627d2bc3a",
+      "date": "Feb 02, 2026",
+      "type": "Maintenance",
+      "message": "task: #3555534 Since symfony/validator 7.4: Support for evaluating options in th",
+      "locDelta": 695,
+      "ccnDelta": 101,
+      "miDelta": -27,
+      "antipatternsDelta": 27
+    },
+    {
+      "hash": "13d18b6bd92",
+      "date": "Feb 01, 2026",
+      "type": "Maintenance",
+      "message": "task: #3520730 Fix PHPStan arguments.count error related to interface argument a",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "a8fe3f24e96",
+      "date": "Feb 01, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3566768 Change \\Drupal\\system\\Form\\CronForm to use ConfigFormBase and",
+      "locDelta": -13,
+      "ccnDelta": -1,
+      "miDelta": 5,
+      "antipatternsDelta": -4
+    },
     {
       "hash": "317ec5e32c3",
       "date": "Feb 01, 2026",
@@ -138715,36 +138745,6 @@
       "ccnDelta": 14,
       "miDelta": -5,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "2d616ade57d",
-      "date": "Nov 27, 2025",
-      "type": "Bug",
-      "message": "fix: #3520188 Do not try to load date format when custom date format is provided",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "dd80d899ecd",
-      "date": "Nov 27, 2025",
-      "type": "Maintenance",
-      "message": "task: #3559573 Replace TrustedCallbackInterface with TrustedCallback attribute i",
-      "locDelta": -3,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "465ffd36d49",
-      "date": "Nov 27, 2025",
-      "type": "Bug",
-      "message": "fix: #3557917 Remove stale implementations of WorkspaceNegotiatorInterface::getA",
-      "locDelta": -9,
-      "ccnDelta": -3,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138854,7 +138854,7 @@
     },
     {
       "year": 2026,
-      "commits": 144
+      "commits": 147
     }
   ]
 }
