@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-02T01:44:52.528001",
+  "generated": "2026-02-03T01:44:30.228589",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 5,
+      "total": 16,
       "features": 0,
-      "bugs": 1,
-      "maintenance": 4,
+      "bugs": 3,
+      "maintenance": 13,
       "unknown": 0
     }
   ],
@@ -133133,9 +133133,9 @@
     },
     {
       "date": "2026-02",
-      "commit": "b6627d2b",
+      "commit": "290a6fb8",
       "production": {
-        "loc": 303339,
+        "loc": 303337,
         "functions": 24113,
         "ccn": {
           "avg": 2.5,
@@ -133145,9 +133145,9 @@
           "avg": 87.5,
           "p5": 85
         },
-        "antipatterns": 69.7
+        "antipatterns": 69.8
       },
-      "testLoc": 668342,
+      "testLoc": 668412,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 229,
@@ -137337,9 +137337,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10745,
-        "deepArrays": 7783,
-        "serviceLocators": 2731
+        "magicKeys": 10738,
+        "deepArrays": 7784,
+        "serviceLocators": 2773
       },
       "hotspots": [
         {
@@ -137508,7 +137508,7 @@
           "ccn": 43,
           "loc": 265,
           "mi": 33,
-          "antipatterns": 14
+          "antipatterns": 18
         },
         {
           "name": "RenderElementBase::preRenderAjaxForm",
@@ -137612,7 +137612,7 @@
           "ccn": 36,
           "loc": 94,
           "mi": 57,
-          "antipatterns": 0
+          "antipatterns": 1
         },
         {
           "name": "EntityViewsData::getViewsData",
@@ -137746,6 +137746,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "03b4ba430e1",
+      "date": "Feb 03, 2026",
+      "type": "Maintenance",
+      "message": "task: #3505370 Remove 'filter tips' page and deprecate the long format API",
+      "locDelta": -4,
+      "ccnDelta": 3,
+      "miDelta": -6,
+      "antipatternsDelta": -8
+    },
+    {
+      "hash": "79ed7375dd2",
+      "date": "Feb 02, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3537962 EntityFieldManager::getFieldDefinitions() per-bundle caching can ",
+      "locDelta": 14,
+      "ccnDelta": 3,
+      "miDelta": -12,
+      "antipatternsDelta": 3
+    },
+    {
+      "hash": "26a0c062ab5",
+      "date": "Feb 02, 2026",
+      "type": "Maintenance",
+      "message": "task: #3566424 Deprecate Views::pluginManager() and Views::handlerManager() and ",
+      "locDelta": -9,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 41
+    },
+    {
+      "hash": "69f701f318d",
+      "date": "Feb 02, 2026",
+      "type": "Maintenance",
+      "message": "task: #3567980 Remove unneeded parameter $requestStack from EntityController",
+      "locDelta": -3,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "b6627d2bc3a",
       "date": "Feb 02, 2026",
@@ -138705,46 +138745,6 @@
       "ccnDelta": 3,
       "miDelta": -2,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "5cab397ea57",
-      "date": "Nov 28, 2025",
-      "type": "Maintenance",
-      "message": "task: #3551738 Remove create method from controllers that use autowire trait",
-      "locDelta": -54,
-      "ccnDelta": -9,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "c12cc19d7da",
-      "date": "Nov 28, 2025",
-      "type": "Bug",
-      "message": "fix: #3033516 Revision log message field missing from layout overrides entity fo",
-      "locDelta": 7,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "d1a5b4faa33",
-      "date": "Nov 28, 2025",
-      "type": "Maintenance",
-      "message": "task: #3502755 Deprecate migrate process plugins needed only for site upgrades",
-      "locDelta": 136,
-      "ccnDelta": 31,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "cc44d66537d",
-      "date": "Nov 27, 2025",
-      "type": "Bug",
-      "message": "fix: #3060985 Layout Builder attempts to builds sections to determine if it is d",
-      "locDelta": 45,
-      "ccnDelta": 14,
-      "miDelta": -5,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138854,7 +138854,7 @@
     },
     {
       "year": 2026,
-      "commits": 147
+      "commits": 158
     }
   ]
 }
