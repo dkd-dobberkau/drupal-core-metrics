@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-03T01:44:30.228589",
+  "generated": "2026-02-04T01:40:10.111571",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 16,
-      "features": 0,
+      "total": 31,
+      "features": 2,
       "bugs": 3,
-      "maintenance": 13,
+      "maintenance": 26,
       "unknown": 0
     }
   ],
@@ -133133,10 +133133,10 @@
     },
     {
       "date": "2026-02",
-      "commit": "290a6fb8",
+      "commit": "3245d571",
       "production": {
-        "loc": 303337,
-        "functions": 24113,
+        "loc": 303428,
+        "functions": 24111,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133147,7 +133147,7 @@
         },
         "antipatterns": 69.8
       },
-      "testLoc": 668412,
+      "testLoc": 668382,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 229,
@@ -133155,7 +133155,7 @@
         "events": 40,
         "services": 246,
         "yamlFormats": 20,
-        "interfaceMethods": 2980,
+        "interfaceMethods": 2975,
         "globalFunctions": 331
       },
       "surfaceAreaLists": {
@@ -134857,14 +134857,10 @@
           "ModuleHandlerInterface::getModuleList",
           "ModuleHandlerInterface::getModule",
           "ModuleHandlerInterface::setModuleList",
-          "ModuleHandlerInterface::addModule",
-          "ModuleHandlerInterface::addProfile",
           "ModuleHandlerInterface::buildModuleDependencies",
           "ModuleHandlerInterface::moduleExists",
           "ModuleHandlerInterface::loadAllIncludes",
           "ModuleHandlerInterface::loadInclude",
-          "ModuleHandlerInterface::getHookInfo",
-          "ModuleHandlerInterface::writeCache",
           "ModuleHandlerInterface::resetImplementations",
           "ModuleHandlerInterface::hasImplementations",
           "ModuleHandlerInterface::invokeAllWith",
@@ -134875,7 +134871,6 @@
           "ModuleHandlerInterface::alter",
           "ModuleHandlerInterface::alterDeprecated",
           "ModuleHandlerInterface::getModuleDirectories",
-          "ModuleHandlerInterface::getName",
           "BlockPluginInterface::label",
           "BlockPluginInterface::access",
           "BlockPluginInterface::build",
@@ -137337,9 +137332,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10738,
-        "deepArrays": 7784,
-        "serviceLocators": 2773
+        "magicKeys": 10742,
+        "deepArrays": 7788,
+        "serviceLocators": 2776
       },
       "hotspots": [
         {
@@ -137746,6 +137741,106 @@
     }
   ],
   "commits": [
+    {
+      "hash": "3245d571a9f",
+      "date": "Feb 03, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3564937 Remove duplicative caching of views rows",
+      "locDelta": 0,
+      "ccnDelta": 0,
+      "miDelta": 1,
+      "antipatternsDelta": -2
+    },
+    {
+      "hash": "9e6f0a2cd9f",
+      "date": "Feb 03, 2026",
+      "type": "Maintenance",
+      "message": "task: #2648272 Deprecate retrieving password from $account",
+      "locDelta": 6,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "51c8bbe6a6b",
+      "date": "Feb 03, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3560398 Move _dblog_get_message_types and dblog_filters to a DbLogFil",
+      "locDelta": 37,
+      "ccnDelta": 5,
+      "miDelta": 1,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "61c592bf375",
+      "date": "Feb 03, 2026",
+      "type": "Maintenance",
+      "message": "task: #3563051 Remove unnecessary status messages from file_save_upload() on fil",
+      "locDelta": -6,
+      "ccnDelta": -1,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "ba110231a9e",
+      "date": "Feb 03, 2026",
+      "type": "Feature",
+      "message": "feat: #3529464 Make menu trail behaviour in SystemMenuBlock optional",
+      "locDelta": 73,
+      "ccnDelta": 21,
+      "miDelta": -10,
+      "antipatternsDelta": 9
+    },
+    {
+      "hash": "99a2607aba6",
+      "date": "Feb 03, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571111 Remove item_attributes deprecations",
+      "locDelta": -9,
+      "ccnDelta": -3,
+      "miDelta": 7,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "78087dfd025",
+      "date": "Feb 03, 2026",
+      "type": "Maintenance",
+      "message": "task: #3568101 Remove editor.module underscore functions. Move the logic in Edit",
+      "locDelta": 10,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "462af0a2e27",
+      "date": "Feb 03, 2026",
+      "type": "Feature",
+      "message": "feat: #3339905 Add page_top and page_bottom to #attached to get rid of NodeTheme",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "b2c257c41f0",
+      "date": "Feb 03, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571063 Remove Deprecated methods in ModuleHandler and ModuleHandlerInter",
+      "locDelta": -29,
+      "ccnDelta": -13,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "47ae02bb658",
+      "date": "Feb 03, 2026",
+      "type": "Maintenance",
+      "message": "task: #3566888 Move contact module form callbacks from procedural to hook class",
+      "locDelta": 9,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "03b4ba430e1",
       "date": "Feb 03, 2026",
@@ -138645,106 +138740,6 @@
       "ccnDelta": 25,
       "miDelta": -21,
       "antipatternsDelta": 6
-    },
-    {
-      "hash": "d73f225ccc8",
-      "date": "Dec 09, 2025",
-      "type": "Bug",
-      "message": "fix: #3560833 Create better way to manage theme setting alters",
-      "locDelta": 2,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "e1e87688c70",
-      "date": "Dec 04, 2025",
-      "type": "Bug",
-      "message": "fix: #3555974 HttpExceptionNormalizer sets cache-max to 0 unnecessarily sometime",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "db51285f948",
-      "date": "Dec 04, 2025",
-      "type": "Maintenance",
-      "message": "docs: #3549662 Fix LongLineDeclaration in module Form directories",
-      "locDelta": 195,
-      "ccnDelta": 0,
-      "miDelta": -78,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "ed8ade4c305",
-      "date": "Dec 03, 2025",
-      "type": "Maintenance",
-      "message": "task: #3490846 Deprecate hook_requirements",
-      "locDelta": 22,
-      "ccnDelta": 5,
-      "miDelta": -6,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "ca4031b9136",
-      "date": "Dec 03, 2025",
-      "type": "Maintenance",
-      "message": "task: #3546105 Automatically manage _wrapper_format for HTMX requests and clean ",
-      "locDelta": 6,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "1de50d63dcb",
-      "date": "Dec 02, 2025",
-      "type": "Maintenance",
-      "message": "task: #3535734 Make block.settings.inline_block:* fully validatable",
-      "locDelta": 116,
-      "ccnDelta": 17,
-      "miDelta": -4,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d3a9ff853ca",
-      "date": "Dec 02, 2025",
-      "type": "Maintenance",
-      "message": "task: #3536726 Use CallableResolver for form callbacks",
-      "locDelta": 62,
-      "ccnDelta": 6,
-      "miDelta": -15,
-      "antipatternsDelta": 5
-    },
-    {
-      "hash": "55c970598cd",
-      "date": "Dec 01, 2025",
-      "type": "Bug",
-      "message": "fix: #3479427 Single Directory Components incompatible with Windows",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "bd24c65d6e6",
-      "date": "Dec 01, 2025",
-      "type": "Bug",
-      "message": "fix: #3518992 Config overrides are loaded for English even when translate_englis",
-      "locDelta": 51,
-      "ccnDelta": 18,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "0ea7fb77b04",
-      "date": "Nov 28, 2025",
-      "type": "Bug",
-      "message": "fix: #3524163 [regression] Empty slot definitions give incorrect validation mess",
-      "locDelta": 5,
-      "ccnDelta": 3,
-      "miDelta": -2,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138854,7 +138849,7 @@
     },
     {
       "year": 2026,
-      "commits": 158
+      "commits": 173
     }
   ]
 }
