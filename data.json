@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-05T01:40:48.092966",
+  "generated": "2026-02-06T01:38:55.891176",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 35,
+      "total": 42,
       "features": 2,
       "bugs": 5,
-      "maintenance": 28,
+      "maintenance": 35,
       "unknown": 0
     }
   ],
@@ -133133,10 +133133,10 @@
     },
     {
       "date": "2026-02",
-      "commit": "97e5311e",
+      "commit": "6d8eddd3",
       "production": {
-        "loc": 303434,
-        "functions": 24111,
+        "loc": 303070,
+        "functions": 24071,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133147,7 +133147,7 @@
         },
         "antipatterns": 69.8
       },
-      "testLoc": 668392,
+      "testLoc": 667569,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 229,
@@ -133155,7 +133155,7 @@
         "events": 40,
         "services": 246,
         "yamlFormats": 20,
-        "interfaceMethods": 2975,
+        "interfaceMethods": 2968,
         "globalFunctions": 331
       },
       "surfaceAreaLists": {
@@ -136434,13 +136434,6 @@
           "ModerationInformationInterface::getWorkflowForEntityTypeAndBundle",
           "ModerationInformationInterface::getUnsupportedFeatures",
           "ModerationInformationInterface::getOriginalState",
-          "EntityDisplayWithLayoutInterface::getDefaultRegion",
-          "EntityDisplayWithLayoutInterface::getLayoutId",
-          "EntityDisplayWithLayoutInterface::getLayoutSettings",
-          "EntityDisplayWithLayoutInterface::setLayoutId",
-          "EntityDisplayWithLayoutInterface::setLayout",
-          "EntityDisplayWithLayoutInterface::getLayout",
-          "EntityDisplayWithLayoutInterface::ensureLayout",
           "MigrateExecutableInterface::import",
           "MigrateExecutableInterface::rollback",
           "MigrateExecutableInterface::processRow",
@@ -137332,9 +137325,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10742,
-        "deepArrays": 7788,
-        "serviceLocators": 2776
+        "magicKeys": 10726,
+        "deepArrays": 7777,
+        "serviceLocators": 2771
       },
       "hotspots": [
         {
@@ -137741,6 +137734,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "90f9762bceb",
+      "date": "Feb 05, 2026",
+      "type": "Maintenance",
+      "message": "task: #3566792 Deprecate remaining ckeditor5.module procedural code",
+      "locDelta": 60,
+      "ccnDelta": 12,
+      "miDelta": -23,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "7a7ba61ec25",
+      "date": "Feb 05, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571609 Remove Field Layout module from core",
+      "locDelta": -415,
+      "ccnDelta": -78,
+      "miDelta": 26,
+      "antipatternsDelta": -31
+    },
+    {
+      "hash": "1f86870ff29",
+      "date": "Feb 05, 2026",
+      "type": "Maintenance",
+      "message": "task: #3471199 Remove sid_length and sid_bits_per_character deprecation from Cor",
+      "locDelta": -9,
+      "ccnDelta": -3,
+      "miDelta": 5,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "5e89bf91349",
       "date": "Feb 04, 2026",
@@ -138710,36 +138733,6 @@
       "ccnDelta": 3,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "1ec56df0e72",
-      "date": "Dec 13, 2025",
-      "type": "Bug",
-      "message": "fix: #2550977 FileItem::generateSampleValue() should generate files with the act",
-      "locDelta": 5,
-      "ccnDelta": 1,
-      "miDelta": -5,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "22134b6d23d",
-      "date": "Dec 11, 2025",
-      "type": "Bug",
-      "message": "fix: #3127026 Not possible to override an entity type class multiple times",
-      "locDelta": 11,
-      "ccnDelta": 3,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "b6f6b2219d3",
-      "date": "Dec 10, 2025",
-      "type": "Bug",
-      "message": "fix: #3562319 [regression] The installer does not properly load the theme",
-      "locDelta": 71,
-      "ccnDelta": 20,
-      "miDelta": -27,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138849,7 +138842,7 @@
     },
     {
       "year": 2026,
-      "commits": 177
+      "commits": 184
     }
   ]
 }
