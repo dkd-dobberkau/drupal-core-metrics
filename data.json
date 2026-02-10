@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-09T01:43:55.410281",
+  "generated": "2026-02-10T02:09:12.225925",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 51,
+      "total": 56,
       "features": 2,
       "bugs": 8,
-      "maintenance": 41,
+      "maintenance": 46,
       "unknown": 0
     }
   ],
@@ -133133,10 +133133,10 @@
     },
     {
       "date": "2026-02",
-      "commit": "6b820f3f",
+      "commit": "14cae432",
       "production": {
-        "loc": 303080,
-        "functions": 24071,
+        "loc": 303192,
+        "functions": 24081,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133145,9 +133145,9 @@
           "avg": 87.5,
           "p5": 85
         },
-        "antipatterns": 69.8
+        "antipatterns": 69.9
       },
-      "testLoc": 667611,
+      "testLoc": 667636,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 229,
@@ -133155,7 +133155,7 @@
         "events": 40,
         "services": 246,
         "yamlFormats": 20,
-        "interfaceMethods": 2968,
+        "interfaceMethods": 2969,
         "globalFunctions": 331
       },
       "surfaceAreaLists": {
@@ -136103,6 +136103,7 @@
           "LocaleProjectStorageInterface::disableAll",
           "LocaleProjectStorageInterface::resetCache",
           "LocaleProjectStorageInterface::countProjects",
+          "LocaleProjectStorageInterface::getProjects",
           "StringInterface::getId",
           "StringInterface::setId",
           "StringInterface::getVersion",
@@ -137327,7 +137328,7 @@
       "antipatterns": {
         "magicKeys": 10726,
         "deepArrays": 7777,
-        "serviceLocators": 2771
+        "serviceLocators": 2793
       },
       "hotspots": [
         {
@@ -137734,6 +137735,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "b4ee668cf88",
+      "date": "Feb 09, 2026",
+      "type": "Maintenance",
+      "message": "task: #3569328 Modernize locale.translations.inc",
+      "locDelta": 112,
+      "ccnDelta": 19,
+      "miDelta": -16,
+      "antipatternsDelta": 22
+    },
     {
       "hash": "acaf0b1c2ee",
       "date": "Feb 07, 2026",
@@ -138723,16 +138734,6 @@
       "ccnDelta": 2,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "95f7025b386",
-      "date": "Dec 16, 2025",
-      "type": "Bug",
-      "message": "fix: #3463592 Require label and category properties for layout plugins",
-      "locDelta": 11,
-      "ccnDelta": 6,
-      "miDelta": -7,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138842,7 +138843,7 @@
     },
     {
       "year": 2026,
-      "commits": 193
+      "commits": 198
     }
   ]
 }
