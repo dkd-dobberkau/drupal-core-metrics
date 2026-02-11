@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-10T02:09:12.225925",
+  "generated": "2026-02-11T01:52:46.873695",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 56,
+      "total": 65,
       "features": 2,
-      "bugs": 8,
-      "maintenance": 46,
+      "bugs": 14,
+      "maintenance": 49,
       "unknown": 0
     }
   ],
@@ -133133,30 +133133,30 @@
     },
     {
       "date": "2026-02",
-      "commit": "14cae432",
+      "commit": "cd54e644",
       "production": {
-        "loc": 303192,
-        "functions": 24081,
+        "loc": 302472,
+        "functions": 24032,
         "ccn": {
           "avg": 2.5,
           "p95": 8
         },
         "mi": {
-          "avg": 87.5,
+          "avg": 87.4,
           "p5": 85
         },
-        "antipatterns": 69.9
+        "antipatterns": 69.8
       },
-      "testLoc": 667636,
+      "testLoc": 667053,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 229,
-        "magicKeys": 268,
+        "magicKeys": 267,
         "events": 40,
-        "services": 246,
+        "services": 245,
         "yamlFormats": 20,
-        "interfaceMethods": 2969,
-        "globalFunctions": 331
+        "interfaceMethods": 2968,
+        "globalFunctions": 327
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -133675,7 +133675,6 @@
           "#caption",
           "#classes",
           "#link_options",
-          "#status",
           "#amount",
           "#severity",
           "#requirements",
@@ -133984,7 +133983,6 @@
           "user_maintenance_mode_subscriber",
           "user_access_denied_subscriber",
           "user_last_access_subscriber",
-          "history",
           "system",
           "element",
           "editor",
@@ -136944,7 +136942,6 @@
           "CommentManagerInterface::getFields",
           "CommentManagerInterface::addBodyField",
           "CommentManagerInterface::forbiddenMessage",
-          "CommentManagerInterface::getCountNewComments",
           "CommentLinkBuilderInterface::buildCommentedEntityLinks",
           "CommentStorageInterface::getMaxThread",
           "CommentStorageInterface::getMaxThreadPerThread",
@@ -137269,9 +137266,6 @@
           "user_cookie_save",
           "user_cookie_delete",
           "user_logout",
-          "history_read",
-          "history_read_multiple",
-          "history_write",
           "system_authorized_init",
           "system_authorized_get_url",
           "system_authorized_batch_processing_url",
@@ -137303,7 +137297,6 @@
           "views_field_default_views_data",
           "views_entity_field_label",
           "node_title_list",
-          "node_mark",
           "node_type_get_names",
           "node_get_type_label",
           "node_type_get_description",
@@ -137326,9 +137319,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10726,
-        "deepArrays": 7777,
-        "serviceLocators": 2793
+        "magicKeys": 10712,
+        "deepArrays": 7748,
+        "serviceLocators": 2762
       },
       "hotspots": [
         {
@@ -137735,6 +137728,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "cd54e644bde",
+      "date": "Feb 10, 2026",
+      "type": "Bug",
+      "message": "fix: #3567544 Alias lookup by path is not case sensitive but AliasPrefixList and",
+      "locDelta": 17,
+      "ccnDelta": 4,
+      "miDelta": -8,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "8fcce5d1d9e",
+      "date": "Feb 10, 2026",
+      "type": "Maintenance",
+      "message": "task: #3570668 Remove History module from core",
+      "locDelta": -741,
+      "ccnDelta": -151,
+      "miDelta": 113,
+      "antipatternsDelta": -75
+    },
+    {
+      "hash": "014cc526536",
+      "date": "Feb 10, 2026",
+      "type": "Bug",
+      "message": "fix: #3568922 Method discoverResourceUrl does not check response type",
+      "locDelta": 4,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "b4ee668cf88",
       "date": "Feb 09, 2026",
@@ -138704,36 +138727,6 @@
       "ccnDelta": 0,
       "miDelta": 3,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "fad3b98f770",
-      "date": "Dec 23, 2025",
-      "type": "Maintenance",
-      "message": "task: #3560205 Remove toolbar usage in hook help",
-      "locDelta": -12,
-      "ccnDelta": -1,
-      "miDelta": 10,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "7e9eb086709",
-      "date": "Dec 22, 2025",
-      "type": "Maintenance",
-      "message": "task: #3560108 Do not make 1000s of calls to get _deprecated_service_list parame",
-      "locDelta": 2,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "dbb19e2a402",
-      "date": "Dec 18, 2025",
-      "type": "Bug",
-      "message": "fix: #3562753 History module triggers ServiceNotFoundException for comment.manag",
-      "locDelta": 1,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138843,7 +138836,7 @@
     },
     {
       "year": 2026,
-      "commits": 198
+      "commits": 207
     }
   ]
 }
