@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-11T01:52:46.873695",
+  "generated": "2026-02-12T01:45:33.730971",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 65,
-      "features": 2,
-      "bugs": 14,
-      "maintenance": 49,
+      "total": 72,
+      "features": 5,
+      "bugs": 16,
+      "maintenance": 51,
       "unknown": 0
     }
   ],
@@ -133133,10 +133133,10 @@
     },
     {
       "date": "2026-02",
-      "commit": "cd54e644",
+      "commit": "2275ac6b",
       "production": {
-        "loc": 302472,
-        "functions": 24032,
+        "loc": 302484,
+        "functions": 24034,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133147,7 +133147,7 @@
         },
         "antipatterns": 69.8
       },
-      "testLoc": 667053,
+      "testLoc": 667140,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 229,
@@ -137319,8 +137319,8 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10712,
-        "deepArrays": 7748,
+        "magicKeys": 10714,
+        "deepArrays": 7752,
         "serviceLocators": 2762
       },
       "hotspots": [
@@ -137528,9 +137528,9 @@
           "name": "AccountForm::form",
           "file": "modules/user/src/AccountForm.php",
           "ccn": 39,
-          "loc": 179,
-          "mi": 42,
-          "antipatterns": 84
+          "loc": 189,
+          "mi": 41,
+          "antipatterns": 92
         },
         {
           "name": "ViewEditForm::getFormBucket",
@@ -137728,6 +137728,56 @@
     }
   ],
   "commits": [
+    {
+      "hash": "2275ac6bd7e",
+      "date": "Feb 11, 2026",
+      "type": "Bug",
+      "message": "fix: #3572084 Dotfiles cannot be ignored cia *.starterkit.yml file",
+      "locDelta": 2,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "859cc28dfc6",
+      "date": "Feb 11, 2026",
+      "type": "Feature",
+      "message": "feat: #1503146 Aliased paths cannot be set as front page",
+      "locDelta": 14,
+      "ccnDelta": 1,
+      "miDelta": 7,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "d4265722d22",
+      "date": "Feb 11, 2026",
+      "type": "Feature",
+      "message": "feat: #3481627 Update user creation form to hide password and status fields when",
+      "locDelta": 10,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 9
+    },
+    {
+      "hash": "43c2d5ec907",
+      "date": "Feb 11, 2026",
+      "type": "Feature",
+      "message": "feat: #3559628 Allow #[MapQueryParameter] attribute for query string handling in",
+      "locDelta": -13,
+      "ccnDelta": -3,
+      "miDelta": 9,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "86416c4ca4e",
+      "date": "Feb 11, 2026",
+      "type": "Bug",
+      "message": "fix: #3569751 Workspace AJAX query parameters become arrays when form elements h",
+      "locDelta": -1,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
     {
       "hash": "cd54e644bde",
       "date": "Feb 10, 2026",
@@ -138677,56 +138727,6 @@
       "ccnDelta": 2,
       "miDelta": -1,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "418d91e75dd",
-      "date": "Jan 05, 2026",
-      "type": "Bug",
-      "message": "fix: #3564548 update_post_update_fix_update_emails() can fail on invalid config",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "64194004bb0",
-      "date": "Jan 05, 2026",
-      "type": "Bug",
-      "message": "fix: #2339921 Undefined variable: groups in \\Drupal\\views\\Plugin\\views\\filter\\Fi",
-      "locDelta": 1,
-      "ccnDelta": 3,
-      "miDelta": -1,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "8adf8b7508d",
-      "date": "Dec 23, 2025",
-      "type": "Bug",
-      "message": "fix: #3553342 Race condition in LocalTaskManager::getLocalTasks() with fibers",
-      "locDelta": 11,
-      "ccnDelta": 2,
-      "miDelta": -7,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "a7d5767717c",
-      "date": "Dec 23, 2025",
-      "type": "Maintenance",
-      "message": "task: #3556450 Move announcements_feed.last_fetch timestamp into raw key/value",
-      "locDelta": 8,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "ba3a99e27f0",
-      "date": "Dec 23, 2025",
-      "type": "Bug",
-      "message": "fix: #3555152 Move skip_procedural_hook_scan cleanup to HookCollectorKeyValueWri",
-      "locDelta": 0,
-      "ccnDelta": 0,
-      "miDelta": 3,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138836,7 +138836,7 @@
     },
     {
       "year": 2026,
-      "commits": 207
+      "commits": 214
     }
   ]
 }
