@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-13T01:48:42.791382",
+  "generated": "2026-02-14T01:41:16.467478",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 79,
-      "features": 5,
-      "bugs": 19,
-      "maintenance": 55,
+      "total": 88,
+      "features": 6,
+      "bugs": 21,
+      "maintenance": 61,
       "unknown": 0
     }
   ],
@@ -133133,9 +133133,9 @@
     },
     {
       "date": "2026-02",
-      "commit": "126e7745",
+      "commit": "4203289e",
       "production": {
-        "loc": 302484,
+        "loc": 302482,
         "functions": 24034,
         "ccn": {
           "avg": 2.5,
@@ -133147,7 +133147,7 @@
         },
         "antipatterns": 69.8
       },
-      "testLoc": 667169,
+      "testLoc": 667141,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 229,
@@ -137729,6 +137729,16 @@
   ],
   "commits": [
     {
+      "hash": "3c07b176ed1",
+      "date": "Feb 13, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3571351 Only get the css/js query string when necessary",
+      "locDelta": -2,
+      "ccnDelta": 0,
+      "miDelta": 1,
+      "antipatternsDelta": -1
+    },
+    {
       "hash": "2275ac6bd7e",
       "date": "Feb 11, 2026",
       "type": "Bug",
@@ -138717,16 +138727,6 @@
       "ccnDelta": 2,
       "miDelta": -5,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "68c6d28e136",
-      "date": "Jan 05, 2026",
-      "type": "Bug",
-      "message": "fix: #3516264 CKEditor 5 loads all plugin translations on AJAX operations",
-      "locDelta": 1,
-      "ccnDelta": 2,
-      "miDelta": -1,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138836,7 +138836,7 @@
     },
     {
       "year": 2026,
-      "commits": 221
+      "commits": 230
     }
   ]
 }
