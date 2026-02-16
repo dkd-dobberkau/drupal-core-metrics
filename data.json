@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-15T01:49:02.566693",
+  "generated": "2026-02-16T01:45:27.899172",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 88,
+      "total": 90,
       "features": 6,
-      "bugs": 21,
-      "maintenance": 61,
+      "bugs": 22,
+      "maintenance": 62,
       "unknown": 0
     }
   ],
@@ -133133,10 +133133,10 @@
     },
     {
       "date": "2026-02",
-      "commit": "4203289e",
+      "commit": "9367e55d",
       "production": {
-        "loc": 302482,
-        "functions": 24034,
+        "loc": 302359,
+        "functions": 24027,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133147,7 +133147,7 @@
         },
         "antipatterns": 69.8
       },
-      "testLoc": 667141,
+      "testLoc": 667098,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 229,
@@ -133847,7 +133847,6 @@
           "redirect",
           "unrouted_url_assembler",
           "link_generator",
-          "pgsql",
           "password",
           "password_generator",
           "request_format_route_filter",
@@ -133938,6 +133937,7 @@
           "dynamic_page_cache_request_policy",
           "dynamic_page_cache_response_policy",
           "dynamic_page_cache_deny_admin_routes",
+          "pgsql",
           "content_translation",
           "workspaces",
           "locale",
@@ -137321,7 +137321,7 @@
       "antipatterns": {
         "magicKeys": 10714,
         "deepArrays": 7752,
-        "serviceLocators": 2762
+        "serviceLocators": 2761
       },
       "hotspots": [
         {
@@ -137728,6 +137728,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "9367e55ded5",
+      "date": "Feb 15, 2026",
+      "type": "Bug",
+      "message": "fix: #2722307 Move translation based conditions into database query on revisions",
+      "locDelta": 3,
+      "ccnDelta": -4,
+      "miDelta": -1,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "c11e445f127",
+      "date": "Feb 15, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571065 Remove deprecated code from lib/Entity and lib/Field",
+      "locDelta": -126,
+      "ccnDelta": -34,
+      "miDelta": 17,
+      "antipatternsDelta": -2
+    },
     {
       "hash": "3c07b176ed1",
       "date": "Feb 13, 2026",
@@ -138707,26 +138727,6 @@
       "ccnDelta": 2,
       "miDelta": -2,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "2c78741ca00",
-      "date": "Jan 05, 2026",
-      "type": "Unknown",
-      "message": "Revert \"fix: #2339921 Undefined variable: groups in \\Drupal\\views\\Plugin\\views\\f",
-      "locDelta": -1,
-      "ccnDelta": -3,
-      "miDelta": 1,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "3abb7ce8d06",
-      "date": "Jan 05, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3559030 Installing from existing config causes massive cache.config popul",
-      "locDelta": 9,
-      "ccnDelta": 2,
-      "miDelta": -5,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138836,7 +138836,7 @@
     },
     {
       "year": 2026,
-      "commits": 230
+      "commits": 232
     }
   ]
 }
