@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-16T01:45:27.899172",
+  "generated": "2026-02-17T01:44:06.365990",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 90,
+      "total": 105,
       "features": 6,
-      "bugs": 22,
-      "maintenance": 62,
+      "bugs": 25,
+      "maintenance": 74,
       "unknown": 0
     }
   ],
@@ -133133,10 +133133,10 @@
     },
     {
       "date": "2026-02",
-      "commit": "9367e55d",
+      "commit": "99d71d7d",
       "production": {
-        "loc": 302359,
-        "functions": 24027,
+        "loc": 302229,
+        "functions": 24004,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133147,7 +133147,7 @@
         },
         "antipatterns": 69.8
       },
-      "testLoc": 667098,
+      "testLoc": 667167,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 229,
@@ -133155,7 +133155,7 @@
         "events": 40,
         "services": 245,
         "yamlFormats": 20,
-        "interfaceMethods": 2968,
+        "interfaceMethods": 2969,
         "globalFunctions": 327
       },
       "surfaceAreaLists": {
@@ -135461,6 +135461,7 @@
           "EntityTypeInterface::setConstraints",
           "EntityTypeInterface::addConstraint",
           "EntityTypeInterface::getBundleConfigDependency",
+          "EntityTypeInterface::hasIntegerId",
           "ParamConverterInterface::convert",
           "ParamConverterInterface::applies",
           "ParamConverterManagerInterface::addConverter",
@@ -137320,8 +137321,8 @@
       },
       "antipatterns": {
         "magicKeys": 10714,
-        "deepArrays": 7752,
-        "serviceLocators": 2761
+        "deepArrays": 7755,
+        "serviceLocators": 2752
       },
       "hotspots": [
         {
@@ -137728,6 +137729,96 @@
     }
   ],
   "commits": [
+    {
+      "hash": "99d71d7d791",
+      "date": "Feb 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3570863 Deprecate _menu_link_content_update_path_alias",
+      "locDelta": 16,
+      "ccnDelta": 3,
+      "miDelta": 1,
+      "antipatternsDelta": -4
+    },
+    {
+      "hash": "cfe4a9adfc4",
+      "date": "Feb 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571067 [12.x] Remove hook_hook_info and support in HookCollectorPass",
+      "locDelta": -108,
+      "ccnDelta": -25,
+      "miDelta": 40,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "bd0f9a5d1f3",
+      "date": "Feb 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571382 Remove deprecations from Layout Builder & Layout Discovery",
+      "locDelta": -6,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "8d9beefb48e",
+      "date": "Feb 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571095 Remove deprecated code from menu_ui and text",
+      "locDelta": -11,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "b090f8e4430",
+      "date": "Feb 16, 2026",
+      "type": "Bug",
+      "message": "fix: #1894286 System updates are executed without priority",
+      "locDelta": 357,
+      "ccnDelta": 94,
+      "miDelta": -135,
+      "antipatternsDelta": 46
+    },
+    {
+      "hash": "4de2b4c0acd",
+      "date": "Feb 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571296 Remove plaintext $account->password",
+      "locDelta": -8,
+      "ccnDelta": -2,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "747ad627d36",
+      "date": "Feb 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3566801 Helper to check if the entity type's ID is integer",
+      "locDelta": -15,
+      "ccnDelta": -2,
+      "miDelta": 6,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "502a59b2c2b",
+      "date": "Feb 16, 2026",
+      "type": "Bug",
+      "message": "fix: #3540105 Capture access cacheability in getDefaultOperations() methods for ",
+      "locDelta": 73,
+      "ccnDelta": 21,
+      "miDelta": -20,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "94da3be331e",
+      "date": "Feb 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3570570 Remove lazy declaration and proxy class for ConfigInstaller and M",
+      "locDelta": -93,
+      "ccnDelta": -18,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
     {
       "hash": "9367e55ded5",
       "date": "Feb 15, 2026",
@@ -138637,96 +138728,6 @@
       "ccnDelta": 7,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "b9564e016b0",
-      "date": "Jan 09, 2026",
-      "type": "Bug",
-      "message": "fix: #3387013 Check LinkItemInterface::isEmpty() before validating",
-      "locDelta": 23,
-      "ccnDelta": 4,
-      "miDelta": -11,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d9515b493f5",
-      "date": "Jan 09, 2026",
-      "type": "Maintenance",
-      "message": "task: #3093118 Move link title validation from LinkWidget into a constraint",
-      "locDelta": 38,
-      "ccnDelta": 5,
-      "miDelta": 1,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "1dc33e4b044",
-      "date": "Jan 09, 2026",
-      "type": "Maintenance",
-      "message": "task: #3555537 Use charset=utf-8 instead of charset=UTF-8 in content type header",
-      "locDelta": -3,
-      "ccnDelta": -1,
-      "miDelta": 3,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "8574f617c02",
-      "date": "Jan 08, 2026",
-      "type": "Bug",
-      "message": "fix: #3244349 Access forbidden when editing/deleting a block from the block layo",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "f0c25113919",
-      "date": "Jan 08, 2026",
-      "type": "Bug",
-      "message": "fix: #3152281 Extra field blocks render even when empty",
-      "locDelta": 9,
-      "ccnDelta": 4,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "3e0d3191cb2",
-      "date": "Jan 08, 2026",
-      "type": "Bug",
-      "message": "fix: #3566140 Properly include install files for runtime requirements",
-      "locDelta": 1,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "041315ba9c0",
-      "date": "Jan 08, 2026",
-      "type": "Unknown",
-      "message": "performance: #3520997 DefaultLazyPluginCollection unnecessarily instantiates plu",
-      "locDelta": 4,
-      "ccnDelta": 3,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "fe5bd78b4e2",
-      "date": "Jan 07, 2026",
-      "type": "Maintenance",
-      "message": "task: #3382815 Prepare to use a 'main' branch as the development target",
-      "locDelta": 16,
-      "ccnDelta": 0,
-      "miDelta": -2,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "b2c0b060da2",
-      "date": "Jan 06, 2026",
-      "type": "Bug",
-      "message": "fix: #2339921 Undefined variable: groups in \\Drupal\\views\\Plugin\\views\\filter\\Fi",
-      "locDelta": 2,
-      "ccnDelta": 2,
-      "miDelta": -2,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138836,7 +138837,7 @@
     },
     {
       "year": 2026,
-      "commits": 232
+      "commits": 247
     }
   ]
 }
