@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-17T01:44:06.365990",
+  "generated": "2026-02-18T01:46:10.062394",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 105,
+      "total": 116,
       "features": 6,
-      "bugs": 25,
-      "maintenance": 74,
+      "bugs": 29,
+      "maintenance": 81,
       "unknown": 0
     }
   ],
@@ -133133,10 +133133,10 @@
     },
     {
       "date": "2026-02",
-      "commit": "99d71d7d",
+      "commit": "96e8b01f",
       "production": {
-        "loc": 302229,
-        "functions": 24004,
+        "loc": 300710,
+        "functions": 23863,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133147,16 +133147,16 @@
         },
         "antipatterns": 69.8
       },
-      "testLoc": 667167,
+      "testLoc": 666818,
       "surfaceArea": {
         "pluginTypes": 46,
-        "hooks": 229,
-        "magicKeys": 267,
+        "hooks": 224,
+        "magicKeys": 266,
         "events": 40,
         "services": 245,
         "yamlFormats": 20,
-        "interfaceMethods": 2969,
-        "globalFunctions": 327
+        "interfaceMethods": 2961,
+        "globalFunctions": 309
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -133210,10 +133210,6 @@
         "hooks": [
           "hook_cache_flush",
           "hook_rebuild",
-          "hook_updater_info",
-          "hook_updater_info_alter",
-          "hook_filetransfer_info",
-          "hook_filetransfer_info_alter",
           "hook_requirements",
           "hook_update_requirements",
           "hook_requirements_alter",
@@ -133378,7 +133374,6 @@
           "hook_views_plugins_display_alter",
           "hook_entity_create",
           "hook_jsonapi_entity_filter_access",
-          "hook_verify_update_archive",
           "hook_update_projects_alter",
           "hook_update_status_alter",
           "hook_config_schema_info_alter",
@@ -133584,7 +133579,6 @@
           "#link",
           "#primary",
           "#secondary",
-          "#messages",
           "#contextual_links",
           "#multilingual",
           "#last",
@@ -135059,13 +135053,6 @@
           "ImageToolkitInterface::isAvailable",
           "ImageToolkitInterface::getSupportedExtensions",
           "ImageToolkitInterface::apply",
-          "UpdaterInterface::isInstalled",
-          "UpdaterInterface::getProjectName",
-          "UpdaterInterface::getInstallDirectory",
-          "UpdaterInterface::getRootDirectoryRelativePath",
-          "UpdaterInterface::canUpdateDirectory",
-          "UpdaterInterface::postInstall",
-          "UpdaterInterface::postUpdate",
           "LockBackendInterface::acquire",
           "LockBackendInterface::lockMayBeAvailable",
           "LockBackendInterface::wait",
@@ -135517,7 +135504,6 @@
           "PathValidatorInterface::isValid",
           "PathMatcherInterface::matchPath",
           "PathMatcherInterface::isFrontPage",
-          "ChmodInterface::chmodJailed",
           "ThemeManagerInterface::render",
           "ThemeManagerInterface::getActiveTheme",
           "ThemeManagerInterface::hasActiveTheme",
@@ -136995,8 +136981,6 @@
           "hide",
           "show",
           "drupal_flush_all_caches",
-          "drupal_get_updaters",
-          "drupal_get_filetransfer_info",
           "drupal_rebuild",
           "install_drupal",
           "install_state_defaults",
@@ -137094,7 +137078,6 @@
           "twig_render_template",
           "claro_system_module_invoked_library_info_alter",
           "claro_system_module_invoked_theme_registry_alter",
-          "authorize_access_allowed",
           "content_translation_translate_access",
           "content_translation_enable_widget",
           "content_translation_language_configuration_element_process",
@@ -137209,11 +137192,6 @@
           "file_field_find_file_reference_column",
           "file_system_settings_submit",
           "block_theme_initialize",
-          "system_authorized_init",
-          "system_authorized_get_url",
-          "system_authorized_batch_processing_url",
-          "system_authorized_run",
-          "system_authorized_batch_process",
           "system_check_directory",
           "system_region_list",
           "system_sort_themes",
@@ -137239,17 +137217,7 @@
           "update_fetch_data",
           "update_fetch_data_finished",
           "update_storage_clear",
-          "update_clear_update_disk_cache",
-          "update_delete_file_if_stale",
-          "update_manager_archive_extract",
-          "update_manager_archive_verify",
-          "update_manager_file_get",
-          "update_manager_batch_project_get",
-          "update_manager_local_transfers_allowed",
           "update_remove_post_updates",
-          "update_authorize_run_update",
-          "update_authorize_batch_copy_project",
-          "update_authorize_update_batch_finished",
           "update_process_project_info",
           "update_calculate_project_data",
           "update_calculate_project_update_status",
@@ -137320,9 +137288,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10714,
-        "deepArrays": 7755,
-        "serviceLocators": 2752
+        "magicKeys": 10649,
+        "deepArrays": 7729,
+        "serviceLocators": 2700
       },
       "hotspots": [
         {
@@ -137729,6 +137697,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "09985a50b2b",
+      "date": "Feb 17, 2026",
+      "type": "Maintenance",
+      "message": "task: #3502975 Remove all legacy code related to authorize.php and FileTransfer",
+      "locDelta": -1526,
+      "ccnDelta": -332,
+      "miDelta": 192,
+      "antipatternsDelta": -124
+    },
+    {
+      "hash": "549c6fb943a",
+      "date": "Feb 17, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3573903 Remove unused SystemManager::$menuItems property",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "31b727dc4f6",
+      "date": "Feb 17, 2026",
+      "type": "Bug",
+      "message": "fix: #3573856 SiteConfigureForm properties need to be reset after module install",
+      "locDelta": 10,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "d3b7a5979d4",
+      "date": "Feb 17, 2026",
+      "type": "Bug",
+      "message": "fix: #2982853 Menu settings and path alias details should be closed even with va",
+      "locDelta": -2,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -3
+    },
     {
       "hash": "99d71d7d791",
       "date": "Feb 16, 2026",
@@ -138688,46 +138696,6 @@
       "ccnDelta": -1,
       "miDelta": 3,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "835b45edeeb",
-      "date": "Jan 12, 2026",
-      "type": "Maintenance",
-      "message": "task: #3557053 Stop passing null as",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": -3,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "27e9d0c2730",
-      "date": "Jan 12, 2026",
-      "type": "Bug",
-      "message": "fix: #3061838 Email element does not have default #ajax event",
-      "locDelta": 1,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "4f08750a652",
-      "date": "Jan 12, 2026",
-      "type": "Bug",
-      "message": "fix: #3565703 block_content post update fails if views module is disabled",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "52737f95caa",
-      "date": "Jan 09, 2026",
-      "type": "Bug",
-      "message": "fix: #3565937 Workaround PHP bug with fibers and __get()",
-      "locDelta": 17,
-      "ccnDelta": 7,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138837,7 +138805,7 @@
     },
     {
       "year": 2026,
-      "commits": 247
+      "commits": 258
     }
   ]
 }
