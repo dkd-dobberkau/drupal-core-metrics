@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-18T01:46:10.062394",
+  "generated": "2026-02-19T01:46:00.028637",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 116,
+      "total": 126,
       "features": 6,
-      "bugs": 29,
-      "maintenance": 81,
+      "bugs": 33,
+      "maintenance": 87,
       "unknown": 0
     }
   ],
@@ -133133,21 +133133,21 @@
     },
     {
       "date": "2026-02",
-      "commit": "96e8b01f",
+      "commit": "6aaf45ef",
       "production": {
-        "loc": 300710,
-        "functions": 23863,
+        "loc": 300869,
+        "functions": 23840,
         "ccn": {
           "avg": 2.5,
           "p95": 8
         },
         "mi": {
-          "avg": 87.4,
-          "p5": 85
+          "avg": 87.3,
+          "p5": 84
         },
         "antipatterns": 69.8
       },
-      "testLoc": 666818,
+      "testLoc": 666805,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 224,
@@ -133155,7 +133155,7 @@
         "events": 40,
         "services": 245,
         "yamlFormats": 20,
-        "interfaceMethods": 2961,
+        "interfaceMethods": 2951,
         "globalFunctions": 309
       },
       "surfaceAreaLists": {
@@ -135919,7 +135919,6 @@
           "WorkspaceManagerInterface::switchToLive",
           "WorkspaceManagerInterface::executeInWorkspace",
           "WorkspaceManagerInterface::executeOutsideWorkspace",
-          "WorkspaceManagerInterface::purgeDeletedWorkspacesBatch",
           "WorkspaceTrackerInterface::trackEntity",
           "WorkspaceTrackerInterface::getTrackedEntities",
           "WorkspaceTrackerInterface::getTrackedEntitiesForListing",
@@ -135968,15 +135967,6 @@
           "WorkspaceInformationInterface::isEntityIgnored",
           "WorkspaceInformationInterface::isEntityTypeIgnored",
           "WorkspaceInformationInterface::isEntityDeletable",
-          "WorkspaceAssociationInterface::trackEntity",
-          "WorkspaceAssociationInterface::workspaceInsert",
-          "WorkspaceAssociationInterface::getTrackedEntities",
-          "WorkspaceAssociationInterface::getTrackedEntitiesForListing",
-          "WorkspaceAssociationInterface::getAssociatedRevisions",
-          "WorkspaceAssociationInterface::getAssociatedInitialRevisions",
-          "WorkspaceAssociationInterface::getEntityTrackingWorkspaceIds",
-          "WorkspaceAssociationInterface::deleteAssociations",
-          "WorkspaceAssociationInterface::initializeWorkspace",
           "LocaleProjectStorageInterface::get",
           "LocaleProjectStorageInterface::getMultiple",
           "LocaleProjectStorageInterface::set",
@@ -137288,18 +137278,18 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10649,
-        "deepArrays": 7729,
-        "serviceLocators": 2700
+        "magicKeys": 10660,
+        "deepArrays": 7730,
+        "serviceLocators": 2704
       },
       "hotspots": [
         {
-          "name": "SystemRequirements::checkRequirements",
-          "file": "modules/system/src/Install/Requirements/SystemRequirements.php",
-          "ccn": 222,
-          "loc": 1290,
+          "name": "SystemRequirementsHooks::checkRequirements",
+          "file": "modules/system/src/Hook/SystemRequirementsHooks.php",
+          "ccn": 181,
+          "loc": 1224,
           "mi": 0,
-          "antipatterns": 84
+          "antipatterns": 82
         },
         {
           "name": "IconMimeTypes::getGenericMimeType",
@@ -137372,6 +137362,14 @@
           "loc": 147,
           "mi": 42,
           "antipatterns": 11
+        },
+        {
+          "name": "SystemRequirements::checkRequirements",
+          "file": "modules/system/src/Install/Requirements/SystemRequirements.php",
+          "ccn": 56,
+          "loc": 374,
+          "mi": 22,
+          "antipatterns": 17
         },
         {
           "name": "ViewsThemeHooks::preprocessViewsViewTable",
@@ -137684,19 +137682,71 @@
           "loc": 65,
           "mi": 66,
           "antipatterns": 0
-        },
-        {
-          "name": "SqlContentEntityStorage::saveToDedicatedTables",
-          "file": "lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php",
-          "ccn": 30,
-          "loc": 100,
-          "mi": 57,
-          "antipatterns": 0
         }
       ]
     }
   ],
   "commits": [
+    {
+      "hash": "3c7b7654433",
+      "date": "Feb 18, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571052 Remove D12 deprecated code from Drupal/Components",
+      "locDelta": -8,
+      "ccnDelta": -3,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "88dc1323f7f",
+      "date": "Feb 18, 2026",
+      "type": "Bug",
+      "message": "fix: #3565020 Set the Drupal\\views\\ViewsData::$fullyLoaded property to TRUE only",
+      "locDelta": 9,
+      "ccnDelta": 4,
+      "miDelta": -5,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "db2875d5ec8",
+      "date": "Feb 18, 2026",
+      "type": "Maintenance",
+      "message": "task: #3525077 Remove deprecated paths from the Database API & friends",
+      "locDelta": -112,
+      "ccnDelta": -10,
+      "miDelta": 23,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "648ed214a99",
+      "date": "Feb 18, 2026",
+      "type": "Maintenance",
+      "message": "task: #3570238 Deprecate remaining functions in taxonomy",
+      "locDelta": 43,
+      "ccnDelta": 16,
+      "miDelta": -17,
+      "antipatternsDelta": 6
+    },
+    {
+      "hash": "686e984d29b",
+      "date": "Feb 18, 2026",
+      "type": "Maintenance",
+      "message": "task: #3573868 Remove deprecated code from Workspaces and Workspace UI modules",
+      "locDelta": -95,
+      "ccnDelta": -31,
+      "miDelta": 2,
+      "antipatternsDelta": -4
+    },
+    {
+      "hash": "e4f6bb432ce",
+      "date": "Feb 18, 2026",
+      "type": "Maintenance",
+      "message": "task: #3554134 Begin cleaning up system install requirements",
+      "locDelta": 322,
+      "ccnDelta": 15,
+      "miDelta": -78,
+      "antipatternsDelta": 14
+    },
     {
       "hash": "09985a50b2b",
       "date": "Feb 17, 2026",
@@ -138636,66 +138686,6 @@
       "ccnDelta": 5,
       "miDelta": -2,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "2c691e8e1c9",
-      "date": "Jan 13, 2026",
-      "type": "Bug",
-      "message": "fix: #3505182 An entity without a label causes an uncaught exception for the nav",
-      "locDelta": 14,
-      "ccnDelta": 4,
-      "miDelta": -3,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "0e8fff5a16c",
-      "date": "Jan 13, 2026",
-      "type": "Bug",
-      "message": "fix: #1522154 Saving non-default revisions shouldn't trigger a search reindex",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "45f43f349a2",
-      "date": "Jan 12, 2026",
-      "type": "Bug",
-      "message": "fix: #2828556 Display meaningful error messages according to the link type",
-      "locDelta": 12,
-      "ccnDelta": 4,
-      "miDelta": -4,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "584cb6e76c5",
-      "date": "Jan 12, 2026",
-      "type": "Bug",
-      "message": "fix: #3557014 PageDisplayVariant does not transmit cache metadata",
-      "locDelta": 5,
-      "ccnDelta": 0,
-      "miDelta": -4,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "bd8e5e585d7",
-      "date": "Jan 12, 2026",
-      "type": "Maintenance",
-      "message": "task: #3557053 Stop passing null as $deserialization_target_class",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": -3,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "e33e42138b1",
-      "date": "Jan 12, 2026",
-      "type": "Unknown",
-      "message": "Revert \"task: #3557053 Stop passing null as\"",
-      "locDelta": -3,
-      "ccnDelta": -1,
-      "miDelta": 3,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138805,7 +138795,7 @@
     },
     {
       "year": 2026,
-      "commits": 258
+      "commits": 268
     }
   ]
 }
