@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-20T01:40:09.069914",
+  "generated": "2026-02-21T01:39:49.783745",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 129,
+      "total": 133,
       "features": 6,
-      "bugs": 33,
-      "maintenance": 88,
+      "bugs": 34,
+      "maintenance": 91,
       "unknown": 2
     }
   ],
@@ -133133,9 +133133,9 @@
     },
     {
       "date": "2026-02",
-      "commit": "090abaf4",
+      "commit": "54bc9308",
       "production": {
-        "loc": 300859,
+        "loc": 300836,
         "functions": 23840,
         "ccn": {
           "avg": 2.5,
@@ -133145,9 +133145,9 @@
           "avg": 87.3,
           "p5": 84
         },
-        "antipatterns": 69.8
+        "antipatterns": 69.7
       },
-      "testLoc": 666811,
+      "testLoc": 666819,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 224,
@@ -133156,7 +133156,7 @@
         "services": 245,
         "yamlFormats": 20,
         "interfaceMethods": 2951,
-        "globalFunctions": 309
+        "globalFunctions": 307
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -137267,8 +137267,6 @@
           "node_access_rebuild",
           "node_reindex_node_search",
           "node_mass_update",
-          "comment_uri",
-          "comment_preview",
           "toolbar_menu_navigation_links",
           "toolbar_get_rendered_subtrees",
           "responsive_image_get_image_dimensions",
@@ -137278,9 +137276,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10658,
+        "magicKeys": 10659,
         "deepArrays": 7724,
-        "serviceLocators": 2704
+        "serviceLocators": 2699
       },
       "hotspots": [
         {
@@ -137687,6 +137685,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "54bc9308376",
+      "date": "Feb 20, 2026",
+      "type": "Bug",
+      "message": "fix: #3562072 Menu link content export with dependencies doesn't include parent ",
+      "locDelta": 42,
+      "ccnDelta": 7,
+      "miDelta": -2,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "1c2aa7b02d7",
+      "date": "Feb 20, 2026",
+      "type": "Maintenance",
+      "message": "task: #3574661 Remove deprecated code from comments module",
+      "locDelta": -69,
+      "ccnDelta": -14,
+      "miDelta": 11,
+      "antipatternsDelta": -5
+    },
+    {
+      "hash": "f89970669b8",
+      "date": "Feb 20, 2026",
+      "type": "Maintenance",
+      "message": "task: #3570693 Do not render navigation top bar with bigpipe to avoid layout shi",
+      "locDelta": 4,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "090abaf440a",
       "date": "Feb 19, 2026",
@@ -138656,36 +138684,6 @@
       "ccnDelta": 2,
       "miDelta": -1,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "508e5ebfd25",
-      "date": "Jan 19, 2026",
-      "type": "Bug",
-      "message": "fix: #3389633 SwitchShortcutSet form does not set access on machine name element",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "ce83a049601",
-      "date": "Jan 19, 2026",
-      "type": "Unknown",
-      "message": "Revert \"fix: #3516264 CKEditor 5 loads all plugin translations on AJAX operation",
-      "locDelta": -1,
-      "ccnDelta": -2,
-      "miDelta": 1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "4d11c55dcb2",
-      "date": "Jan 19, 2026",
-      "type": "Bug",
-      "message": "fix: #2940605 Can only intentionally re-render an entity with references 20 time",
-      "locDelta": 8,
-      "ccnDelta": 3,
-      "miDelta": 16,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138795,7 +138793,7 @@
     },
     {
       "year": 2026,
-      "commits": 271
+      "commits": 275
     }
   ]
 }
