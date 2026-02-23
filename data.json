@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-22T01:42:33.704896",
+  "generated": "2026-02-23T01:44:16.113209",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 133,
+      "total": 141,
       "features": 6,
-      "bugs": 34,
-      "maintenance": 91,
+      "bugs": 36,
+      "maintenance": 97,
       "unknown": 2
     }
   ],
@@ -133133,10 +133133,10 @@
     },
     {
       "date": "2026-02",
-      "commit": "54bc9308",
+      "commit": "34cfba50",
       "production": {
-        "loc": 300836,
-        "functions": 23840,
+        "loc": 300294,
+        "functions": 23793,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133145,18 +133145,18 @@
           "avg": 87.3,
           "p5": 84
         },
-        "antipatterns": 69.7
+        "antipatterns": 69.8
       },
-      "testLoc": 666819,
+      "testLoc": 666609,
       "surfaceArea": {
-        "pluginTypes": 46,
-        "hooks": 224,
+        "pluginTypes": 45,
+        "hooks": 222,
         "magicKeys": 266,
         "events": 40,
         "services": 245,
         "yamlFormats": 20,
-        "interfaceMethods": 2951,
-        "globalFunctions": 307
+        "interfaceMethods": 2946,
+        "globalFunctions": 300
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -133172,7 +133172,6 @@
           "FormatterPluginManager",
           "MailManager",
           "QueueWorkerManager",
-          "ArchiverManager",
           "ActionManager",
           "ElementInfoManager",
           "BlockManager",
@@ -133386,7 +133385,6 @@
           "hook_user_cancel_methods_alter",
           "hook_system_themes_page_alter",
           "hook_runtime_requirements_alter",
-          "hook_archiver_info_alter",
           "hook_editor_xss_filter_alter",
           "hook_editor_js_settings_alter",
           "hook_views_invalidate_cache",
@@ -133401,7 +133399,6 @@
           "hook_node_update_index",
           "hook_node_search_result",
           "hook_node_search_ranking",
-          "hook_ranking",
           "hook_config_translation_info_alter",
           "hook_node_links_alter",
           "hook_node_access_records",
@@ -134743,10 +134740,6 @@
           "QueueInterface::deleteQueue",
           "QueueWorkerInterface::processItem",
           "OutboundRouteProcessorInterface::processOutbound",
-          "ArchiverInterface::add",
-          "ArchiverInterface::remove",
-          "ArchiverInterface::extract",
-          "ArchiverInterface::listContents",
           "BatchStorageInterface::load",
           "BatchStorageInterface::create",
           "BatchStorageInterface::update",
@@ -136848,7 +136841,6 @@
           "NodeStorageInterface::revisionIds",
           "NodeStorageInterface::userRevisionIds",
           "NodeStorageInterface::countDefaultLanguageRevisions",
-          "NodeStorageInterface::updateType",
           "NodeStorageInterface::clearRevisionsLanguage",
           "NodeInterface::getType",
           "NodeInterface::getTitle",
@@ -137081,7 +137073,6 @@
           "update_fetch_data",
           "update_fetch_data_finished",
           "update_storage_clear",
-          "block_content_add_body_field",
           "automated_cron_settings_submit",
           "file_get_content_headers",
           "file_save_upload",
@@ -137100,7 +137091,6 @@
           "language_get_default_langcode",
           "language_negotiation_url_prefixes_update",
           "language_get_browser_drupal_langcode_mappings",
-          "datetime_type_field_views_data_helper",
           "media_filter_format_edit_form_validate",
           "locale_translate_batch_import_files",
           "locale_translate_get_interface_translation_files",
@@ -137255,18 +137245,13 @@
           "views_element_validate_tags",
           "views_field_default_views_data",
           "views_entity_field_label",
-          "node_title_list",
           "node_type_get_names",
           "node_get_type_label",
-          "node_type_get_description",
-          "node_add_body_field",
           "node_is_page",
+          "node_mass_update",
           "node_access_grants",
-          "node_access_view_all_nodes",
           "node_access_needs_rebuild",
           "node_access_rebuild",
-          "node_reindex_node_search",
-          "node_mass_update",
           "toolbar_menu_navigation_links",
           "toolbar_get_rendered_subtrees",
           "responsive_image_get_image_dimensions",
@@ -137276,9 +137261,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10659,
-        "deepArrays": 7724,
-        "serviceLocators": 2699
+        "magicKeys": 10651,
+        "deepArrays": 7720,
+        "serviceLocators": 2676
       },
       "hotspots": [
         {
@@ -137685,6 +137670,56 @@
     }
   ],
   "commits": [
+    {
+      "hash": "8f8ade46b13",
+      "date": "Feb 22, 2026",
+      "type": "Maintenance",
+      "message": "task: #3574901 Remove deprecated code from datetime and datetime_range module",
+      "locDelta": -13,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "ffea32377c9",
+      "date": "Feb 22, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571874 Remove deprecated code from block_content",
+      "locDelta": -119,
+      "ccnDelta": -27,
+      "miDelta": 18,
+      "antipatternsDelta": -8
+    },
+    {
+      "hash": "69ed67c96da",
+      "date": "Feb 22, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571058 Remove deprecated code from lib/Classloader, lib/Composer, and li",
+      "locDelta": -14,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "637e0e356bc",
+      "date": "Feb 22, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571623 Remove deprecated code from the Node module",
+      "locDelta": -196,
+      "ccnDelta": -35,
+      "miDelta": 19,
+      "antipatternsDelta": -25
+    },
+    {
+      "hash": "78253dd19d1",
+      "date": "Feb 22, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571054 Remove deprecated code from lib/Access, lib/Ajax, and lib/Archive",
+      "locDelta": -200,
+      "ccnDelta": -41,
+      "miDelta": 8,
+      "antipatternsDelta": -2
+    },
     {
       "hash": "54bc9308376",
       "date": "Feb 20, 2026",
@@ -138634,56 +138669,6 @@
       "ccnDelta": 0,
       "miDelta": 1,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "c289125bb75",
-      "date": "Jan 19, 2026",
-      "type": "Bug",
-      "message": "fix: #3502900 Improve error message when updating a field schema with existing d",
-      "locDelta": 7,
-      "ccnDelta": 1,
-      "miDelta": -7,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "5da34e968e9",
-      "date": "Jan 19, 2026",
-      "type": "Maintenance",
-      "message": "task: #3561135 Deprecate passing options array to UploadedFileConstraint",
-      "locDelta": 22,
-      "ccnDelta": 8,
-      "miDelta": -5,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "f2ee3e47285",
-      "date": "Jan 19, 2026",
-      "type": "Bug",
-      "message": "fix: #3450792 Only set #group is status field exists in NodeForm",
-      "locDelta": 2,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "7b7712f0891",
-      "date": "Jan 19, 2026",
-      "type": "Feature",
-      "message": "feat: #3397418 Ensure origin headers of mails sent using the symfony-based maile",
-      "locDelta": 72,
-      "ccnDelta": 16,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "c32f2c706ce",
-      "date": "Jan 19, 2026",
-      "type": "Bug",
-      "message": "fix: #3560093 $target_url in ViewAjaxController::ajaxView can be NULL",
-      "locDelta": 2,
-      "ccnDelta": 2,
-      "miDelta": -1,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -138793,7 +138778,7 @@
     },
     {
       "year": 2026,
-      "commits": 275
+      "commits": 283
     }
   ]
 }
