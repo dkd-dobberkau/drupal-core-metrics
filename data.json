@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-23T01:44:16.113209",
+  "generated": "2026-02-24T01:43:06.441029",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 141,
-      "features": 6,
+      "total": 149,
+      "features": 7,
       "bugs": 36,
-      "maintenance": 97,
+      "maintenance": 104,
       "unknown": 2
     }
   ],
@@ -133133,10 +133133,10 @@
     },
     {
       "date": "2026-02",
-      "commit": "34cfba50",
+      "commit": "6817f476",
       "production": {
-        "loc": 300294,
-        "functions": 23793,
+        "loc": 299908,
+        "functions": 23742,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133145,18 +133145,18 @@
           "avg": 87.3,
           "p5": 84
         },
-        "antipatterns": 69.8
+        "antipatterns": 69.7
       },
-      "testLoc": 666609,
+      "testLoc": 666344,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 222,
         "magicKeys": 266,
         "events": 40,
-        "services": 245,
+        "services": 244,
         "yamlFormats": 20,
-        "interfaceMethods": 2946,
-        "globalFunctions": 300
+        "interfaceMethods": 2941,
+        "globalFunctions": 297
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -133965,7 +133965,6 @@
           "content_translation",
           "layout",
           "path_processor",
-          "ban",
           "filter",
           "help",
           "help_twig",
@@ -136574,11 +136573,6 @@
           "ImageStyleInterface::addImageEffect",
           "ImageStyleInterface::deleteImageEffect",
           "ImageStyleInterface::supportsUri",
-          "BanIpManagerInterface::isBanned",
-          "BanIpManagerInterface::findAll",
-          "BanIpManagerInterface::banIp",
-          "BanIpManagerInterface::unbanIp",
-          "BanIpManagerInterface::findById",
           "FilterInterface::getType",
           "FilterInterface::getLabel",
           "FilterInterface::getDescription",
@@ -137192,7 +137186,6 @@
           "content_translation_field_sync_widget",
           "image_path_flush",
           "image_style_options",
-          "image_filter_keyword",
           "filter_formats",
           "filter_formats_reset",
           "filter_get_roles_by_format",
@@ -137254,16 +137247,14 @@
           "node_access_rebuild",
           "toolbar_menu_navigation_links",
           "toolbar_get_rendered_subtrees",
-          "responsive_image_get_image_dimensions",
-          "responsive_image_get_mime_type",
           "contact_user_profile_form_submit",
           "contact_form_user_admin_settings_submit"
         ]
       },
       "antipatterns": {
-        "magicKeys": 10651,
-        "deepArrays": 7720,
-        "serviceLocators": 2676
+        "magicKeys": 10635,
+        "deepArrays": 7717,
+        "serviceLocators": 2665
       },
       "hotspots": [
         {
@@ -137670,6 +137661,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "6817f4764fe",
+      "date": "Feb 23, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571886 Remove Ban from core",
+      "locDelta": -288,
+      "ccnDelta": -45,
+      "miDelta": 25,
+      "antipatternsDelta": -18
+    },
+    {
+      "hash": "40419648e79",
+      "date": "Feb 23, 2026",
+      "type": "Feature",
+      "message": "feat: #3558306 Support automatic setter injection using the #[Required] attribut",
+      "locDelta": 14,
+      "ccnDelta": 3,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "c0e6b67e8b2",
+      "date": "Feb 23, 2026",
+      "type": "Maintenance",
+      "message": "task: #3574424 Remove deprecated code from path, path_alias, image, and responsi",
+      "locDelta": -83,
+      "ccnDelta": -20,
+      "miDelta": 0,
+      "antipatternsDelta": -12
+    },
+    {
+      "hash": "f5d6d7d901c",
+      "date": "Feb 23, 2026",
+      "type": "Maintenance",
+      "message": "task: #3569133 Remove shortcut from umami and standard profile and recipe",
+      "locDelta": -33,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "8f8ade46b13",
       "date": "Feb 22, 2026",
@@ -138629,46 +138660,6 @@
       "ccnDelta": 5,
       "miDelta": -4,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "675ec8e209f",
-      "date": "Jan 22, 2026",
-      "type": "Bug",
-      "message": "fix: #3327662 Deleting the system.site:page.front config results in a PHP deprec",
-      "locDelta": 1,
-      "ccnDelta": 2,
-      "miDelta": -1,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "ff724645b20",
-      "date": "Jan 19, 2026",
-      "type": "Bug",
-      "message": "fix: #3562759 ContentEntityBase::hasTranslationChanges() must use loadRevisionUn",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "b13c0284ad9",
-      "date": "Jan 19, 2026",
-      "type": "Bug",
-      "message": "fix: #3532360 Check return value from getCurrentRequest() before calling setRequ",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "98539c4b797",
-      "date": "Jan 19, 2026",
-      "type": "Bug",
-      "message": "fix: #3557953 Drupal\\node\\Hook\\NodeRequirements::runtime throws PHP warning when",
-      "locDelta": -1,
-      "ccnDelta": 0,
-      "miDelta": 1,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138778,7 +138769,7 @@
     },
     {
       "year": 2026,
-      "commits": 283
+      "commits": 291
     }
   ]
 }
