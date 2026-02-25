@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-24T01:43:06.441029",
+  "generated": "2026-02-25T01:47:39.245141",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 149,
+      "total": 151,
       "features": 7,
       "bugs": 36,
-      "maintenance": 104,
+      "maintenance": 106,
       "unknown": 2
     }
   ],
@@ -133133,10 +133133,10 @@
     },
     {
       "date": "2026-02",
-      "commit": "6817f476",
+      "commit": "3c911e9b",
       "production": {
-        "loc": 299908,
-        "functions": 23742,
+        "loc": 299803,
+        "functions": 23731,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133156,7 +133156,7 @@
         "services": 244,
         "yamlFormats": 20,
         "interfaceMethods": 2941,
-        "globalFunctions": 297
+        "globalFunctions": 296
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -137222,7 +137222,6 @@
           "editor_form_filter_admin_form_ajax",
           "editor_form_filter_admin_format_validate",
           "editor_form_filter_admin_format_submit",
-          "editor_load",
           "editor_filter_xss",
           "editor_image_upload_settings_form",
           "views_add_contextual_links",
@@ -137254,7 +137253,7 @@
       "antipatterns": {
         "magicKeys": 10635,
         "deepArrays": 7717,
-        "serviceLocators": 2665
+        "serviceLocators": 2647
       },
       "hotspots": [
         {
@@ -137661,6 +137660,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "95147fb9ba1",
+      "date": "Feb 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3575201 Simple deprecation removal from modules part 1",
+      "locDelta": -105,
+      "ccnDelta": -24,
+      "miDelta": 4,
+      "antipatternsDelta": -18
+    },
     {
       "hash": "6817f4764fe",
       "date": "Feb 23, 2026",
@@ -138650,16 +138659,6 @@
       "ccnDelta": 9,
       "miDelta": -19,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "a0acc2c1005",
-      "date": "Jan 22, 2026",
-      "type": "Bug",
-      "message": "fix: #3561800 Using \\Drupal\\Core\\Database\\Query\\Insert::from() on postgres on a ",
-      "locDelta": 8,
-      "ccnDelta": 5,
-      "miDelta": -4,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138769,7 +138768,7 @@
     },
     {
       "year": 2026,
-      "commits": 291
+      "commits": 293
     }
   ]
 }
