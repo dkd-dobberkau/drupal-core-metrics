@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-26T01:41:50.898172",
+  "generated": "2026-02-27T01:40:14.050612",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 157,
+      "total": 166,
       "features": 7,
-      "bugs": 37,
-      "maintenance": 111,
+      "bugs": 38,
+      "maintenance": 119,
       "unknown": 2
     }
   ],
@@ -133133,10 +133133,10 @@
     },
     {
       "date": "2026-02",
-      "commit": "24b60a5c",
+      "commit": "961e6118",
       "production": {
-        "loc": 298549,
-        "functions": 23615,
+        "loc": 297175,
+        "functions": 23527,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133145,18 +133145,18 @@
           "avg": 87.3,
           "p5": 84
         },
-        "antipatterns": 69.6
+        "antipatterns": 69.1
       },
-      "testLoc": 606863,
+      "testLoc": 603941,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
-        "magicKeys": 265,
+        "magicKeys": 262,
         "events": 40,
-        "services": 243,
+        "services": 242,
         "yamlFormats": 20,
         "interfaceMethods": 2914,
-        "globalFunctions": 294
+        "globalFunctions": 288
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -133659,19 +133659,16 @@
           "#resource",
           "#media",
           "#placeholder_token",
-          "#long",
-          "#tips",
           "#node",
           "#caption",
           "#classes",
           "#base_type",
+          "#tips",
           "#result",
           "#section_storage",
           "#redirect",
           "#in_preview",
           "#extra_field_placeholder_field_name",
-          "#counters",
-          "#general_info",
           "#labels",
           "#bundle_label",
           "#language_types_info",
@@ -133966,7 +133963,6 @@
           "layout_builder",
           "inline_block",
           "field",
-          "migrate_drupal_ui",
           "menu_ui",
           "language_negotiator",
           "language_converter",
@@ -136982,7 +136978,6 @@
           "drupal_current_script_url",
           "drupal_requirements_url",
           "drupal_check_profile",
-          "drupal_requirements_severity",
           "drupal_check_module",
           "install_profile_info",
           "install_check_class_requirements",
@@ -137029,7 +137024,6 @@
           "content_translation_language_configuration_element_process",
           "content_translation_language_configuration_element_validate",
           "content_translation_language_configuration_element_submit",
-          "content_translation_field_sync_widget",
           "locale_translation_batch_update_build",
           "locale_translation_batch_fetch_build",
           "locale_translation_flush_projects",
@@ -137090,9 +137084,7 @@
           "locale_config_batch_update_components",
           "locale_config_batch_build",
           "locale_config_batch_update_default_config_langcodes",
-          "locale_config_batch_set_config_langcodes",
           "locale_config_batch_update_config_translations",
-          "locale_config_batch_refresh_name",
           "locale_config_batch_finished",
           "shortcut_set_edit_access",
           "shortcut_set_switch_access",
@@ -137158,7 +137150,6 @@
           "update_calculate_project_data",
           "update_calculate_project_update_status",
           "text_summary",
-          "ckeditor5_filter_format_edit_form_submit",
           "user_picture_enabled",
           "user_load_by_mail",
           "user_load_by_name",
@@ -137212,16 +137203,15 @@
           "editor_form_filter_admin_format_validate",
           "editor_form_filter_admin_format_submit",
           "editor_filter_xss",
-          "field_ui_form_manage_field_form_submit",
           "automated_cron_settings_submit",
           "toolbar_menu_navigation_links",
           "toolbar_get_rendered_subtrees"
         ]
       },
       "antipatterns": {
-        "magicKeys": 10553,
-        "deepArrays": 7692,
-        "serviceLocators": 2634
+        "magicKeys": 10451,
+        "deepArrays": 7589,
+        "serviceLocators": 2584
       },
       "hotspots": [
         {
@@ -137529,6 +137519,14 @@
           "antipatterns": 0
         },
         {
+          "name": "install_begin_request",
+          "file": "includes/install.core.inc",
+          "ccn": 33,
+          "loc": 148,
+          "mi": 48,
+          "antipatterns": 18
+        },
+        {
           "name": "ThemePreprocess::preprocessTable",
           "file": "lib/Drupal/Core/Theme/ThemePreprocess.php",
           "ccn": 33,
@@ -137609,14 +137607,6 @@
           "antipatterns": 66
         },
         {
-          "name": "install_begin_request",
-          "file": "includes/install.core.inc",
-          "ccn": 30,
-          "loc": 133,
-          "mi": 51,
-          "antipatterns": 18
-        },
-        {
           "name": "drupal_verify_install_file",
           "file": "includes/install.inc",
           "ccn": 30,
@@ -137628,6 +137618,56 @@
     }
   ],
   "commits": [
+    {
+      "hash": "961e61181b8",
+      "date": "Feb 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3572339 Modernize locale.fetch.inc",
+      "locDelta": 39,
+      "ccnDelta": 7,
+      "miDelta": 2,
+      "antipatternsDelta": 3
+    },
+    {
+      "hash": "f215e25ce11",
+      "date": "Feb 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3574714 Remove Migrate Drupal UI from core",
+      "locDelta": -1082,
+      "ccnDelta": -160,
+      "miDelta": 247,
+      "antipatternsDelta": -219
+    },
+    {
+      "hash": "49c2dc16930",
+      "date": "Feb 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3575254 Module deprecation removal part2",
+      "locDelta": -255,
+      "ccnDelta": -67,
+      "miDelta": 41,
+      "antipatternsDelta": -28
+    },
+    {
+      "hash": "89ac5060439",
+      "date": "Feb 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3335756 Drop sequences table in Drupal 12",
+      "locDelta": 3,
+      "ccnDelta": 4,
+      "miDelta": -3,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "0b5ea5baa1c",
+      "date": "Feb 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3575841 Remove deprecations from .inc files (not theme)",
+      "locDelta": -79,
+      "ccnDelta": -18,
+      "miDelta": 1,
+      "antipatternsDelta": -11
+    },
     {
       "hash": "24b60a5c648",
       "date": "Feb 25, 2026",
@@ -138577,56 +138617,6 @@
       "ccnDelta": 2,
       "miDelta": -4,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "ab5a470b20f",
-      "date": "Jan 28, 2026",
-      "type": "Maintenance",
-      "message": "task: #3515347 Reduce run-tests.sh complexity in spawning subprocesses",
-      "locDelta": 34,
-      "ccnDelta": 6,
-      "miDelta": -8,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "b68de1a5f60",
-      "date": "Jan 27, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3564689 Combine multiple cardinality field loading into a single database",
-      "locDelta": 26,
-      "ccnDelta": 8,
-      "miDelta": -6,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "2c5006a3d1e",
-      "date": "Jan 27, 2026",
-      "type": "Feature",
-      "message": "feat: #3566879 Deprecate comment_preview() logic to CommentForm",
-      "locDelta": 26,
-      "ccnDelta": 4,
-      "miDelta": -14,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "6245bc3f3b1",
-      "date": "Jan 23, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3493290 Try to reduce the number of database queries in MenuTreeStorage::",
-      "locDelta": 22,
-      "ccnDelta": 5,
-      "miDelta": -8,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "64584b8c118",
-      "date": "Jan 23, 2026",
-      "type": "Feature",
-      "message": "feat: #3566776 Move _block_content_has_reusable_condition() to a protected metho",
-      "locDelta": 0,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138736,7 +138726,7 @@
     },
     {
       "year": 2026,
-      "commits": 299
+      "commits": 308
     }
   ]
 }
