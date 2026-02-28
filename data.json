@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-27T01:40:14.050612",
+  "generated": "2026-02-28T01:34:47.331581",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2467,10 +2467,10 @@
     },
     {
       "date": "2026-02",
-      "total": 166,
+      "total": 169,
       "features": 7,
       "bugs": 38,
-      "maintenance": 119,
+      "maintenance": 122,
       "unknown": 2
     }
   ],
@@ -133133,10 +133133,10 @@
     },
     {
       "date": "2026-02",
-      "commit": "961e6118",
+      "commit": "f08dfd49",
       "production": {
-        "loc": 297175,
-        "functions": 23527,
+        "loc": 297183,
+        "functions": 23528,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133147,7 +133147,7 @@
         },
         "antipatterns": 69.1
       },
-      "testLoc": 603941,
+      "testLoc": 603945,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137619,6 +137619,16 @@
   ],
   "commits": [
     {
+      "hash": "f08dfd4910e",
+      "date": "Feb 27, 2026",
+      "type": "Maintenance",
+      "message": "task: #3574461 Deprecate not implementing \\Drupal\\layout_builder\\SupportAwareSec",
+      "locDelta": 8,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "961e61181b8",
       "date": "Feb 26, 2026",
       "type": "Maintenance",
@@ -138607,16 +138617,6 @@
       "ccnDelta": -12,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "85468ee47db",
-      "date": "Jan 28, 2026",
-      "type": "Feature",
-      "message": "feat: #3554447 Use #attributes instead of #item_attributes",
-      "locDelta": 5,
-      "ccnDelta": 2,
-      "miDelta": -4,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138726,7 +138726,7 @@
     },
     {
       "year": 2026,
-      "commits": 308
+      "commits": 311
     }
   ]
 }
