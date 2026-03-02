@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-01T01:50:26.009678",
+  "generated": "2026-03-02T01:42:30.292093",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2472,6 +2472,14 @@
       "bugs": 38,
       "maintenance": 122,
       "unknown": 2
+    },
+    {
+      "date": "2026-03",
+      "total": 15,
+      "features": 1,
+      "bugs": 8,
+      "maintenance": 6,
+      "unknown": 0
     }
   ],
   "snapshots": [
@@ -133133,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "f08dfd49",
+      "commit": "9fc3187d",
       "production": {
-        "loc": 297183,
-        "functions": 23528,
+        "loc": 299669,
+        "functions": 23660,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133145,13 +133153,13 @@
           "avg": 87.3,
           "p5": 84
         },
-        "antipatterns": 69.1
+        "antipatterns": 70.7
       },
-      "testLoc": 603945,
+      "testLoc": 604268,
       "surfaceArea": {
         "pluginTypes": 45,
-        "hooks": 221,
-        "magicKeys": 262,
+        "hooks": 224,
+        "magicKeys": 271,
         "events": 40,
         "services": 242,
         "yamlFormats": 20,
@@ -133215,6 +133223,17 @@
           "hook_update_requirements_alter",
           "hook_batch_alter",
           "hook_form_alter",
+          "hook_admin_content_form_ignore_form_ids",
+          "hook_admin_content_form_routes",
+          "hook_admin_content_form_routes_alter",
+          "hook_css_alter",
+          "hook_element_info_alter",
+          "hook_library_info_alter",
+          "hook_page_attachments_alter",
+          "hook_theme_registry_alter",
+          "hook_views_ui_display_tab_alter",
+          "hook_views_ui_display_top_alter",
+          "hook_views_pre_render",
           "hook_transliteration_overrides_alter",
           "hook_file_url_alter",
           "hook_file_mimetype_mapping_alter",
@@ -133242,10 +133261,8 @@
           "hook_schema",
           "hook_ajax_render_alter",
           "hook_page_attachments",
-          "hook_page_attachments_alter",
           "hook_page_top",
           "hook_page_bottom",
-          "hook_element_info_alter",
           "hook_user_format_name_alter",
           "hook_system_breadcrumb_alter",
           "hook_field_info_max_weight",
@@ -133288,14 +133305,11 @@
           "hook_tokens_alter",
           "hook_token_info",
           "hook_token_info_alter",
-          "hook_css_alter",
           "hook_js_alter",
           "hook_js_settings_build",
           "hook_js_settings_alter",
-          "hook_library_info_alter",
           "hook_template_preprocess_default_variables_alter",
           "hook_theme",
-          "hook_theme_registry_alter",
           "hook_contextual_links_alter",
           "hook_node_grants",
           "hook_menu_local_tasks_alter",
@@ -133321,7 +133335,6 @@
           "hook_entity_query_tag__latest_translated_affected_revision_alter",
           "hook_locale_translation_projects_alter",
           "hook_media_source_info_alter",
-          "hook_views_pre_render",
           "hook_views_post_render",
           "hook_local_tasks_alter",
           "hook_image_style_access",
@@ -133363,9 +133376,7 @@
           "hook_block_build_alter",
           "hook_system_themes_page_alter",
           "hook_runtime_requirements_alter",
-          "hook_views_ui_display_tab_alter",
           "hook_views_ui_display_top_links_alter",
-          "hook_views_ui_display_top_alter",
           "hook_views_preview_info_alter",
           "hook_views_plugins_display_alter",
           "hook_entity_create",
@@ -133395,8 +133406,8 @@
           "hook_language_types_info",
           "hook_language_switch_links_alter",
           "hook_tour_tips_alter",
-          "hook_editor_js_settings_alter",
           "hook_editor_xss_filter_alter",
+          "hook_editor_js_settings_alter",
           "hook_field_formatter_settings_summary_alter",
           "hook_field_widget_third_party_settings_form",
           "hook_field_widget_settings_summary_alter",
@@ -133449,10 +133460,26 @@
           "#tree",
           "#summary_attributes",
           "#errors",
+          "#after_build",
+          "#states",
+          "#title_display",
+          "#process",
+          "#open",
+          "#multilingual",
+          "#entity.(?<entityTypeId>.+).canonical#",
+          "#entity.(?<entityTypeId>.+).delete_form#",
+          "#entity.(?<entityTypeId>.+).delete_multiple_form#",
+          "#entity.(?<entityTypeId>.+).edit_form#",
+          "#entity.(?<entityTypeId>.+).add_form#",
+          "#entity.(?<entityTypeId>.+).add_page#",
+          "#entity.(?<entityTypeId>.+).reset_form#",
+          "#entity.(?<entityTypeId>.+).cancel_form#",
+          "#entity.(?<entityTypeId>.+).clone_form#",
+          "#lazy_builder",
+          "#create_placeholder",
+          "#url",
           "#plain_text",
           "#return_value",
-          "#url",
-          "#lazy_builder",
           "#uri",
           "#width",
           "#height",
@@ -133479,7 +133506,6 @@
           "#formatter",
           "#is_multiple",
           "#third_party_settings",
-          "#title_display",
           "#delta",
           "#validate",
           "#submit",
@@ -133491,15 +133517,12 @@
           "#button_type",
           "#field_parents",
           "#element_validate",
-          "#process",
-          "#open",
           "#target_type",
           "#selection_handler",
           "#selection_settings",
           "#validate_reference",
           "#languages",
           "#entity",
-          "#states",
           "#text",
           "#header",
           "#tabledrag",
@@ -133517,7 +133540,6 @@
           "#settings",
           "#lazy_builder_preview",
           "#placeholder_strategy_denylist",
-          "#create_placeholder",
           "#include_fallback",
           "#pre_render",
           "#theme_wrappers",
@@ -133576,10 +133598,8 @@
           "#primary",
           "#secondary",
           "#contextual_links",
-          "#multilingual",
           "#last",
           "#not_found",
-          "#after_build",
           "#upload_validators",
           "#upload_location",
           "#style_name",
@@ -137209,9 +137229,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10451,
-        "deepArrays": 7589,
-        "serviceLocators": 2584
+        "magicKeys": 10618,
+        "deepArrays": 8082,
+        "serviceLocators": 2600
       },
       "hotspots": [
         {
@@ -137618,6 +137638,96 @@
     }
   ],
   "commits": [
+    {
+      "hash": "9fc3187d7cc",
+      "date": "Mar 01, 2026",
+      "type": "Feature",
+      "message": "feat: #3556948 Merging Gin as Admin theme",
+      "locDelta": 2405,
+      "ccnDelta": 634,
+      "miDelta": -658,
+      "antipatternsDelta": 673
+    },
+    {
+      "hash": "4dcc7892403",
+      "date": "Mar 01, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3570235 Deprecate functions in syslog.module",
+      "locDelta": 16,
+      "ccnDelta": 2,
+      "miDelta": 2,
+      "antipatternsDelta": -3
+    },
+    {
+      "hash": "867a3c069c9",
+      "date": "Mar 01, 2026",
+      "type": "Bug",
+      "message": "fix: #3560260 OEmbedIframeController makes responses uncacheable by mistake",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "ac357941fe8",
+      "date": "Mar 01, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3566782 Deprecate block_theme_initialize() and move the logic to a se",
+      "locDelta": 25,
+      "ccnDelta": 5,
+      "miDelta": -8,
+      "antipatternsDelta": 4
+    },
+    {
+      "hash": "efe749343bb",
+      "date": "Mar 01, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3572348 Static cache EntityDataDefinition::getDataType()",
+      "locDelta": 9,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "03d858794c4",
+      "date": "Mar 01, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3572098 JSON:API normalisation caching can be more expensive than normali",
+      "locDelta": 6,
+      "ccnDelta": 2,
+      "miDelta": -2,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "0318f797cdf",
+      "date": "Mar 01, 2026",
+      "type": "Bug",
+      "message": "fix: #3574721 FormBuilder service order causes failure",
+      "locDelta": -4,
+      "ccnDelta": -1,
+      "miDelta": 3,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "f350d615690",
+      "date": "Mar 01, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3568144 Convert editor_filter_xss() to a element.editor service metho",
+      "locDelta": 18,
+      "ccnDelta": 4,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "d1db2f83aad",
+      "date": "Mar 01, 2026",
+      "type": "Bug",
+      "message": "fix: #2613044 Requests are pushed onto the request stack twice, popped once",
+      "locDelta": 10,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "f08dfd4910e",
       "date": "Feb 27, 2026",
@@ -138527,96 +138637,6 @@
       "ccnDelta": 7,
       "miDelta": -21,
       "antipatternsDelta": 5
-    },
-    {
-      "hash": "5d5b25bd598",
-      "date": "Jan 30, 2026",
-      "type": "Bug",
-      "message": "fix: #3564510 TypeError: Drupal\\Core\\Utility\\ThemeRegistry::getGlobalPreprocess(",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "fec030e580d",
-      "date": "Jan 30, 2026",
-      "type": "Feature",
-      "message": "feat: #3505776 Retain asset aggregates for 45 days by default to reduce generati",
-      "locDelta": 20,
-      "ccnDelta": 8,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "a13a7ca220d",
-      "date": "Jan 30, 2026",
-      "type": "Feature",
-      "message": "feat: #3569949 Add a config action to override static menu links",
-      "locDelta": 49,
-      "ccnDelta": 7,
-      "miDelta": -4,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "830d302e307",
-      "date": "Jan 30, 2026",
-      "type": "Feature",
-      "message": "feat: #1874838 Allow exposed blocks to use 'Link display' settings",
-      "locDelta": 6,
-      "ccnDelta": 4,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "b72f6be51e0",
-      "date": "Jan 30, 2026",
-      "type": "Maintenance",
-      "message": "task: #3555532 Since symfony/http-foundation 7.4: Request::get() is deprecated, ",
-      "locDelta": -4,
-      "ccnDelta": 1,
-      "miDelta": -2,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "71d11fd02a6",
-      "date": "Jan 29, 2026",
-      "type": "Maintenance",
-      "message": "task: #3526250 Deprecate use of #access as anything other than an allowed boolea",
-      "locDelta": 6,
-      "ccnDelta": 2,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "5c1021d18ad",
-      "date": "Jan 29, 2026",
-      "type": "Maintenance",
-      "message": "task: #3547349 Move ANONYMOUS_ constants in CommentInterface to new AnonymousCon",
-      "locDelta": 15,
-      "ccnDelta": 1,
-      "miDelta": 3,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "6d59445f1d6",
-      "date": "Jan 28, 2026",
-      "type": "Bug",
-      "message": "fix: #3506444 UserThemeHooks::preprocessUsername() doesn't handle cacheability c",
-      "locDelta": 11,
-      "ccnDelta": 4,
-      "miDelta": -6,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "0895e77862b",
-      "date": "Jan 28, 2026",
-      "type": "Maintenance",
-      "message": "task: #3472008 Avoid JSON:API schema validation by default when assert is enable",
-      "locDelta": -70,
-      "ccnDelta": -12,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138726,7 +138746,7 @@
     },
     {
       "year": 2026,
-      "commits": 311
+      "commits": 326
     }
   ]
 }
