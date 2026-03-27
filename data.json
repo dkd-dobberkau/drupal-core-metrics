@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-26T01:52:46.509865",
+  "generated": "2026-03-27T01:51:46.925356",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 229,
-      "features": 10,
-      "bugs": 60,
-      "maintenance": 158,
+      "total": 236,
+      "features": 12,
+      "bugs": 62,
+      "maintenance": 161,
       "unknown": 1
     }
   ],
@@ -133141,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "f0e5828b",
+      "commit": "e15d32c4",
       "production": {
-        "loc": 288213,
-        "functions": 22799,
+        "loc": 288260,
+        "functions": 22800,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133155,7 +133155,7 @@
         },
         "antipatterns": 72.9
       },
-      "testLoc": 455937,
+      "testLoc": 456359,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137180,7 +137180,7 @@
       },
       "antipatterns": {
         "magicKeys": 10614,
-        "deepArrays": 7998,
+        "deepArrays": 8004,
         "serviceLocators": 2494
       },
       "hotspots": [
@@ -137467,9 +137467,9 @@
         {
           "name": "CommentTokensHooks::tokens",
           "file": "modules/comment/src/Hook/CommentTokensHooks.php",
-          "ccn": 35,
-          "loc": 119,
-          "mi": 52,
+          "ccn": 36,
+          "loc": 120,
+          "mi": 51,
           "antipatterns": 5
         },
         {
@@ -137588,6 +137588,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "65bd47cd354",
+      "date": "Mar 26, 2026",
+      "type": "Bug",
+      "message": "fix: #3578193 CommentTokensHooks passes NULL to UrlHelper::stripDangerousProtoco",
+      "locDelta": 1,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "37a345a2c48",
+      "date": "Mar 26, 2026",
+      "type": "Feature",
+      "message": "feat: #3574012 Add a getFieldValue() method to bypass typed data overhead for sp",
+      "locDelta": 29,
+      "ccnDelta": 5,
+      "miDelta": -5,
+      "antipatternsDelta": 6
+    },
+    {
+      "hash": "fd74ffe5dd8",
+      "date": "Mar 26, 2026",
+      "type": "Bug",
+      "message": "fix: #3569172 Weird language negotiation behavior inside getLanguageSwitchLinks ",
+      "locDelta": 17,
+      "ccnDelta": 5,
+      "miDelta": -10,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "1af5bc1f931",
       "date": "Mar 25, 2026",
@@ -138557,36 +138587,6 @@
       "ccnDelta": -23,
       "miDelta": 0,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "03fc6bda9b2",
-      "date": "Feb 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571595 Remove authorize.php related Twig and CSS from core",
-      "locDelta": -33,
-      "ccnDelta": -6,
-      "miDelta": 9,
-      "antipatternsDelta": -12
-    },
-    {
-      "hash": "6e15fec9ced",
-      "date": "Feb 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #3573484 Remove Contact module from core",
-      "locDelta": -1151,
-      "ccnDelta": -182,
-      "miDelta": 181,
-      "antipatternsDelta": -108
-    },
-    {
-      "hash": "c62b2574a0e",
-      "date": "Feb 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #3459277 Enforce second parameter in BreadcrumbBuilderInterface::applies",
-      "locDelta": -1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -138696,7 +138696,7 @@
     },
     {
       "year": 2026,
-      "commits": 540
+      "commits": 547
     }
   ]
 }
