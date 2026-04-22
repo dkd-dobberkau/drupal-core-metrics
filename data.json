@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-21T02:14:49.734308",
+  "generated": "2026-04-22T02:14:13.035214",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 95,
+      "total": 100,
       "features": 9,
       "bugs": 11,
-      "maintenance": 70,
+      "maintenance": 75,
       "unknown": 5
     }
   ],
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "ed828b00",
+      "commit": "7410b513",
       "production": {
-        "loc": 288648,
-        "functions": 22828,
+        "loc": 288789,
+        "functions": 22845,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133161,9 +133161,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 72.6
+        "antipatterns": 72.5
       },
-      "testLoc": 453647,
+      "testLoc": 453882,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137196,7 +137196,7 @@
       },
       "antipatterns": {
         "magicKeys": 10618,
-        "deepArrays": 7968,
+        "deepArrays": 7967,
         "serviceLocators": 2463
       },
       "hotspots": [
@@ -137604,6 +137604,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "7410b513d52",
+      "date": "Apr 21, 2026",
+      "type": "Maintenance",
+      "message": "task: #3498026 RecipeRunner::processInstall() should allow for installing multip",
+      "locDelta": 139,
+      "ccnDelta": 35,
+      "miDelta": -21,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "ed828b000c3",
       "date": "Apr 20, 2026",
@@ -138593,16 +138603,6 @@
       "ccnDelta": -2,
       "miDelta": -6,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "f72b6b28cdd",
-      "date": "Mar 10, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3571143 Convert BlockHooks::pageTop to attachment in BlockController:",
-      "locDelta": -6,
-      "ccnDelta": -2,
-      "miDelta": -4,
-      "antipatternsDelta": -2
     }
   ],
   "commitsPerYear": [
@@ -138712,7 +138712,7 @@
     },
     {
       "year": 2026,
-      "commits": 674
+      "commits": 679
     }
   ]
 }
