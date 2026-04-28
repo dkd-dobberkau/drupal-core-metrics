@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-27T02:24:25.383791",
+  "generated": "2026-04-28T02:28:36.573770",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 127,
-      "features": 12,
-      "bugs": 16,
-      "maintenance": 92,
+      "total": 135,
+      "features": 14,
+      "bugs": 17,
+      "maintenance": 97,
       "unknown": 7
     }
   ],
@@ -133149,21 +133149,21 @@
     },
     {
       "date": "2026-04",
-      "commit": "3301cb41",
+      "commit": "a2b01208",
       "production": {
-        "loc": 289016,
-        "functions": 22865,
+        "loc": 289662,
+        "functions": 22887,
         "ccn": {
           "avg": 2.5,
           "p95": 8
         },
         "mi": {
-          "avg": 87,
+          "avg": 86.9,
           "p5": 84
         },
         "antipatterns": 72.5
       },
-      "testLoc": 454089,
+      "testLoc": 454682,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137196,8 +137196,8 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10617,
-        "deepArrays": 7978,
+        "magicKeys": 10648,
+        "deepArrays": 7994,
         "serviceLocators": 2463
       },
       "hotspots": [
@@ -137362,6 +137362,14 @@
           "antipatterns": 0
         },
         {
+          "name": "SystemController::themesPage",
+          "file": "modules/system/src/Controller/SystemController.php",
+          "ccn": 44,
+          "loc": 176,
+          "mi": 41,
+          "antipatterns": 10
+        },
+        {
           "name": "DisplayPluginBase::optionsSummary",
           "file": "modules/views/src/Plugin/views/display/DisplayPluginBase.php",
           "ccn": 43,
@@ -137376,14 +137384,6 @@
           "loc": 103,
           "mi": 53,
           "antipatterns": 9
-        },
-        {
-          "name": "SystemController::themesPage",
-          "file": "modules/system/src/Controller/SystemController.php",
-          "ccn": 42,
-          "loc": 167,
-          "mi": 43,
-          "antipatterns": 10
         },
         {
           "name": "SmartDefaultSettings::computeSmartDefaultSettings",
@@ -137605,6 +137605,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "c50266aecf3",
+      "date": "Apr 27, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571172 Deprecate system_sort_themes() and system_check_directory() in sy",
+      "locDelta": 11,
+      "ccnDelta": 2,
+      "miDelta": -3,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "20ee7c834dc",
+      "date": "Apr 27, 2026",
+      "type": "Maintenance",
+      "message": "task: #3530640 Disable the user.login.http route by default and move to REST",
+      "locDelta": 218,
+      "ccnDelta": 44,
+      "miDelta": -47,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "b694283c795",
+      "date": "Apr 27, 2026",
+      "type": "Feature",
+      "message": "feat: #3512962 Add validation to field.storage.*.* indexes",
+      "locDelta": 91,
+      "ccnDelta": 24,
+      "miDelta": -30,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "38336a5b040",
+      "date": "Apr 27, 2026",
+      "type": "Feature",
+      "message": "feat: #3564234 Add display-builder agnostic overview page for display modes",
+      "locDelta": 326,
+      "ccnDelta": 50,
+      "miDelta": -89,
+      "antipatternsDelta": 46
+    },
     {
       "hash": "a2bcba1d161",
       "date": "Apr 24, 2026",
@@ -138564,46 +138604,6 @@
       "ccnDelta": 0,
       "miDelta": -1,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "e58734790f5",
-      "date": "Mar 17, 2026",
-      "type": "Bug",
-      "message": "fix: #3416735 Stream wrappers not registered when installing module's default co",
-      "locDelta": 2,
-      "ccnDelta": 3,
-      "miDelta": -3,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "73c6e0ac22d",
-      "date": "Mar 17, 2026",
-      "type": "Maintenance",
-      "message": "task: #3558292 Support passing container parameters with the Autowire attribute ",
-      "locDelta": 9,
-      "ccnDelta": 2,
-      "miDelta": -9,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "4e0930e0c51",
-      "date": "Mar 16, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3566890 Deprecate and remove procedural code from content_translation",
-      "locDelta": 102,
-      "ccnDelta": 14,
-      "miDelta": 1,
-      "antipatternsDelta": 9
-    },
-    {
-      "hash": "24411d2f3b3",
-      "date": "Mar 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #3575584 Convert Claro to OOP",
-      "locDelta": 115,
-      "ccnDelta": 0,
-      "miDelta": -53,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138713,7 +138713,7 @@
     },
     {
       "year": 2026,
-      "commits": 706
+      "commits": 714
     }
   ]
 }
