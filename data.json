@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-28T02:28:36.573770",
+  "generated": "2026-04-29T02:31:45.818329",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 135,
-      "features": 14,
-      "bugs": 17,
-      "maintenance": 97,
+      "total": 153,
+      "features": 15,
+      "bugs": 24,
+      "maintenance": 107,
       "unknown": 7
     }
   ],
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "a2b01208",
+      "commit": "1f556401",
       "production": {
-        "loc": 289662,
-        "functions": 22887,
+        "loc": 290092,
+        "functions": 22903,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133163,12 +133163,12 @@
         },
         "antipatterns": 72.5
       },
-      "testLoc": 454682,
+      "testLoc": 455276,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
-        "magicKeys": 271,
-        "events": 41,
+        "magicKeys": 275,
+        "events": 42,
         "services": 241,
         "yamlFormats": 19,
         "interfaceMethods": 2902,
@@ -133485,6 +133485,10 @@
           "#label",
           "#items",
           "#active",
+          "#@starterkit:machine_name",
+          "#@starterkit:label",
+          "#@starterkit:machine_class_name",
+          "#@starterkit:label_class_name",
           "#ajax",
           "#pack_id",
           "#icon_id",
@@ -133719,6 +133723,8 @@
           "#result"
         ],
         "events": [
+          "KernelEvents::REQUEST",
+          "KernelEvents::FINISH_REQUEST",
           "ConfigEvents::SAVE",
           "ConfigEvents::DELETE",
           "ConfigEvents::IMPORT_MISSING_CONTENT",
@@ -133733,7 +133739,6 @@
           "KernelEvents::EXCEPTION",
           "RoutingEvents::STATIC",
           "RoutingEvents::ALTER",
-          "KernelEvents::REQUEST",
           "FieldStorageDefinitionEvents::CREATE",
           "KernelEvents::VIEW",
           "KernelEvents::RESPONSE",
@@ -137196,16 +137201,16 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10648,
-        "deepArrays": 7994,
-        "serviceLocators": 2463
+        "magicKeys": 10666,
+        "deepArrays": 8006,
+        "serviceLocators": 2470
       },
       "hotspots": [
         {
           "name": "SystemRequirementsHooks::checkRequirements",
           "file": "modules/system/src/Hook/SystemRequirementsHooks.php",
-          "ccn": 182,
-          "loc": 1227,
+          "ccn": 183,
+          "loc": 1235,
           "mi": 0,
           "antipatterns": 82
         },
@@ -137224,6 +137229,14 @@
           "loc": 269,
           "mi": 24,
           "antipatterns": 3
+        },
+        {
+          "name": "SqlContentEntityStorage::loadFromDedicatedTables",
+          "file": "lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php",
+          "ccn": 69,
+          "loc": 189,
+          "mi": 34,
+          "antipatterns": 14
         },
         {
           "name": "YamlFileLoader::parseDefinition",
@@ -137264,14 +137277,6 @@
           "loc": 285,
           "mi": 28,
           "antipatterns": 90
-        },
-        {
-          "name": "SqlContentEntityStorage::loadFromDedicatedTables",
-          "file": "lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php",
-          "ccn": 57,
-          "loc": 151,
-          "mi": 42,
-          "antipatterns": 11
         },
         {
           "name": "SystemRequirements::checkRequirements",
@@ -137605,6 +137610,136 @@
     }
   ],
   "commits": [
+    {
+      "hash": "d8fb0e0929c",
+      "date": "Apr 28, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3184242 Support brotli compression of assets",
+      "locDelta": 19,
+      "ccnDelta": 6,
+      "miDelta": -9,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "e3857514b3c",
+      "date": "Apr 28, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3587415 Avoid querying for last installed schema definitions twice",
+      "locDelta": 13,
+      "ccnDelta": 2,
+      "miDelta": -10,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "c9798f85aa9",
+      "date": "Apr 28, 2026",
+      "type": "Feature",
+      "message": "feat: #2954834 Add poster image to HTML5 media videos",
+      "locDelta": 136,
+      "ccnDelta": 22,
+      "miDelta": -35,
+      "antipatternsDelta": 22
+    },
+    {
+      "hash": "4c021eac920",
+      "date": "Apr 28, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3561960 Combine the database queries in ::loadFromSharedTables() and ::lo",
+      "locDelta": 38,
+      "ccnDelta": 12,
+      "miDelta": -9,
+      "antipatternsDelta": 4
+    },
+    {
+      "hash": "117fee744a4",
+      "date": "Apr 28, 2026",
+      "type": "Bug",
+      "message": "fix: #3581434 Entity serialization issue in Layout Builder due to content modera",
+      "locDelta": 2,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "051f4387948",
+      "date": "Apr 28, 2026",
+      "type": "Bug",
+      "message": "fix: #3566351 Throwing AccessDeniedException without a route causes PHP errors",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "c3a6c1a5285",
+      "date": "Apr 28, 2026",
+      "type": "Bug",
+      "message": "fix: #3584324 Make the chained fast backend self-heal when last_write_timestamp ",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": -2,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "d5babbbe46e",
+      "date": "Apr 28, 2026",
+      "type": "Bug",
+      "message": "fix: #1797438 HTML5 validation is preventing form submit and not fully accessibl",
+      "locDelta": 12,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "a2ee2493433",
+      "date": "Apr 28, 2026",
+      "type": "Bug",
+      "message": "fix: #3580855 Entity recursive rendering protection is not compatible with Fiber",
+      "locDelta": 4,
+      "ccnDelta": 1,
+      "miDelta": -4,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "95b8775117c",
+      "date": "Apr 28, 2026",
+      "type": "Bug",
+      "message": "fix: #3474070 Allow StarterKit forked themes with prefix",
+      "locDelta": 16,
+      "ccnDelta": 2,
+      "miDelta": -3,
+      "antipatternsDelta": 3
+    },
+    {
+      "hash": "4f2ff40d2b4",
+      "date": "Apr 28, 2026",
+      "type": "Maintenance",
+      "message": "task: #3584329 Re-evaluate skipping the chained fast backend in the installer",
+      "locDelta": -3,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "01c0bc54701",
+      "date": "Apr 28, 2026",
+      "type": "Maintenance",
+      "message": "task: #3580545 Make empty route lookup cacheable",
+      "locDelta": 126,
+      "ccnDelta": 21,
+      "miDelta": -31,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "a0dcfd36e25",
+      "date": "Apr 28, 2026",
+      "type": "Maintenance",
+      "message": "task: #3574727 Deprecate remaining language.module code",
+      "locDelta": 64,
+      "ccnDelta": 13,
+      "miDelta": -9,
+      "antipatternsDelta": 5
+    },
     {
       "hash": "c50266aecf3",
       "date": "Apr 27, 2026",
@@ -138474,136 +138609,6 @@
       "ccnDelta": -16,
       "miDelta": 1,
       "antipatternsDelta": -2
-    },
-    {
-      "hash": "222a555507a",
-      "date": "Mar 24, 2026",
-      "type": "Maintenance",
-      "message": "task: #3580403 Add a 'is temporary' flag to WorkspaceSwitchEvent",
-      "locDelta": 4,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "0b415562467",
-      "date": "Mar 24, 2026",
-      "type": "Maintenance",
-      "message": "task: #3579903 Eliminate Olivero and three test .theme files",
-      "locDelta": 6,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "dcfcfab69eb",
-      "date": "Mar 24, 2026",
-      "type": "Maintenance",
-      "message": "task: #3580662 Deprecate _filter_tips()",
-      "locDelta": 24,
-      "ccnDelta": 7,
-      "miDelta": -5,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "7d554627d8f",
-      "date": "Mar 24, 2026",
-      "type": "Maintenance",
-      "message": "task: #3579899 Remove remaining claro.theme functions",
-      "locDelta": 1,
-      "ccnDelta": -4,
-      "miDelta": -1,
-      "antipatternsDelta": -4
-    },
-    {
-      "hash": "2ed9cb80fae",
-      "date": "Mar 24, 2026",
-      "type": "Bug",
-      "message": "fix: #3577001 LocaleConfigManager::updateConfigTranslations() unconditionally re",
-      "locDelta": 2,
-      "ccnDelta": 2,
-      "miDelta": -2,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "fe7b094eb73",
-      "date": "Mar 20, 2026",
-      "type": "Bug",
-      "message": "fix: #3577711 LanguageEditForm does not display status message after saving",
-      "locDelta": -2,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "b7fce18f77e",
-      "date": "Mar 19, 2026",
-      "type": "Bug",
-      "message": "fix: #3572679 Prevent undefined array key warnings in AddToAllBundles",
-      "locDelta": 0,
-      "ccnDelta": 2,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "6a691af821b",
-      "date": "Mar 19, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3576129 Reduce calls to FieldDefinition::getColumns()",
-      "locDelta": 13,
-      "ccnDelta": 2,
-      "miDelta": -4,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "20efadbbb79",
-      "date": "Mar 19, 2026",
-      "type": "Bug",
-      "message": "fix: #3349201 Big Pipe, logged-in users and 4xx pages",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "9304d695052",
-      "date": "Mar 19, 2026",
-      "type": "Maintenance",
-      "message": "task: #3573870 Remove deprecated code from user and basic_auth module",
-      "locDelta": -192,
-      "ccnDelta": -42,
-      "miDelta": 19,
-      "antipatternsDelta": -12
-    },
-    {
-      "hash": "6b3bd50be53",
-      "date": "Mar 17, 2026",
-      "type": "Bug",
-      "message": "fix: #3575678 Locale checks file mtime but this is tricky if the translation fil",
-      "locDelta": 48,
-      "ccnDelta": 10,
-      "miDelta": -13,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "16b32971c3d",
-      "date": "Mar 17, 2026",
-      "type": "Bug",
-      "message": "fix: #3252278 Complete JSON:API's handling of field (including computed & empty ",
-      "locDelta": 4,
-      "ccnDelta": 1,
-      "miDelta": -2,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "9186041119a",
-      "date": "Mar 17, 2026",
-      "type": "Maintenance",
-      "message": "task: #3566600 Deprecate drupal/core-dev-pinned metapackage",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138713,7 +138718,7 @@
     },
     {
       "year": 2026,
-      "commits": 714
+      "commits": 732
     }
   ]
 }
