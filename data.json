@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-27T00:55:08.463966",
+  "generated": "2026-05-28T00:52:40.591197",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,11 +2491,11 @@
     },
     {
       "date": "2026-05",
-      "total": 91,
+      "total": 94,
       "features": 3,
-      "bugs": 19,
-      "maintenance": 67,
-      "unknown": 2
+      "bugs": 20,
+      "maintenance": 68,
+      "unknown": 3
     }
   ],
   "snapshots": [
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "56aee63b",
+      "commit": "68cf8d51",
       "production": {
-        "loc": 291353,
-        "functions": 22989,
+        "loc": 291135,
+        "functions": 22976,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133171,7 +133171,7 @@
         },
         "antipatterns": 72.1
       },
-      "testLoc": 456562,
+      "testLoc": 456182,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137620,6 +137620,16 @@
   ],
   "commits": [
     {
+      "hash": "21eace16a29",
+      "date": "May 27, 2026",
+      "type": "Unknown",
+      "message": "Revert \"task: #3530640 Disable the user.login.http route by default and move to ",
+      "locDelta": -218,
+      "ccnDelta": -44,
+      "miDelta": 47,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "a1a05d186fa",
       "date": "May 26, 2026",
       "type": "Maintenance",
@@ -138608,16 +138618,6 @@
       "ccnDelta": -2,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "5674bcd77c2",
-      "date": "Apr 13, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3571400 Deprecate functions in menu_ui.module and move to hooks or he",
-      "locDelta": 55,
-      "ccnDelta": 8,
-      "miDelta": -1,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 841
+      "commits": 844
     }
   ]
 }
