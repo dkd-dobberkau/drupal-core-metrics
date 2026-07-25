@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-24T02:17:01.905735",
+  "generated": "2026-07-25T02:14:31.769627",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 92,
+      "total": 98,
       "features": 6,
-      "bugs": 38,
-      "maintenance": 44,
+      "bugs": 40,
+      "maintenance": 48,
       "unknown": 4
     }
   ],
@@ -137642,6 +137642,36 @@
   ],
   "commits": [
     {
+      "hash": "29066acd0c9",
+      "date": "Jul 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3593667 Convert user.module routes to attributes",
+      "locDelta": 189,
+      "ccnDelta": 0,
+      "miDelta": -36,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "6765430cb4d",
+      "date": "Jul 24, 2026",
+      "type": "Bug",
+      "message": "fix: #3604077 DiscardLayoutChangesForm/RevertOverridesForm::getDescription do no",
+      "locDelta": 8,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "2e0db3e82d3",
+      "date": "Jul 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3588332 file_tokens() fails when [file:owner] resolves on a file whose ow",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "4aa1f933844",
       "date": "Jul 24, 2026",
       "type": "Feature",
@@ -137650,6 +137680,16 @@
       "ccnDelta": 1,
       "miDelta": -1,
       "antipatternsDelta": 7
+    },
+    {
+      "hash": "680a81390e1",
+      "date": "Jul 23, 2026",
+      "type": "Maintenance",
+      "message": "task: #3608184 Load multiple cardinality fields with a smaller result set",
+      "locDelta": 35,
+      "ccnDelta": 5,
+      "miDelta": -11,
+      "antipatternsDelta": 0
     },
     {
       "hash": "f6012fd4721",
@@ -138600,46 +138640,6 @@
       "ccnDelta": -1,
       "miDelta": -3,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "12da330a1d3",
-      "date": "May 28, 2026",
-      "type": "Maintenance",
-      "message": "task: #3503843 Remove automatic preloading of all \"public\" routes, cache routes ",
-      "locDelta": -43,
-      "ccnDelta": -15,
-      "miDelta": -8,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "01058045345",
-      "date": "May 27, 2026",
-      "type": "Bug",
-      "message": "fix: #3592341 Fix dot-segment encoding for chained ../ and ./ in generated URLs",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "21eace16a29",
-      "date": "May 27, 2026",
-      "type": "Unknown",
-      "message": "Revert \"task: #3530640 Disable the user.login.http route by default and move to ",
-      "locDelta": -218,
-      "ccnDelta": -44,
-      "miDelta": 47,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "a1a05d186fa",
-      "date": "May 26, 2026",
-      "type": "Maintenance",
-      "message": "task: #3587564 Move search functionality from node to Search module",
-      "locDelta": 65,
-      "ccnDelta": 3,
-      "miDelta": -27,
-      "antipatternsDelta": 3
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 1036
+      "commits": 1042
     }
   ]
 }
