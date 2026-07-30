@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-29T02:10:22.728020",
+  "generated": "2026-07-30T02:05:29.303072",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 125,
-      "features": 6,
-      "bugs": 46,
-      "maintenance": 69,
+      "total": 137,
+      "features": 7,
+      "bugs": 49,
+      "maintenance": 77,
       "unknown": 4
     }
   ],
@@ -137642,6 +137642,26 @@
   ],
   "commits": [
     {
+      "hash": "e179038b408",
+      "date": "Jul 29, 2026",
+      "type": "Bug",
+      "message": "fix: #3209204 Adding existing translation throws \"Invalid translation language s",
+      "locDelta": 5,
+      "ccnDelta": 1,
+      "miDelta": -4,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "5a7489d2a92",
+      "date": "Jul 29, 2026",
+      "type": "Maintenance",
+      "message": "task: #3613344 Remove update_fetch_with_http_fallback",
+      "locDelta": -56,
+      "ccnDelta": -7,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "fbfe9c0cbbb",
       "date": "Jul 29, 2026",
       "type": "Maintenance",
@@ -138620,26 +138640,6 @@
       "ccnDelta": 0,
       "miDelta": -2,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "dfa3792d478",
-      "date": "Jun 03, 2026",
-      "type": "Maintenance",
-      "message": "task: #3486503 Add a file parsing cache collector to replace some uses of FileCa",
-      "locDelta": 87,
-      "ccnDelta": 21,
-      "miDelta": 6,
-      "antipatternsDelta": 3
-    },
-    {
-      "hash": "f30d64c5689",
-      "date": "Jun 02, 2026",
-      "type": "Bug",
-      "message": "fix: #1499532 Respect explicitly set node path alias langcode on save",
-      "locDelta": 8,
-      "ccnDelta": 2,
-      "miDelta": -4,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 1069
+      "commits": 1081
     }
   ]
 }
