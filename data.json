@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-25T03:03:47.200760",
+  "generated": "2026-09-26T03:06:48.941652",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,10 +2523,10 @@
     },
     {
       "date": "2026-09",
-      "total": 153,
+      "total": 155,
       "features": 4,
-      "bugs": 43,
-      "maintenance": 101,
+      "bugs": 44,
+      "maintenance": 102,
       "unknown": 5
     }
   ],
@@ -137657,10 +137657,10 @@
     },
     {
       "date": "2026-09",
-      "commit": "be4d7799",
+      "commit": "b4659e2c",
       "production": {
-        "loc": 287537,
-        "functions": 22686,
+        "loc": 287544,
+        "functions": 22687,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -142078,6 +142078,16 @@
   ],
   "commits": [
     {
+      "hash": "b4659e2c479",
+      "date": "Sep 25, 2026",
+      "type": "Bug",
+      "message": "fix: #3625969 Twig's 3.30 TypeError: Twig\\Runtime\\EscaperRuntime::escape(): Argu",
+      "locDelta": 7,
+      "ccnDelta": 2,
+      "miDelta": 2,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "be4d7799375",
       "date": "Sep 24, 2026",
       "type": "Maintenance",
@@ -143066,16 +143076,6 @@
       "ccnDelta": -6,
       "miDelta": -11,
       "antipatternsDelta": -5
-    },
-    {
-      "hash": "07d6e6935e7",
-      "date": "Aug 19, 2026",
-      "type": "Unknown",
-      "message": "Revert \"feat: #256287 Give roles a description value\"",
-      "locDelta": -35,
-      "ccnDelta": -7,
-      "miDelta": 5,
-      "antipatternsDelta": -8
     }
   ],
   "commitsPerYear": [
@@ -143185,7 +143185,7 @@
     },
     {
       "year": 2026,
-      "commits": 1431
+      "commits": 1433
     }
   ]
 }
