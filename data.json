@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-27T03:00:08.350212",
+  "generated": "2026-09-28T03:09:10.047723",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,10 +2523,10 @@
     },
     {
       "date": "2026-09",
-      "total": 155,
+      "total": 157,
       "features": 4,
       "bugs": 44,
-      "maintenance": 102,
+      "maintenance": 104,
       "unknown": 5
     }
   ],
@@ -137657,19 +137657,19 @@
     },
     {
       "date": "2026-09",
-      "commit": "b4659e2c",
+      "commit": "c321043b",
       "production": {
-        "loc": 287544,
-        "functions": 22687,
+        "loc": 287694,
+        "functions": 22689,
         "ccn": {
           "avg": 2.5,
           "p95": 8
         },
         "mi": {
-          "avg": 87,
+          "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 67.5
+        "antipatterns": 67.2
       },
       "testLoc": 560,
       "surfaceArea": {
@@ -141669,8 +141669,8 @@
       },
       "antipatterns": {
         "magicKeys": 10110,
-        "deepArrays": 7081,
-        "serviceLocators": 2313
+        "deepArrays": 7013,
+        "serviceLocators": 2314
       },
       "hotspots": [
         {
@@ -141954,6 +141954,14 @@
           "antipatterns": 0
         },
         {
+          "name": "Column::validate",
+          "file": "lib/Drupal/Core/Database/SchemaDefinition/Column.php",
+          "ccn": 34,
+          "loc": 58,
+          "mi": 67,
+          "antipatterns": 0
+        },
+        {
           "name": "install_begin_request",
           "file": "includes/install.core.inc",
           "ccn": 33,
@@ -142026,14 +142034,6 @@
           "antipatterns": 2
         },
         {
-          "name": "Column::validate",
-          "file": "lib/Drupal/Core/Database/SchemaDefinition/Column.php",
-          "ccn": 31,
-          "loc": 52,
-          "mi": 70,
-          "antipatterns": 0
-        },
-        {
           "name": "ViewUI::renderPreview",
           "file": "modules/views_ui/src/ViewUI.php",
           "ccn": 31,
@@ -142077,6 +142077,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "c321043bb82",
+      "date": "Sep 28, 2026",
+      "type": "Maintenance",
+      "message": "task: #3557481 Convert hook_schema() implementations to SchemaDefinition - regul",
+      "locDelta": 150,
+      "ccnDelta": 9,
+      "miDelta": -22,
+      "antipatternsDelta": -68
+    },
     {
       "hash": "b4659e2c479",
       "date": "Sep 25, 2026",
@@ -143066,16 +143076,6 @@
       "ccnDelta": 1,
       "miDelta": 1,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "e326830e48a",
-      "date": "Aug 21, 2026",
-      "type": "Maintenance",
-      "message": "task: #3614955 Move library overrides for Toolbar from Claro and Default Admin t",
-      "locDelta": 2,
-      "ccnDelta": -6,
-      "miDelta": -11,
-      "antipatternsDelta": -5
     }
   ],
   "commitsPerYear": [
@@ -143185,7 +143185,7 @@
     },
     {
       "year": 2026,
-      "commits": 1433
+      "commits": 1435
     }
   ]
 }
