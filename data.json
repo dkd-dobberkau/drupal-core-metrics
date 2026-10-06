@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-05T03:36:46.397219",
+  "generated": "2026-10-06T04:18:49.603950",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2531,10 +2531,10 @@
     },
     {
       "date": "2026-10",
-      "total": 10,
+      "total": 13,
       "features": 0,
-      "bugs": 4,
-      "maintenance": 6,
+      "bugs": 5,
+      "maintenance": 8,
       "unknown": 0
     }
   ],
@@ -137665,9 +137665,9 @@
     },
     {
       "date": "2026-10",
-      "commit": "26873db1",
+      "commit": "9493974a",
       "production": {
-        "loc": 287815,
+        "loc": 287817,
         "functions": 22697,
         "ccn": {
           "avg": 2.5,
@@ -142087,6 +142087,26 @@
   ],
   "commits": [
     {
+      "hash": "9493974a25a",
+      "date": "Oct 06, 2026",
+      "type": "Bug",
+      "message": "fix: #3344629 Passing null to parameter #1 ($haystack) of type string is depreca",
+      "locDelta": 0,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "96cfe41327b",
+      "date": "Oct 05, 2026",
+      "type": "Maintenance",
+      "message": "task: #3626105 Release runtime theme registries after destruction",
+      "locDelta": 2,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
       "hash": "528d4178619",
       "date": "Oct 02, 2026",
       "type": "Bug",
@@ -143065,26 +143085,6 @@
       "ccnDelta": 5,
       "miDelta": -1,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "11e948864ef",
-      "date": "Aug 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #345747 Show all DB Connections on Status Page",
-      "locDelta": 22,
-      "ccnDelta": 5,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "308cba9319f",
-      "date": "Aug 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #3590882 Standard profile should not include Olivero anymore, should provi",
-      "locDelta": 14,
-      "ccnDelta": 2,
-      "miDelta": 1,
-      "antipatternsDelta": 6
     }
   ],
   "commitsPerYear": [
@@ -143194,7 +143194,7 @@
     },
     {
       "year": 2026,
-      "commits": 1450
+      "commits": 1453
     }
   ]
 }
