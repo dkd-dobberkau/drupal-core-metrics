@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-09T04:05:51.754974",
+  "generated": "2026-10-10T03:56:16.243594",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2531,10 +2531,10 @@
     },
     {
       "date": "2026-10",
-      "total": 15,
-      "features": 0,
+      "total": 19,
+      "features": 2,
       "bugs": 5,
-      "maintenance": 10,
+      "maintenance": 12,
       "unknown": 0
     }
   ],
@@ -137665,10 +137665,10 @@
     },
     {
       "date": "2026-10",
-      "commit": "c305d653",
+      "commit": "1e10d0d2",
       "production": {
-        "loc": 287814,
-        "functions": 22697,
+        "loc": 288031,
+        "functions": 22703,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137677,7 +137677,7 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 67.2
+        "antipatterns": 67.1
       },
       "testLoc": 560,
       "surfaceArea": {
@@ -142087,6 +142087,36 @@
   ],
   "commits": [
     {
+      "hash": "1e10d0d2a9d",
+      "date": "Oct 10, 2026",
+      "type": "Feature",
+      "message": "feat: #3594337 Add a command to export configuration",
+      "locDelta": 85,
+      "ccnDelta": 11,
+      "miDelta": -21,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "5f4a8ff850d",
+      "date": "Oct 10, 2026",
+      "type": "Feature",
+      "message": "feat: #3594336 Add a command to list modules and themes on a site",
+      "locDelta": 99,
+      "ccnDelta": 18,
+      "miDelta": -26,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "73361685b5f",
+      "date": "Oct 09, 2026",
+      "type": "Maintenance",
+      "message": "task: #3575642 Always free up old container on rebuild, not only in the installe",
+      "locDelta": 33,
+      "ccnDelta": 14,
+      "miDelta": -8,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "9493974a25a",
       "date": "Oct 06, 2026",
       "type": "Bug",
@@ -143055,36 +143085,6 @@
       "ccnDelta": 0,
       "miDelta": 1,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "b1d192950a5",
-      "date": "Aug 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #3610009 Stop discovery of hooks in include files",
-      "locDelta": -10,
-      "ccnDelta": -4,
-      "miDelta": 2,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "ee7c7d2d123",
-      "date": "Aug 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #3303751 Reduce the number of times UpdateRegistry scans for extensions",
-      "locDelta": 24,
-      "ccnDelta": 4,
-      "miDelta": -4,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "8f7a0cbafdf",
-      "date": "Aug 25, 2026",
-      "type": "Feature",
-      "message": "feat: #2871354 Improve \"allowed_html\" to provide a better config diff",
-      "locDelta": 23,
-      "ccnDelta": 5,
-      "miDelta": -1,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143194,7 +143194,7 @@
     },
     {
       "year": 2026,
-      "commits": 1455
+      "commits": 1459
     }
   ]
 }
