@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-14T03:12:37.210687",
+  "generated": "2026-10-15T02:54:36.691475",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2531,11 +2531,11 @@
     },
     {
       "date": "2026-10",
-      "total": 21,
-      "features": 2,
-      "bugs": 5,
+      "total": 26,
+      "features": 3,
+      "bugs": 8,
       "maintenance": 14,
-      "unknown": 0
+      "unknown": 1
     }
   ],
   "snapshots": [
@@ -137665,10 +137665,10 @@
     },
     {
       "date": "2026-10",
-      "commit": "4f9558d8",
+      "commit": "aeca9d71",
       "production": {
-        "loc": 288119,
-        "functions": 22716,
+        "loc": 288321,
+        "functions": 22722,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137687,7 +137687,7 @@
         "events": 43,
         "services": 241,
         "yamlFormats": 16,
-        "interfaceMethods": 2885,
+        "interfaceMethods": 2887,
         "globalFunctions": 252
       },
       "surfaceAreaLists": {
@@ -140279,9 +140279,11 @@
           "ThemeInstallerInterface::install",
           "ThemeInstallerInterface::getThemesToInstall",
           "ThemeInstallerInterface::uninstall",
+          "ThemeInstallerInterface::getThemesToUninstall",
           "ModuleInstallerInterface::install",
           "ModuleInstallerInterface::getModulesToInstall",
           "ModuleInstallerInterface::uninstall",
+          "ModuleInstallerInterface::getModulesToUninstall",
           "ModuleInstallerInterface::validateUninstall",
           "TasksInterface::getTasks",
           "TasksInterface::alter",
@@ -142092,6 +142094,36 @@
   ],
   "commits": [
     {
+      "hash": "bfa52b403dd",
+      "date": "Oct 14, 2026",
+      "type": "Bug",
+      "message": "fix: SA-CORE-2026-015",
+      "locDelta": 2,
+      "ccnDelta": 2,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "299db52e14b",
+      "date": "Oct 14, 2026",
+      "type": "Bug",
+      "message": "fix: SA-CORE-2026-014",
+      "locDelta": 3,
+      "ccnDelta": 3,
+      "miDelta": -2,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "3b94128e929",
+      "date": "Oct 14, 2026",
+      "type": "Feature",
+      "message": "feat: #3594335 Add a module and theme uninstall command",
+      "locDelta": 197,
+      "ccnDelta": 34,
+      "miDelta": -50,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "4f9558d85e7",
       "date": "Oct 12, 2026",
       "type": "Maintenance",
@@ -143060,36 +143092,6 @@
       "ccnDelta": 25,
       "miDelta": -28,
       "antipatternsDelta": 13
-    },
-    {
-      "hash": "d6ae4630b29",
-      "date": "Aug 26, 2026",
-      "type": "Maintenance",
-      "message": "task: #3618772 Move toolbar_alter hook implementations to the toolbar module",
-      "locDelta": -10,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "55c151b4862",
-      "date": "Aug 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #3616275 Use the PECL YAML parser for info file parsing when available",
-      "locDelta": 19,
-      "ccnDelta": 3,
-      "miDelta": -6,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "6a9373d79a2",
-      "date": "Aug 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #3614825 Allow additional modules to be installed alongside the profile mo",
-      "locDelta": 30,
-      "ccnDelta": 8,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143199,7 +143201,7 @@
     },
     {
       "year": 2026,
-      "commits": 1461
+      "commits": 1466
     }
   ]
 }
