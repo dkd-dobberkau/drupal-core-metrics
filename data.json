@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-15T02:54:36.691475",
+  "generated": "2026-10-16T02:48:46.864367",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2531,11 +2531,11 @@
     },
     {
       "date": "2026-10",
-      "total": 26,
+      "total": 34,
       "features": 3,
-      "bugs": 8,
-      "maintenance": 14,
-      "unknown": 1
+      "bugs": 11,
+      "maintenance": 18,
+      "unknown": 2
     }
   ],
   "snapshots": [
@@ -137665,9 +137665,9 @@
     },
     {
       "date": "2026-10",
-      "commit": "aeca9d71",
+      "commit": "e300703d",
       "production": {
-        "loc": 288321,
+        "loc": 288320,
         "functions": 22722,
         "ccn": {
           "avg": 2.5,
@@ -141685,7 +141685,7 @@
       },
       "antipatterns": {
         "magicKeys": 10110,
-        "deepArrays": 7013,
+        "deepArrays": 7012,
         "serviceLocators": 2317
       },
       "hotspots": [
@@ -142093,6 +142093,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "ad11ba71c0f",
+      "date": "Oct 15, 2026",
+      "type": "Bug",
+      "message": "fix: #3628096 Default Admin attaches a library it doesn't define",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -2
+    },
     {
       "hash": "bfa52b403dd",
       "date": "Oct 14, 2026",
@@ -143082,16 +143092,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "f31a5d865e9",
-      "date": "Aug 26, 2026",
-      "type": "Maintenance",
-      "message": "task: #3534109 Permanently maintain a sandbox directory in package_manager",
-      "locDelta": 161,
-      "ccnDelta": 25,
-      "miDelta": -28,
-      "antipatternsDelta": 13
     }
   ],
   "commitsPerYear": [
@@ -143201,7 +143201,7 @@
     },
     {
       "year": 2026,
-      "commits": 1466
+      "commits": 1474
     }
   ]
 }
