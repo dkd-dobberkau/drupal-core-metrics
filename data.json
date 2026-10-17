@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-16T02:48:46.864367",
+  "generated": "2026-10-17T02:38:22.471142",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2531,10 +2531,10 @@
     },
     {
       "date": "2026-10",
-      "total": 34,
+      "total": 46,
       "features": 3,
-      "bugs": 11,
-      "maintenance": 18,
+      "bugs": 16,
+      "maintenance": 25,
       "unknown": 2
     }
   ],
@@ -137665,9 +137665,9 @@
     },
     {
       "date": "2026-10",
-      "commit": "e300703d",
+      "commit": "dbfce851",
       "production": {
-        "loc": 288320,
+        "loc": 288339,
         "functions": 22722,
         "ccn": {
           "avg": 2.5,
@@ -141685,8 +141685,8 @@
       },
       "antipatterns": {
         "magicKeys": 10110,
-        "deepArrays": 7012,
-        "serviceLocators": 2317
+        "deepArrays": 7011,
+        "serviceLocators": 2318
       },
       "hotspots": [
         {
@@ -142093,6 +142093,66 @@
     }
   ],
   "commits": [
+    {
+      "hash": "89973d2da24",
+      "date": "Oct 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3223012 oEmbed system should validate that downloaded thumbnails are vali",
+      "locDelta": 22,
+      "ccnDelta": 4,
+      "miDelta": -8,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "1753b953190",
+      "date": "Oct 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571580 add a generic bundle type entity delete form",
+      "locDelta": -23,
+      "ccnDelta": -1,
+      "miDelta": -10,
+      "antipatternsDelta": -2
+    },
+    {
+      "hash": "40668f03b2d",
+      "date": "Oct 16, 2026",
+      "type": "Bug",
+      "message": "fix: #3617719 Field block does not display placeholder fallback in preview mode",
+      "locDelta": 5,
+      "ccnDelta": 0,
+      "miDelta": -3,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "ca18edacfe9",
+      "date": "Oct 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #2448545 Modernize form select option helpers",
+      "locDelta": 12,
+      "ccnDelta": 2,
+      "miDelta": -1,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "65625decc4a",
+      "date": "Oct 16, 2026",
+      "type": "Bug",
+      "message": "fix: #3114467 'Negate' form value for condition plugins should be cast to boolea",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "af25ad71fe8",
+      "date": "Oct 16, 2026",
+      "type": "Bug",
+      "message": "fix: #3614737 Reset button doesn't appear for table column sort",
+      "locDelta": 2,
+      "ccnDelta": 2,
+      "miDelta": -1,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "ad11ba71c0f",
       "date": "Oct 15, 2026",
@@ -143032,66 +143092,6 @@
       "ccnDelta": 13,
       "miDelta": -25,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "9758a3ba6fb",
-      "date": "Aug 27, 2026",
-      "type": "Maintenance",
-      "message": "task: #3580152 Deprecate theme-settings.php files",
-      "locDelta": 9,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "1ae585cd5db",
-      "date": "Aug 26, 2026",
-      "type": "Maintenance",
-      "message": "task: #3618358 Deprecate remaining underscore functions in locale",
-      "locDelta": 39,
-      "ccnDelta": 9,
-      "miDelta": -1,
-      "antipatternsDelta": -6
-    },
-    {
-      "hash": "bd98d7e72ba",
-      "date": "Aug 26, 2026",
-      "type": "Maintenance",
-      "message": "task: #3555115 Add a UploadedFilesExtractor and remove duplicate code",
-      "locDelta": 6,
-      "ccnDelta": 1,
-      "miDelta": 5,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "3c3b0152992",
-      "date": "Aug 26, 2026",
-      "type": "Maintenance",
-      "message": "task: #3539178 Extract _user_mail_notify() into a user NotificationHandler",
-      "locDelta": 171,
-      "ccnDelta": 34,
-      "miDelta": -16,
-      "antipatternsDelta": 7
-    },
-    {
-      "hash": "e24cd7972d9",
-      "date": "Aug 26, 2026",
-      "type": "Maintenance",
-      "message": "task: #3566626 Use property hooks for entity reference item and list entity and ",
-      "locDelta": 9,
-      "ccnDelta": -7,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "4c585253d2e",
-      "date": "Aug 26, 2026",
-      "type": "Maintenance",
-      "message": "task: #3618909 Remove toolbar help text not in the module",
-      "locDelta": 2,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143201,7 +143201,7 @@
     },
     {
       "year": 2026,
-      "commits": 1474
+      "commits": 1486
     }
   ]
 }
