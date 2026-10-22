@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-21T03:03:16.754049",
+  "generated": "2026-10-22T03:00:29.264422",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2531,10 +2531,10 @@
     },
     {
       "date": "2026-10",
-      "total": 56,
+      "total": 58,
       "features": 3,
-      "bugs": 22,
-      "maintenance": 29,
+      "bugs": 23,
+      "maintenance": 30,
       "unknown": 2
     }
   ],
@@ -137665,7 +137665,7 @@
     },
     {
       "date": "2026-10",
-      "commit": "e0107674",
+      "commit": "89df3a06",
       "production": {
         "loc": 288336,
         "functions": 22722,
@@ -137677,7 +137677,7 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 67.1
+        "antipatterns": 67
       },
       "testLoc": 560,
       "surfaceArea": {
@@ -141685,7 +141685,7 @@
       },
       "antipatterns": {
         "magicKeys": 10110,
-        "deepArrays": 7011,
+        "deepArrays": 7003,
         "serviceLocators": 2318
       },
       "hotspots": [
@@ -142093,6 +142093,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "89df3a065de",
+      "date": "Oct 21, 2026",
+      "type": "Bug",
+      "message": "fix: #3631439 Fix plural strings with the same singular as another string",
+      "locDelta": 0,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -9
+    },
     {
       "hash": "a50836dbcfe",
       "date": "Oct 19, 2026",
@@ -143082,16 +143092,6 @@
       "ccnDelta": 3,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "7d8143e6d2d",
-      "date": "Aug 27, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3587797 Move views data cache to cache_discovery",
-      "locDelta": 8,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143201,7 +143201,7 @@
     },
     {
       "year": 2026,
-      "commits": 1496
+      "commits": 1498
     }
   ]
 }
