@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-22T03:00:29.264422",
+  "generated": "2026-10-23T03:03:23.788941",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2531,9 +2531,9 @@
     },
     {
       "date": "2026-10",
-      "total": 58,
+      "total": 59,
       "features": 3,
-      "bugs": 23,
+      "bugs": 24,
       "maintenance": 30,
       "unknown": 2
     }
@@ -137665,9 +137665,9 @@
     },
     {
       "date": "2026-10",
-      "commit": "89df3a06",
+      "commit": "cf863a1d",
       "production": {
-        "loc": 288336,
+        "loc": 288340,
         "functions": 22722,
         "ccn": {
           "avg": 2.5,
@@ -141685,7 +141685,7 @@
       },
       "antipatterns": {
         "magicKeys": 10110,
-        "deepArrays": 7003,
+        "deepArrays": 7005,
         "serviceLocators": 2318
       },
       "hotspots": [
@@ -141732,10 +141732,10 @@
         {
           "name": "FieldViewsDataProvider::defaultFieldImplementation",
           "file": "modules/views/src/FieldViewsDataProvider.php",
-          "ccn": 61,
-          "loc": 386,
-          "mi": 21,
-          "antipatterns": 60
+          "ccn": 62,
+          "loc": 389,
+          "mi": 20,
+          "antipatterns": 62
         },
         {
           "name": "DisplayPluginBase::buildOptionsForm",
@@ -142018,6 +142018,14 @@
           "antipatterns": 8
         },
         {
+          "name": "EntityViewsData::mapSingleFieldViewsData",
+          "file": "modules/views/src/EntityViewsData.php",
+          "ccn": 32,
+          "loc": 87,
+          "mi": 59,
+          "antipatterns": 0
+        },
+        {
           "name": "NumericFilter::valueForm",
           "file": "modules/views/src/Plugin/views/filter/NumericFilter.php",
           "ccn": 32,
@@ -142066,14 +142074,6 @@
           "antipatterns": 63
         },
         {
-          "name": "EntityViewsData::mapSingleFieldViewsData",
-          "file": "modules/views/src/EntityViewsData.php",
-          "ccn": 31,
-          "loc": 86,
-          "mi": 60,
-          "antipatterns": 0
-        },
-        {
           "name": "ViewsDataHelper::fetchFields",
           "file": "modules/views/src/ViewsDataHelper.php",
           "ccn": 31,
@@ -142093,6 +142093,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "cf863a1d55e",
+      "date": "Oct 22, 2026",
+      "type": "Bug",
+      "message": "fix: #2735997 Decimal separator and precision settings unavailable when aggregat",
+      "locDelta": 4,
+      "ccnDelta": 2,
+      "miDelta": -2,
+      "antipatternsDelta": 2
+    },
     {
       "hash": "89df3a065de",
       "date": "Oct 21, 2026",
@@ -143082,16 +143092,6 @@
       "ccnDelta": 4,
       "miDelta": -2,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "e09f5a64800",
-      "date": "Aug 28, 2026",
-      "type": "Bug",
-      "message": "fix: #3556506 Respect allowed_formats settings in \\Drupal\\text\\Plugin\\Field\\Fiel",
-      "locDelta": 5,
-      "ccnDelta": 3,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143201,7 +143201,7 @@
     },
     {
       "year": 2026,
-      "commits": 1498
+      "commits": 1499
     }
   ]
 }
