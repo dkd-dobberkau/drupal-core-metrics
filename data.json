@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-23T03:03:23.788941",
+  "generated": "2026-10-24T02:59:37.408374",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2531,10 +2531,10 @@
     },
     {
       "date": "2026-10",
-      "total": 59,
+      "total": 61,
       "features": 3,
-      "bugs": 24,
-      "maintenance": 30,
+      "bugs": 25,
+      "maintenance": 31,
       "unknown": 2
     }
   ],
@@ -137665,9 +137665,9 @@
     },
     {
       "date": "2026-10",
-      "commit": "cf863a1d",
+      "commit": "ecc5d942",
       "production": {
-        "loc": 288340,
+        "loc": 288355,
         "functions": 22722,
         "ccn": {
           "avg": 2.5,
@@ -142094,6 +142094,16 @@
   ],
   "commits": [
     {
+      "hash": "ecc5d9423f1",
+      "date": "Oct 24, 2026",
+      "type": "Bug",
+      "message": "fix: #3218381 #file_value_callbacks bypass the TrustedCallbackInterface protecti",
+      "locDelta": 15,
+      "ccnDelta": 1,
+      "miDelta": -3,
+      "antipatternsDelta": -1
+    },
+    {
       "hash": "cf863a1d55e",
       "date": "Oct 22, 2026",
       "type": "Bug",
@@ -143082,16 +143092,6 @@
       "ccnDelta": -15,
       "miDelta": 8,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "bad194b809b",
-      "date": "Aug 28, 2026",
-      "type": "Maintenance",
-      "message": "task: #3610503 Optimize StorageCopyTrait::replaceStorageContents()",
-      "locDelta": 10,
-      "ccnDelta": 4,
-      "miDelta": -2,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143201,7 +143201,7 @@
     },
     {
       "year": 2026,
-      "commits": 1499
+      "commits": 1501
     }
   ]
 }
