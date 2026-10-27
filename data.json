@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26T02:41:27.955216",
+  "generated": "2026-10-27T03:20:21.006334",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2531,10 +2531,10 @@
     },
     {
       "date": "2026-10",
-      "total": 61,
-      "features": 3,
-      "bugs": 25,
-      "maintenance": 31,
+      "total": 71,
+      "features": 4,
+      "bugs": 30,
+      "maintenance": 35,
       "unknown": 2
     }
   ],
@@ -137665,10 +137665,10 @@
     },
     {
       "date": "2026-10",
-      "commit": "ecc5d942",
+      "commit": "0a04f467",
       "production": {
-        "loc": 288355,
-        "functions": 22722,
+        "loc": 288467,
+        "functions": 22723,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137682,7 +137682,7 @@
       "testLoc": 560,
       "surfaceArea": {
         "pluginTypes": 46,
-        "hooks": 217,
+        "hooks": 218,
         "magicKeys": 273,
         "events": 43,
         "services": 241,
@@ -137825,6 +137825,7 @@
           "hook_help",
           "hook_themes_installed",
           "hook_themes_uninstalled",
+          "hook_extension_info_alter",
           "hook_system_info_alter",
           "hook_mail",
           "hook_mail_alter",
@@ -142094,6 +142095,36 @@
   ],
   "commits": [
     {
+      "hash": "0a04f467c34",
+      "date": "Oct 27, 2026",
+      "type": "Feature",
+      "message": "feat: #3594338 Add a command to import configuration",
+      "locDelta": 76,
+      "ccnDelta": 9,
+      "miDelta": -18,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "8582e13b5f5",
+      "date": "Oct 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3575547 Deprecate StatementPrefetchIterator",
+      "locDelta": 37,
+      "ccnDelta": 4,
+      "miDelta": -14,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "096c6ad233b",
+      "date": "Oct 26, 2026",
+      "type": "Bug",
+      "message": "fix: #3621157 Admin theme should override top-bar.html.twig directly",
+      "locDelta": -3,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "ecc5d9423f1",
       "date": "Oct 24, 2026",
       "type": "Bug",
@@ -143062,36 +143093,6 @@
       "ccnDelta": 49,
       "miDelta": -21,
       "antipatternsDelta": 62
-    },
-    {
-      "hash": "51ff2c2fe01",
-      "date": "Aug 29, 2026",
-      "type": "Bug",
-      "message": "fix: #3580733 Views status field triggers a PHP 8.5 deprecation on /admin/people",
-      "locDelta": 14,
-      "ccnDelta": 3,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "3a9a48933cd",
-      "date": "Aug 29, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3591680 Use the YAML parsing cache collector for config file storage",
-      "locDelta": 12,
-      "ccnDelta": 5,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "7d62c7b7785",
-      "date": "Aug 29, 2026",
-      "type": "Maintenance",
-      "message": "task: #3618955 Reduce necessary directory traversing in HookCollectorPass",
-      "locDelta": -41,
-      "ccnDelta": -15,
-      "miDelta": 8,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143201,7 +143202,7 @@
     },
     {
       "year": 2026,
-      "commits": 1501
+      "commits": 1511
     }
   ]
 }
