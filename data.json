@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-27T03:20:21.006334",
+  "generated": "2026-10-28T03:38:12.478355",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2531,10 +2531,10 @@
     },
     {
       "date": "2026-10",
-      "total": 71,
+      "total": 83,
       "features": 4,
-      "bugs": 30,
-      "maintenance": 35,
+      "bugs": 34,
+      "maintenance": 43,
       "unknown": 2
     }
   ],
@@ -137665,10 +137665,10 @@
     },
     {
       "date": "2026-10",
-      "commit": "0a04f467",
+      "commit": "9f359f93",
       "production": {
-        "loc": 288467,
-        "functions": 22723,
+        "loc": 288659,
+        "functions": 22726,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137687,7 +137687,7 @@
         "events": 43,
         "services": 241,
         "yamlFormats": 16,
-        "interfaceMethods": 2887,
+        "interfaceMethods": 2888,
         "globalFunctions": 252
       },
       "surfaceAreaLists": {
@@ -139563,6 +139563,7 @@
           "TransactionManagerInterface::unpile",
           "TransactionManagerInterface::rollback",
           "TransactionManagerInterface::voidClientTransaction",
+          "TransactionManagerInterface::handleAutomaticCommit",
           "TransactionManagerInterface::addPostTransactionCallback",
           "SupportsTemporaryTablesInterface::queryTemporary",
           "StatementInterface::execute",
@@ -142095,6 +142096,26 @@
   ],
   "commits": [
     {
+      "hash": "2be6e066a1c",
+      "date": "Oct 27, 2026",
+      "type": "Maintenance",
+      "message": "task: #3082239 Forbid limited length primary and unique keys, allow only in inde",
+      "locDelta": 67,
+      "ccnDelta": 20,
+      "miDelta": -20,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "a36bfd1a715",
+      "date": "Oct 27, 2026",
+      "type": "Bug",
+      "message": "fix: #3584465 Fix inconsistencies in the TransactionManager behavior",
+      "locDelta": 124,
+      "ccnDelta": 23,
+      "miDelta": -39,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "0a04f467c34",
       "date": "Oct 27, 2026",
       "type": "Feature",
@@ -143073,26 +143094,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": -2
-    },
-    {
-      "hash": "b0d6a1940a3",
-      "date": "Aug 31, 2026",
-      "type": "Maintenance",
-      "message": "task: #3580703 Deprecate update.module functions",
-      "locDelta": 123,
-      "ccnDelta": 28,
-      "miDelta": -35,
-      "antipatternsDelta": -3
-    },
-    {
-      "hash": "617b3ed985b",
-      "date": "Aug 31, 2026",
-      "type": "Maintenance",
-      "message": "task: #3549134 Move text_with_summary to its own module",
-      "locDelta": 319,
-      "ccnDelta": 49,
-      "miDelta": -21,
-      "antipatternsDelta": 62
     }
   ],
   "commitsPerYear": [
@@ -143202,7 +143203,7 @@
     },
     {
       "year": 2026,
-      "commits": 1511
+      "commits": 1523
     }
   ]
 }
