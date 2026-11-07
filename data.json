@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-06T04:48:12.170332",
+  "generated": "2026-11-07T04:16:53.049065",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2539,10 +2539,10 @@
     },
     {
       "date": "2026-11",
-      "total": 20,
+      "total": 23,
       "features": 0,
-      "bugs": 8,
-      "maintenance": 11,
+      "bugs": 9,
+      "maintenance": 13,
       "unknown": 1
     }
   ],
@@ -137673,10 +137673,10 @@
     },
     {
       "date": "2026-11",
-      "commit": "eef285cd",
+      "commit": "3fb1c69d",
       "production": {
-        "loc": 288552,
-        "functions": 22726,
+        "loc": 288606,
+        "functions": 22728,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -141918,6 +141918,14 @@
           "antipatterns": 32
         },
         {
+          "name": "HookCollectorPass::collectModuleHookImplementations",
+          "file": "lib/Drupal/Core/Hook/HookCollectorPass.php",
+          "ccn": 37,
+          "loc": 130,
+          "mi": 49,
+          "antipatterns": 2
+        },
+        {
           "name": "MailFormatHelper::htmlToText",
           "file": "lib/Drupal/Core/Mail/MailFormatHelper.php",
           "ccn": 37,
@@ -142038,14 +142046,6 @@
           "antipatterns": 8
         },
         {
-          "name": "HookCollectorPass::collectModuleHookImplementations",
-          "file": "lib/Drupal/Core/Hook/HookCollectorPass.php",
-          "ccn": 31,
-          "loc": 108,
-          "mi": 55,
-          "antipatterns": 2
-        },
-        {
           "name": "PrimitiveTypeConstraintValidator::validate",
           "file": "lib/Drupal/Core/Validation/Plugin/Validation/Constraint/PrimitiveTypeConstraintValidator.php",
           "ccn": 31,
@@ -142105,6 +142105,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "3fb1c69d369",
+      "date": "Nov 06, 2026",
+      "type": "Maintenance",
+      "message": "task: #3619733 Deprecate .module file extension",
+      "locDelta": 51,
+      "ccnDelta": 9,
+      "miDelta": -11,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "e28908b62c7",
+      "date": "Nov 06, 2026",
+      "type": "Bug",
+      "message": "fix: #3634917 [random test failure] \u201ccache_file_parsing\u201d table does not exist in",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "b93b7840566",
       "date": "Nov 04, 2026",
@@ -143084,26 +143104,6 @@
       "ccnDelta": 19,
       "miDelta": -16,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "39b62a8288e",
-      "date": "Sep 01, 2026",
-      "type": "Maintenance",
-      "message": "task: #2831617 Deprecate global constants in locale module",
-      "locDelta": 74,
-      "ccnDelta": -2,
-      "miDelta": 1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "df31ad4e31b",
-      "date": "Sep 01, 2026",
-      "type": "Bug",
-      "message": "fix: #2781815 Content authored views relationship should be provided by node.mod",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": -5,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143213,7 +143213,7 @@
     },
     {
       "year": 2026,
-      "commits": 1551
+      "commits": 1554
     }
   ]
 }
