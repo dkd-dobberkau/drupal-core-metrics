@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-07T04:16:53.049065",
+  "generated": "2026-11-08T03:47:18.581697",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2539,10 +2539,10 @@
     },
     {
       "date": "2026-11",
-      "total": 23,
+      "total": 29,
       "features": 0,
-      "bugs": 9,
-      "maintenance": 13,
+      "bugs": 13,
+      "maintenance": 15,
       "unknown": 1
     }
   ],
@@ -137673,9 +137673,9 @@
     },
     {
       "date": "2026-11",
-      "commit": "3fb1c69d",
+      "commit": "109a70e9",
       "production": {
-        "loc": 288606,
+        "loc": 288613,
         "functions": 22728,
         "ccn": {
           "avg": 2.5,
@@ -142106,6 +142106,26 @@
   ],
   "commits": [
     {
+      "hash": "3e1711eb4f9",
+      "date": "Nov 07, 2026",
+      "type": "Bug",
+      "message": "fix: #3626006 DefaultExceptionHtmlSubscriber leaves the router with a detached G",
+      "locDelta": 4,
+      "ccnDelta": 0,
+      "miDelta": -2,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "c45f208c9bf",
+      "date": "Nov 07, 2026",
+      "type": "Bug",
+      "message": "fix: #3403394 [regression] CKEditor 5 throws an exception when the default theme",
+      "locDelta": 3,
+      "ccnDelta": 2,
+      "miDelta": -3,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "3fb1c69d369",
       "date": "Nov 06, 2026",
       "type": "Maintenance",
@@ -143084,26 +143104,6 @@
       "ccnDelta": 1,
       "miDelta": -1,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "72844a3cba6",
-      "date": "Sep 01, 2026",
-      "type": "Maintenance",
-      "message": "task: #3375423 Deprecate file_managed_file_save_upload(), file_save_upload() and",
-      "locDelta": 63,
-      "ccnDelta": 6,
-      "miDelta": -3,
-      "antipatternsDelta": -3
-    },
-    {
-      "hash": "3a8ca189fa4",
-      "date": "Sep 01, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3532930 Make Drupal\\Core\\Database\\Database type strict and PHPStan L1",
-      "locDelta": 57,
-      "ccnDelta": 19,
-      "miDelta": -16,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143213,7 +143213,7 @@
     },
     {
       "year": 2026,
-      "commits": 1554
+      "commits": 1560
     }
   ]
 }
