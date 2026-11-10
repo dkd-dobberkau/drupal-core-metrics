@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-09T04:05:50.000989",
+  "generated": "2026-11-10T05:47:55.793490",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2539,10 +2539,10 @@
     },
     {
       "date": "2026-11",
-      "total": 32,
+      "total": 49,
       "features": 0,
-      "bugs": 14,
-      "maintenance": 17,
+      "bugs": 18,
+      "maintenance": 30,
       "unknown": 1
     }
   ],
@@ -137673,9 +137673,9 @@
     },
     {
       "date": "2026-11",
-      "commit": "9b26fc7c",
+      "commit": "fd96931e",
       "production": {
-        "loc": 288616,
+        "loc": 288633,
         "functions": 22728,
         "ccn": {
           "avg": 2.5,
@@ -137691,7 +137691,7 @@
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 218,
-        "magicKeys": 275,
+        "magicKeys": 276,
         "events": 43,
         "services": 241,
         "yamlFormats": 16,
@@ -138213,6 +138213,7 @@
           "#extra_field_placeholder_field_name",
           "#block",
           "#children",
+          "#field_label",
           "#link_type",
           "#url_title",
           "#responsive_image_style_id",
@@ -141696,7 +141697,7 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10109,
+        "magicKeys": 10110,
         "deepArrays": 7005,
         "serviceLocators": 2318
       },
@@ -141896,9 +141897,9 @@
         {
           "name": "AccountForm::form",
           "file": "modules/user/src/AccountForm.php",
-          "ccn": 39,
-          "loc": 189,
-          "mi": 41,
+          "ccn": 40,
+          "loc": 192,
+          "mi": 40,
           "antipatterns": 92
         },
         {
@@ -142105,6 +142106,76 @@
     }
   ],
   "commits": [
+    {
+      "hash": "6c549b3f0d1",
+      "date": "Nov 10, 2026",
+      "type": "Bug",
+      "message": "fix: #3631325 ViewPageController::handle() should not ask for upcast route param",
+      "locDelta": -4,
+      "ccnDelta": -1,
+      "miDelta": 4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "abb6fd19c23",
+      "date": "Nov 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3357616 Remove \"Forgot your password?\" link on failed login attempt messag",
+      "locDelta": 11,
+      "ccnDelta": 4,
+      "miDelta": -6,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "8c2b477153d",
+      "date": "Nov 09, 2026",
+      "type": "Maintenance",
+      "message": "task: #3615750 Update logic of hasValuesInUse in OptionsHooks",
+      "locDelta": -3,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "be8eb5ba925",
+      "date": "Nov 09, 2026",
+      "type": "Maintenance",
+      "message": "task: #3615571 Optimize update module's UpdateTestBase",
+      "locDelta": 2,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "6ed53eb76a1",
+      "date": "Nov 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3619623 Empty FilterUrl maximum link text length setting trims to ellipsis",
+      "locDelta": 4,
+      "ccnDelta": 3,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "a65f1b48181",
+      "date": "Nov 09, 2026",
+      "type": "Maintenance",
+      "message": "task: #3181762 The field name is not displayed in LinkWidget error messages",
+      "locDelta": 5,
+      "ccnDelta": 0,
+      "miDelta": -4,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "5a049310899",
+      "date": "Nov 09, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3615654 Default to using the 'libraries' parameter for CSS aggregates",
+      "locDelta": 2,
+      "ccnDelta": 2,
+      "miDelta": -2,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "8d0055d8dcc",
       "date": "Nov 08, 2026",
@@ -143034,76 +143105,6 @@
       "ccnDelta": -2,
       "miDelta": 0,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "2c9c31c0448",
-      "date": "Sep 03, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3315265 Improve support of native MERGE with RETURNING merge_action()",
-      "locDelta": 135,
-      "ccnDelta": 35,
-      "miDelta": -50,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "f0a5223446b",
-      "date": "Sep 03, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3615415 Remove using preg_replace() on every query for PostgreSQL",
-      "locDelta": 28,
-      "ccnDelta": 5,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "2aa5aede43f",
-      "date": "Sep 03, 2026",
-      "type": "Feature",
-      "message": "feat: #3555916 Update to htmx 4",
-      "locDelta": -5,
-      "ccnDelta": -1,
-      "miDelta": 1,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "c82feae0c89",
-      "date": "Sep 03, 2026",
-      "type": "Bug",
-      "message": "fix: #3610122 Field data for multiple cardinality fields are not populated on en",
-      "locDelta": 14,
-      "ccnDelta": 4,
-      "miDelta": -4,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "1b4da6dbb82",
-      "date": "Sep 02, 2026",
-      "type": "Maintenance",
-      "message": "task: #3583153 Allow to invoke multiple implementations of a specific module wit",
-      "locDelta": 11,
-      "ccnDelta": 4,
-      "miDelta": -6,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "246bddbf7e0",
-      "date": "Sep 02, 2026",
-      "type": "Maintenance",
-      "message": "task: #3620228 Remove text_with_summary",
-      "locDelta": -489,
-      "ccnDelta": -65,
-      "miDelta": 38,
-      "antipatternsDelta": -97
-    },
-    {
-      "hash": "e882b59cc91",
-      "date": "Sep 02, 2026",
-      "type": "Bug",
-      "message": "fix: #3614993 AjaxRenderer::renderResponse() should handle a render array with n",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143213,7 +143214,7 @@
     },
     {
       "year": 2026,
-      "commits": 1563
+      "commits": 1580
     }
   ]
 }
