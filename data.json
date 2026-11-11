@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-10T05:47:55.793490",
+  "generated": "2026-11-11T04:18:45.656877",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2539,10 +2539,10 @@
     },
     {
       "date": "2026-11",
-      "total": 49,
+      "total": 56,
       "features": 0,
-      "bugs": 18,
-      "maintenance": 30,
+      "bugs": 20,
+      "maintenance": 35,
       "unknown": 1
     }
   ],
@@ -137673,9 +137673,9 @@
     },
     {
       "date": "2026-11",
-      "commit": "fd96931e",
+      "commit": "7312a125",
       "production": {
-        "loc": 288633,
+        "loc": 288631,
         "functions": 22728,
         "ccn": {
           "avg": 2.5,
@@ -141737,9 +141737,9 @@
         {
           "name": "Renderer::doRender",
           "file": "lib/Drupal/Core/Render/Renderer.php",
-          "ccn": 66,
-          "loc": 205,
-          "mi": 33,
+          "ccn": 65,
+          "loc": 201,
+          "mi": 34,
           "antipatterns": 5
         },
         {
@@ -142106,6 +142106,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "6c7f1ffe6fa",
+      "date": "Nov 10, 2026",
+      "type": "Maintenance",
+      "message": "task: #3633353 Remove redundant render context lookup in Renderer::doRender()",
+      "locDelta": -4,
+      "ccnDelta": -1,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "11392cbf02d",
+      "date": "Nov 10, 2026",
+      "type": "Bug",
+      "message": "fix: #3620626 Data integrity issues with deleting languages and node revisions",
+      "locDelta": 2,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "6c549b3f0d1",
       "date": "Nov 10, 2026",
@@ -143085,26 +143105,6 @@
       "ccnDelta": 2,
       "miDelta": 0,
       "antipatternsDelta": 4
-    },
-    {
-      "hash": "4240fa274f1",
-      "date": "Sep 04, 2026",
-      "type": "Bug",
-      "message": "fix: #3619974 A view in a workspace shows default revision values for non-transl",
-      "locDelta": 4,
-      "ccnDelta": 2,
-      "miDelta": -2,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "dde124da00f",
-      "date": "Sep 04, 2026",
-      "type": "Maintenance",
-      "message": "task: #3620804 Remove search references from Umami theme",
-      "locDelta": -10,
-      "ccnDelta": -2,
-      "miDelta": 0,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -143214,7 +143214,7 @@
     },
     {
       "year": 2026,
-      "commits": 1580
+      "commits": 1587
     }
   ]
 }
