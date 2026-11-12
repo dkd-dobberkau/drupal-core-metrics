@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-11T04:18:45.656877",
+  "generated": "2026-11-12T05:14:40.695550",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2539,10 +2539,10 @@
     },
     {
       "date": "2026-11",
-      "total": 56,
+      "total": 72,
       "features": 0,
-      "bugs": 20,
-      "maintenance": 35,
+      "bugs": 27,
+      "maintenance": 44,
       "unknown": 1
     }
   ],
@@ -137673,10 +137673,10 @@
     },
     {
       "date": "2026-11",
-      "commit": "7312a125",
+      "commit": "f3468222",
       "production": {
-        "loc": 288631,
-        "functions": 22728,
+        "loc": 288680,
+        "functions": 22730,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -141698,17 +141698,17 @@
       },
       "antipatterns": {
         "magicKeys": 10110,
-        "deepArrays": 7005,
-        "serviceLocators": 2318
+        "deepArrays": 7007,
+        "serviceLocators": 2319
       },
       "hotspots": [
         {
           "name": "SystemRequirementsHooks::checkRequirements",
           "file": "modules/system/src/Hook/SystemRequirementsHooks.php",
-          "ccn": 192,
-          "loc": 1269,
+          "ccn": 195,
+          "loc": 1291,
           "mi": 0,
-          "antipatterns": 85
+          "antipatterns": 88
         },
         {
           "name": "IconMimeTypes::getGenericMimeType",
@@ -142106,6 +142106,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "290b5ad0d40",
+      "date": "Nov 11, 2026",
+      "type": "Bug",
+      "message": "fix: #3626014 DrupalKernel::terminate() leaves the main request on the stack whe",
+      "locDelta": 5,
+      "ccnDelta": 0,
+      "miDelta": -5,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "a2c2d38d51e",
+      "date": "Nov 11, 2026",
+      "type": "Bug",
+      "message": "fix: #3466047 BlockContentBlock does not inherit block content entity cacheable ",
+      "locDelta": 23,
+      "ccnDelta": 9,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "a6e64eca8f2",
+      "date": "Nov 11, 2026",
+      "type": "Maintenance",
+      "message": "task: #3617943 Deprecate DateTimePlus::prepareFormat()",
+      "locDelta": -3,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "659badedf09",
+      "date": "Nov 11, 2026",
+      "type": "Maintenance",
+      "message": "task: #3621330 Include Bandwidth optimization (aggregation) on Status report pag",
+      "locDelta": 22,
+      "ccnDelta": 3,
+      "miDelta": 0,
+      "antipatternsDelta": 4
+    },
     {
       "hash": "6c7f1ffe6fa",
       "date": "Nov 10, 2026",
@@ -143065,46 +143105,6 @@
       "ccnDelta": 3,
       "miDelta": -2,
       "antipatternsDelta": 3
-    },
-    {
-      "hash": "4a54dacd42d",
-      "date": "Sep 04, 2026",
-      "type": "Maintenance",
-      "message": "task: #3580705 Deprecate update.compare functions",
-      "locDelta": 166,
-      "ccnDelta": 44,
-      "miDelta": -57,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "fa4fd791c51",
-      "date": "Sep 04, 2026",
-      "type": "Feature",
-      "message": "feat: #3586688 Add support for generated columns to the DB Schema Definition API",
-      "locDelta": 232,
-      "ccnDelta": 52,
-      "miDelta": -97,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "35bbc4e3bdc",
-      "date": "Sep 04, 2026",
-      "type": "Maintenance",
-      "message": "task: #3605702 Remove remaining Gin and Claro implementation names from Default ",
-      "locDelta": -3,
-      "ccnDelta": -1,
-      "miDelta": -1,
-      "antipatternsDelta": -21
-    },
-    {
-      "hash": "1b496c981a2",
-      "date": "Sep 04, 2026",
-      "type": "Maintenance",
-      "message": "task: #3620216 Add loadOverrideFree and loadMultipleOverrideFree to ConfigEntity",
-      "locDelta": 14,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 4
     }
   ],
   "commitsPerYear": [
@@ -143214,7 +143214,7 @@
     },
     {
       "year": 2026,
-      "commits": 1587
+      "commits": 1603
     }
   ]
 }
