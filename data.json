@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-14T04:36:31.176342",
+  "generated": "2026-11-15T04:17:11.049969",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2539,10 +2539,10 @@
     },
     {
       "date": "2026-11",
-      "total": 77,
+      "total": 81,
       "features": 0,
-      "bugs": 28,
-      "maintenance": 48,
+      "bugs": 30,
+      "maintenance": 50,
       "unknown": 1
     }
   ],
@@ -137673,9 +137673,9 @@
     },
     {
       "date": "2026-11",
-      "commit": "7480c58b",
+      "commit": "ec3bb0fd",
       "production": {
-        "loc": 288686,
+        "loc": 288689,
         "functions": 22731,
         "ccn": {
           "avg": 2.5,
@@ -141697,8 +141697,8 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10110,
-        "deepArrays": 7007,
+        "magicKeys": 10111,
+        "deepArrays": 7010,
         "serviceLocators": 2319
       },
       "hotspots": [
@@ -142106,6 +142106,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "5a915039303",
+      "date": "Nov 15, 2026",
+      "type": "Maintenance",
+      "message": "task: #3634420 Removed unused code in CSS discovery process",
+      "locDelta": -2,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "b0128a3aae0",
+      "date": "Nov 14, 2026",
+      "type": "Bug",
+      "message": "fix: #2703349 Show as expanded checkbox is not necessary when No menu entry is s",
+      "locDelta": 5,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 3
+    },
     {
       "hash": "af2ff7c4ba5",
       "date": "Nov 13, 2026",
@@ -143085,26 +143105,6 @@
       "ccnDelta": 3,
       "miDelta": -6,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "d4404e98af2",
-      "date": "Sep 05, 2026",
-      "type": "Unknown",
-      "message": "Revert \"fix: #2865710 Dependencies from only one instance of a widget are used i",
-      "locDelta": -7,
-      "ccnDelta": -2,
-      "miDelta": 0,
-      "antipatternsDelta": -2
-    },
-    {
-      "hash": "96240ad32a8",
-      "date": "Sep 05, 2026",
-      "type": "Bug",
-      "message": "fix: #3611957 Improve InvalidComponentException by including the parent/calling ",
-      "locDelta": 20,
-      "ccnDelta": 5,
-      "miDelta": -12,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143214,7 +143214,7 @@
     },
     {
       "year": 2026,
-      "commits": 1608
+      "commits": 1612
     }
   ]
 }
