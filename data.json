@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T04:18:32.647939",
+  "generated": "2026-11-17T06:04:30.945270",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2539,10 +2539,10 @@
     },
     {
       "date": "2026-11",
-      "total": 85,
+      "total": 88,
       "features": 0,
-      "bugs": 32,
-      "maintenance": 51,
+      "bugs": 33,
+      "maintenance": 53,
       "unknown": 2
     }
   ],
@@ -137673,9 +137673,9 @@
     },
     {
       "date": "2026-11",
-      "commit": "bca3ab4c",
+      "commit": "e95c24bb",
       "production": {
-        "loc": 288694,
+        "loc": 288697,
         "functions": 22731,
         "ccn": {
           "avg": 2.5,
@@ -142107,6 +142107,16 @@
   ],
   "commits": [
     {
+      "hash": "fb81627270a",
+      "date": "Nov 16, 2026",
+      "type": "Bug",
+      "message": "fix: #3627338 Serializer::getJsonSchema() throws a TypeError when passed a class",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "813e696a88a",
       "date": "Nov 15, 2026",
       "type": "Maintenance",
@@ -143095,16 +143105,6 @@
       "ccnDelta": 0,
       "miDelta": -1,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "1ab223a55d3",
-      "date": "Sep 07, 2026",
-      "type": "Maintenance",
-      "message": "task: #3561302 Register equivalent updates on site install",
-      "locDelta": 36,
-      "ccnDelta": 9,
-      "miDelta": -10,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143214,7 +143214,7 @@
     },
     {
       "year": 2026,
-      "commits": 1616
+      "commits": 1619
     }
   ]
 }
