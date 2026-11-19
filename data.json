@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-18T05:36:57.448678",
+  "generated": "2026-11-19T05:37:04.880677",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2539,10 +2539,10 @@
     },
     {
       "date": "2026-11",
-      "total": 89,
+      "total": 95,
       "features": 0,
-      "bugs": 33,
-      "maintenance": 54,
+      "bugs": 36,
+      "maintenance": 57,
       "unknown": 2
     }
   ],
@@ -137673,10 +137673,10 @@
     },
     {
       "date": "2026-11",
-      "commit": "29b0a0b2",
+      "commit": "92e5c3a3",
       "production": {
-        "loc": 288697,
-        "functions": 22731,
+        "loc": 288711,
+        "functions": 22732,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -141699,7 +141699,7 @@
       "antipatterns": {
         "magicKeys": 10111,
         "deepArrays": 7010,
-        "serviceLocators": 2319
+        "serviceLocators": 2324
       },
       "hotspots": [
         {
@@ -141935,6 +141935,14 @@
           "antipatterns": 0
         },
         {
+          "name": "install_begin_request",
+          "file": "includes/install.core.inc",
+          "ccn": 37,
+          "loc": 148,
+          "mi": 47,
+          "antipatterns": 17
+        },
+        {
           "name": "CKEditor5PluginDefinition::validateDrupalAspects",
           "file": "modules/ckeditor5/src/Plugin/CKEditor5PluginDefinition.php",
           "ccn": 37,
@@ -142005,14 +142013,6 @@
           "loc": 121,
           "mi": 52,
           "antipatterns": 22
-        },
-        {
-          "name": "install_begin_request",
-          "file": "includes/install.core.inc",
-          "ccn": 33,
-          "loc": 140,
-          "mi": 49,
-          "antipatterns": 16
         },
         {
           "name": "SqlContentEntityStorage::loadSingleCardinalityFields",
@@ -142106,6 +142106,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "e48d9e61b68",
+      "date": "Nov 18, 2026",
+      "type": "Bug",
+      "message": "fix: SA-CORE-2026-018",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "fb81627270a",
       "date": "Nov 16, 2026",
@@ -143095,16 +143105,6 @@
       "ccnDelta": 3,
       "miDelta": 0,
       "antipatternsDelta": 3
-    },
-    {
-      "hash": "a9c9c3e5e4f",
-      "date": "Sep 07, 2026",
-      "type": "Bug",
-      "message": "fix: #3612458 Show all dependent modules on module confirm form for each chosen ",
-      "locDelta": 2,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143214,7 +143214,7 @@
     },
     {
       "year": 2026,
-      "commits": 1620
+      "commits": 1626
     }
   ]
 }
