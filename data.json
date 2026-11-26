@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T06:34:11.625105",
+  "generated": "2026-11-26T06:30:41.126419",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2539,9 +2539,9 @@
     },
     {
       "date": "2026-11",
-      "total": 111,
+      "total": 114,
       "features": 0,
-      "bugs": 38,
+      "bugs": 41,
       "maintenance": 68,
       "unknown": 5
     }
@@ -137673,10 +137673,10 @@
     },
     {
       "date": "2026-11",
-      "commit": "1dec2b8c",
+      "commit": "0387fb94",
       "production": {
-        "loc": 288766,
-        "functions": 22734,
+        "loc": 288778,
+        "functions": 22735,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -141699,7 +141699,7 @@
       "antipatterns": {
         "magicKeys": 10109,
         "deepArrays": 7004,
-        "serviceLocators": 2324
+        "serviceLocators": 2327
       },
       "hotspots": [
         {
@@ -141887,6 +141887,14 @@
           "antipatterns": 0
         },
         {
+          "name": "install_begin_request",
+          "file": "includes/install.core.inc",
+          "ccn": 40,
+          "loc": 151,
+          "mi": 46,
+          "antipatterns": 18
+        },
+        {
           "name": "UrlGenerator::generateFromRoute",
           "file": "lib/Drupal/Core/Routing/UrlGenerator.php",
           "ccn": 40,
@@ -141917,14 +141925,6 @@
           "loc": 91,
           "mi": 57,
           "antipatterns": 0
-        },
-        {
-          "name": "install_begin_request",
-          "file": "includes/install.core.inc",
-          "ccn": 37,
-          "loc": 148,
-          "mi": 47,
-          "antipatterns": 17
         },
         {
           "name": "MailFormatHelper::htmlToText",
@@ -142106,6 +142106,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "1196ce0d2ef",
+      "date": "Nov 25, 2026",
+      "type": "Bug",
+      "message": "fix: SA-CORE-2026-019",
+      "locDelta": 12,
+      "ccnDelta": 6,
+      "miDelta": -1,
+      "antipatternsDelta": 4
+    },
     {
       "hash": "e6ee52de373",
       "date": "Nov 24, 2026",
@@ -143095,16 +143105,6 @@
       "ccnDelta": -56,
       "miDelta": 59,
       "antipatternsDelta": -49
-    },
-    {
-      "hash": "0c1323961c4",
-      "date": "Sep 08, 2026",
-      "type": "Bug",
-      "message": "fix: #2660338 Deprecate locale_get_plural",
-      "locDelta": 27,
-      "ccnDelta": 7,
-      "miDelta": 0,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -143214,7 +143214,7 @@
     },
     {
       "year": 2026,
-      "commits": 1642
+      "commits": 1645
     }
   ]
 }
