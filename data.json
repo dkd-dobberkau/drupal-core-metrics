@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-26T06:30:41.126419",
+  "generated": "2026-11-27T06:17:53.412468",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2539,10 +2539,10 @@
     },
     {
       "date": "2026-11",
-      "total": 114,
+      "total": 122,
       "features": 0,
-      "bugs": 41,
-      "maintenance": 68,
+      "bugs": 42,
+      "maintenance": 75,
       "unknown": 5
     }
   ],
@@ -137673,10 +137673,10 @@
     },
     {
       "date": "2026-11",
-      "commit": "0387fb94",
+      "commit": "bd6c80ae",
       "production": {
-        "loc": 288778,
-        "functions": 22735,
+        "loc": 288908,
+        "functions": 22743,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137685,7 +137685,7 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 67
+        "antipatterns": 66.9
       },
       "testLoc": 560,
       "surfaceArea": {
@@ -142107,6 +142107,26 @@
   ],
   "commits": [
     {
+      "hash": "824558283b4",
+      "date": "Nov 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3636785 Backport performance improvements from Doctrine's parser to Named",
+      "locDelta": -3,
+      "ccnDelta": 2,
+      "miDelta": 4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "3de62ec9b50",
+      "date": "Nov 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3622582 Cleanup database exceptions",
+      "locDelta": 133,
+      "ccnDelta": 18,
+      "miDelta": -13,
+      "antipatternsDelta": -1
+    },
+    {
       "hash": "1196ce0d2ef",
       "date": "Nov 25, 2026",
       "type": "Bug",
@@ -143085,26 +143105,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "8a9850a4bd6",
-      "date": "Sep 08, 2026",
-      "type": "Maintenance",
-      "message": "task: #3620746 Remove deprecated methods and functions tagged for 12.0.0",
-      "locDelta": -120,
-      "ccnDelta": -29,
-      "miDelta": 31,
-      "antipatternsDelta": -4
-    },
-    {
-      "hash": "bb5d24ea3d5",
-      "date": "Sep 08, 2026",
-      "type": "Maintenance",
-      "message": "task: #3620747 Remove deprecated method arguments tagged for 12.0.0",
-      "locDelta": -261,
-      "ccnDelta": -56,
-      "miDelta": 59,
-      "antipatternsDelta": -49
     }
   ],
   "commitsPerYear": [
@@ -143214,7 +143214,7 @@
     },
     {
       "year": 2026,
-      "commits": 1645
+      "commits": 1653
     }
   ]
 }
