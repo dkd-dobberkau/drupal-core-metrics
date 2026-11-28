@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-27T06:17:53.412468",
+  "generated": "2026-11-28T05:57:12.350383",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2539,10 +2539,10 @@
     },
     {
       "date": "2026-11",
-      "total": 122,
+      "total": 127,
       "features": 0,
-      "bugs": 42,
-      "maintenance": 75,
+      "bugs": 45,
+      "maintenance": 77,
       "unknown": 5
     }
   ],
@@ -137673,10 +137673,10 @@
     },
     {
       "date": "2026-11",
-      "commit": "bd6c80ae",
+      "commit": "c706424d",
       "production": {
-        "loc": 288908,
-        "functions": 22743,
+        "loc": 289051,
+        "functions": 22751,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -142107,6 +142107,46 @@
   ],
   "commits": [
     {
+      "hash": "c706424d7ef",
+      "date": "Nov 27, 2026",
+      "type": "Bug",
+      "message": "fix: #3641672 WorkspaceManager::executeInWorkspace() and executeOutsideWorkspace",
+      "locDelta": 6,
+      "ccnDelta": 0,
+      "miDelta": -2,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "9f63dc704a9",
+      "date": "Nov 27, 2026",
+      "type": "Maintenance",
+      "message": "task: #3123401 Stop caching route lookups with query parameters or without resul",
+      "locDelta": 5,
+      "ccnDelta": 6,
+      "miDelta": -2,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "747bda6d0ba",
+      "date": "Nov 27, 2026",
+      "type": "Bug",
+      "message": "fix: #3616328 Key the typed data prototype cache by the definition, not by root ",
+      "locDelta": -8,
+      "ccnDelta": 0,
+      "miDelta": 4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "8a7df6cc3e6",
+      "date": "Nov 27, 2026",
+      "type": "Bug",
+      "message": "fix: #2778345 Views argument validators aren't taken into account on access chec",
+      "locDelta": 140,
+      "ccnDelta": 41,
+      "miDelta": -39,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "824558283b4",
       "date": "Nov 26, 2026",
       "type": "Maintenance",
@@ -143065,46 +143105,6 @@
       "ccnDelta": 4,
       "miDelta": 0,
       "antipatternsDelta": 2
-    },
-    {
-      "hash": "99c79fcdb7f",
-      "date": "Sep 10, 2026",
-      "type": "Maintenance",
-      "message": "task: #941970 Rebuild router only when something related to routing changes",
-      "locDelta": 115,
-      "ccnDelta": 32,
-      "miDelta": -23,
-      "antipatternsDelta": 4
-    },
-    {
-      "hash": "678e64789ed",
-      "date": "Sep 10, 2026",
-      "type": "Maintenance",
-      "message": "task: #3618971 Use Admin theme in installer",
-      "locDelta": 23,
-      "ccnDelta": 10,
-      "miDelta": 5,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "1ed8ef5ddcd",
-      "date": "Sep 10, 2026",
-      "type": "Maintenance",
-      "message": "task: #3621981 Remove admin-custom.css",
-      "locDelta": -9,
-      "ccnDelta": -3,
-      "miDelta": 2,
-      "antipatternsDelta": -2
-    },
-    {
-      "hash": "9afec8faf2b",
-      "date": "Sep 08, 2026",
-      "type": "Maintenance",
-      "message": "task: #3585957 Prevent the navigation sidebar being rendered via big pipe",
-      "locDelta": 3,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143214,7 +143214,7 @@
     },
     {
       "year": 2026,
-      "commits": 1653
+      "commits": 1658
     }
   ]
 }
